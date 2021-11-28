@@ -137,7 +137,6 @@
 					</div>
 				</div>
 			</form>
-			<input type="submit" name="" class="a" id="">
 			<!-- /row -->
 		</div>
 		<!-- /container -->
