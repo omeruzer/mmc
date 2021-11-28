@@ -24,6 +24,9 @@
                         </div>
                         <ul>
                             <li>
+                                <a href="{{route('homepage')}}">Anasayfa</a>
+                            </li>
+                            <li>
                                 <a href="{{route('blog')}}">Blog</a>
                             </li>
                             <li>
@@ -31,9 +34,6 @@
                             </li>
                             <li>
                                 <a href="{{route('about')}}">Hakkımızda</a>
-                            </li>
-                            <li>
-                                <a href="{{route('track')}}">Kargom Nerede</a>
                             </li>
                             <li>
                                 <a href="{{route('contact')}}">İletişim</a>

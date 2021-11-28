@@ -73,9 +73,9 @@
                                         @endif
                                         {{-- <div data-countdown="2019/05/15" class="countdown"></div> --}}
                                     </figure>
-                                    <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
+                                    <a style="text-decoration: none" href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
                                         <h3>{{$product->name}}</h3>
-                                        <div class=""><span>{{$product->code}}</span></div>
+                                        <div class=""><span style="color: #47C78E; ">{{$product->code}}</span></div>
                                     </a>
                                     <div class="price_box">
                                         <span class="new_price">${{$product->price}}</span>
