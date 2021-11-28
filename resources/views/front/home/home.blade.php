@@ -107,7 +107,7 @@
                         <span class="ribbon off">Öne Çıkan Fırsat</span>
                         <figure>
                             <a href="{{ route('product',[$featured->getProduct->getCategory->slug,$featured->getProduct->slug,$featured->getProduct->code]) }}">
-                                <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$featured->getProduct->img}}" data-src="img/products/shoes/4.jpg" alt="">
+                                <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$featured->getProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$featured->getProduct->slug}}">
                             </a>
                             @if ($featured->getProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
@@ -171,7 +171,7 @@
                         <span class="ribbon new">Yeni</span>
                         <figure>
                             <a href="{{ route('product',[$newProduct->getCategory->slug,$newProduct->slug,$newProduct->code]) }}">
-                                <img style="width: 400px%;  max-height: 300px" class="owl" src="/assets/images/products/{{$newProduct->img}}" data-src="img/products/shoes/4.jpg" alt="">
+                                <img style="width: 400px%;  max-height: 300px" class="owl" src="/assets/images/products/{{$newProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$newProduct->slug}}">
                             </a>
                             @if ($newProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
@@ -251,7 +251,7 @@
                 <div class="col-lg-6">
                     <a class="box_news" href="{{ route('blog-detail',[$blog->slug]) }}">
                         <figure>
-                            <img src="/assets/images/blogs/{{$blog->img}}" alt="" width="400" height="266" class="lazy">
+                            <img src="/assets/images/blogs/{{$blog->img}}" alt="{{$blog->slug}}" width="400" height="266" class="lazy">
                         </figure>
                         <ul>
                             <li>{{$blog->created_at}}</li>
