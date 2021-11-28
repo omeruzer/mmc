@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="col-xl-6">
 			@include('admin.layouts.partials.error')
-			@include('admin.layouts.partials.alert')        
+			@include('admin.layouts.partials.alert')
 		</div>
 	</div>
 		<div class="row justify-content-center">
