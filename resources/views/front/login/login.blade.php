@@ -34,9 +34,9 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password" id="password_in" value="" placeholder="Parola">
                             </div>
-                            <div class="clearfix add_bottom_15">
+                            {{-- <div class="clearfix add_bottom_15">
                                 <div class="float-right"><a id="forgot" style="float: right" href="javascript:void(0);">Lost Password?</a></div>
-                            </div>
+                            </div> --}}
                             <div class="text-center"><input type="submit" value="Giriş Yap" class="btn_1 full-width"></div>
                         </div>
                     </form>
@@ -64,12 +64,12 @@
                                 <input type="password" autocomplete="off" class="form-control" name="password_confirmation" placeholder="Parola (Tekrar)*">
                             </div>
 
-                            <div class="form-group">
-                                <label class="container_check">Accept <a href="#0">Terms and conditions</a>
+                            {{-- <div class="form-group">
+                                <label class="container_check">Accept <a href="#0">Şartlar ve Koşullar</a>
                                     <input type="checkbox" name="accept">
                                     <span class="checkmark"></span>
                                 </label>
-                            </div>
+                            </div> --}}
                             <div class="text-center"><input type="submit" value="Üye Ol" class="btn_1 full-width"></div>
                         </div>
                     </form>

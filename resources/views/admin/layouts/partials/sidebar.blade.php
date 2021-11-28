@@ -117,6 +117,18 @@
                             </a>
                         </li>
                         <li class="submenu">
+                            <a class="" href="{{route('admin.privacy')}}">
+                                <i class="fas fa-file-alt"></i>
+                                <span> Gizlilik </span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a class="" href="{{route('admin.terms.and.conditions')}}">
+                                <i class="fas fa-file-invoice"></i>
+                                <span> Şartlar ve Koşullar </span>
+                            </a>
+                        </li>
+                        <li class="submenu">
                             <a class="" href="{{route('admin.statistic')}}">
                                 <i class="fas fa-chart-bar"></i>
                                 <span> İstatiskiler </span>

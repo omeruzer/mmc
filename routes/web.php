@@ -14,12 +14,14 @@ use App\Http\Controllers\admin\LogoController;
 use App\Http\Controllers\admin\MessageController;
 use App\Http\Controllers\admin\NewsletterController as AdminNewsletterController;
 use App\Http\Controllers\admin\OrderController;
+use App\Http\Controllers\admin\PrivacyController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SeoController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\SocialmediaController;
 use App\Http\Controllers\admin\SSSController;
 use App\Http\Controllers\admin\StatisticController as AdminStatisticController;
+use App\Http\Controllers\admin\TermsandConditionsController as AdminTermsandConditionsController;
 use App\Http\Controllers\admin\TruckController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\ConfirmController;
@@ -37,8 +39,10 @@ use App\Http\Controllers\front\HomeController as FrontHomeController;
 use App\Http\Controllers\front\NewsletterController;
 use App\Http\Controllers\front\OrderController as FrontOrderController;
 use App\Http\Controllers\front\PaymentController;
+use App\Http\Controllers\front\PrivacyController as FrontPrivacyController;
 use App\Http\Controllers\front\ProductController as FrontProductController;
 use App\Http\Controllers\front\SSSController as FrontSSSController;
+use App\Http\Controllers\front\TermsandConditionsController;
 use App\Http\Controllers\front\TrackController;
 use App\Http\Controllers\front\UserController as FrontUserController;
 use App\Http\Controllers\StatisticController;
@@ -122,6 +126,10 @@ Route::get('/sss',[FrontSSSController::class,'index'])->name('sss');
 Route::get('/order/back',[FrontOrderController::class,'backOrder'])->name('order.back');
 
 Route::post('/newsletter',[NewsletterController::class,'add'])->name('newsletter');
+
+Route::get('/privacy',[FrontPrivacyController::class,'index'])->name('privacy');
+
+Route::get('/termsandconditions',[TermsandConditionsController::class,'index'])->name('terms.and.conditions');
 
 // ADMİN PANEL
 
@@ -309,6 +317,17 @@ Route::group(['prefix' => 'admin'],function(){
             Route::post('/register/update',[SeoController::class,'register'])->name('admin.seo.register');
             Route::post('/sss/update',[SeoController::class,'sss'])->name('admin.seo.sss');
             Route::post('/blog/update',[SeoController::class,'blog'])->name('admin.seo.blog');
+        });
+
+        Route::group(['prefix' => 'privacy'],function(){
+
+            Route::get('/',[PrivacyController::class,'index'])->name('admin.privacy');
+            Route::post('/',[PrivacyController::class,'post'])->name('admin.privacy.post');
+        });
+
+        Route::group(['prefix' => 'termsandconditions'],function(){
+            Route::get('/',[AdminTermsandConditionsController::class,'index'])->name('admin.terms.and.conditions');
+            Route::post('/',[AdminTermsandConditionsController::class,'post'])->name('admin.terms.and.conditions.post');
         });
 
     });

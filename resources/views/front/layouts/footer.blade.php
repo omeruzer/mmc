@@ -102,8 +102,8 @@
                     <li><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="/assets/front/img/cards_all.svg" alt="" width="198" height="30" class="lazy"></li>
                 </ul>
                 <ul style="float: right" class="additional_links">
-                    <li><a href="#0">Terms and conditions</a></li>
-                    <li><a href="#0">Privacy</a></li>
+                    <li><a href="{{route('terms.and.conditions')}}">Şartlar ve Koşullar</a></li>
+                    <li><a href="{{route('privacy')}}">Gizlilik</a></li>
                     <li><span>© {{date('Y')}} MMC</span></li>
                 </ul>
             </div>
