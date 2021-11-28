@@ -87,7 +87,7 @@
                     <form action="{{route('searcing')}}" method="post">
                         {{ csrf_field() }}
                         <div class="custom-search-input">
-                            <input type="text" name="searching" placeholder="Ne Aramak İstediniz">
+                            <input type="text" name="searching" autocomplete="off" placeholder="Ne Aramak İstediniz">
                             <button type="submit"><i class="header-icon_search_custom"></i></button>
                         </div>
                     </form>
@@ -134,7 +134,7 @@
         <form action="{{route('searcing')}}" method="post">
             {{ csrf_field() }}
             <div class="search_mob_wp">
-                <input type="text" class="form-control" name="searching" placeholder="Ne Aramak İstediniz">
+                <input type="text" class="form-control" autocomplete="off" name="searching" placeholder="Ne Aramak İstediniz">
                 <input type="submit" class="btn_1 full-width" value="Ara">
             </div>
         </form>

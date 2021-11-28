@@ -31,16 +31,16 @@
                             @csrf
                             <div class="form_container">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="{{auth()->user()->address}}" name="address" id="email_2" placeholder="Adres">
+                                    <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->address}}" name="address" id="email_2" placeholder="Adres">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="{{auth()->user()->city}}" name="city" id="email_2" placeholder="Şehir">
+                                    <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->city}}" name="city" id="email_2" placeholder="Şehir">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="{{auth()->user()->country}}" name="country" id="email_2" placeholder="Ülke">
+                                    <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->country}}" name="country" id="email_2" placeholder="Ülke">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="{{auth()->user()->postCode}}" name="postCode" id="email_2" placeholder="Posta Kodu">
+                                    <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->postCode}}" name="postCode" id="email_2" placeholder="Posta Kodu">
                                 </div>
         
                                 <div class="text-center"><input type="submit" value="Güncelle" class="btn_1 full-width"></div>

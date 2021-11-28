@@ -30,15 +30,15 @@
                             <div class="form_container">
                                 <div class="form-group">
                                     <label for="">Eski Şifre :</label>
-                                    <input type="password" class="form-control" name="password" id="email_2" placeholder="Eski Şifre">
+                                    <input type="password" autocomplete="off" class="form-control" name="password" id="email_2" placeholder="Eski Şifre">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Yeni Şifre :</label>
-                                    <input type="password" class="form-control"  name="newPassword" id="email_2" placeholder="Yeni Şifre">
+                                    <input type="password" autocomplete="off" class="form-control"  name="newPassword" id="email_2" placeholder="Yeni Şifre">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Yeni Şifre (Tekrar) :</label>
-                                    <input type="password" class="form-control" name="newPassword_confirmation" id="email_2" placeholder="Yeni Şifre (Tekrar)">
+                                    <input type="password" autocomplete="off" class="form-control" name="newPassword_confirmation" id="email_2" placeholder="Yeni Şifre (Tekrar)">
                                 </div>
                                 <div class="text-center"><input type="submit" value="Güncelle" class="btn_1 full-width"></div>
                             </div>

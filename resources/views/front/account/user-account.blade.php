@@ -30,13 +30,13 @@
                             @csrf
                             <div class="form_container">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="{{auth()->user()->name}}" name="name" id="email_2" placeholder="Ad Soyad">
+                                    <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->name}}" name="name" id="email_2" placeholder="Ad Soyad">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" value="{{auth()->user()->email}}" name="email" id="email_2" placeholder="E-mail*">
+                                    <input type="email" autocomplete="off" class="form-control" value="{{auth()->user()->email}}" name="email" id="email_2" placeholder="E-mail*">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="{{auth()->user()->phone}}" name="phone" id="email_2" placeholder="Telefon*">
+                                    <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->phone}}" name="phone" id="email_2" placeholder="Telefon*">
                                 </div>
         
                                 <div class="text-center"><input type="submit" value="Güncelle" class="btn_1 full-width"></div>

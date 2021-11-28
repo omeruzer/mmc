@@ -60,52 +60,6 @@
 									<input type="tel" class="form-control" name='phone' value="{{auth()->user()->phone}}" placeholder="Telefon">
 								</div>
 
-							{{--<hr>	<div class="form-group">
-									<label class="container_check" id="other_addr">Other billing address
-									<input type="checkbox">
-									<span class="checkmark"></span>
-									</label>
-								</div>
-								<div id="other_addr_c" class="pt-2">
-								<div class="row no-gutters">
-									<div class="col-6 form-group pr-1">
-										<input type="text" class="form-control" placeholder="Name">
-									</div>
-									<div class="col-6 form-group pl-1">
-										<input type="text" class="form-control" placeholder="Last Name">
-									</div>
-								</div>
-								<!-- /row -->
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Full Address">
-								</div>
-								<div class="row no-gutters">
-									<div class="col-6 form-group pr-1">
-										<input type="text" class="form-control" placeholder="City">
-									</div>
-									<div class="col-6 form-group pl-1">
-										<input type="text" class="form-control" placeholder="Postal code">
-									</div>
-								</div>
-								<!-- /row -->
-								<div class="row no-gutters">
-									<div class="col-md-12 form-group">
-										<div class="custom-select-form">
-											<select class="wide add_bottom_15" name="country" id="country_2">
-												<option value="" selected>Country</option>
-												<option value="Europe">Europe</option>
-												<option value="United states">United states</option>
-												<option value="Asia">Asia</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<!-- /row -->
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Telephone">
-								</div>
-								</div> --}}
-								<!-- /other_addr_c -->
 								<hr>
 							</div>
 							<!-- /tab_2 -->
@@ -174,14 +128,8 @@
 							</ul>
 							<div class="total clearfix">Genel Toplam <span>${{ str_replace(',', '', Cart::total()) + $shipp->track }}</span></div>
 							<input type="hidden" name="cartTotal" value="{{ str_replace(',', '', Cart::total()) + $shipp->track }}">
-							{{-- <div class="form-group">
-								<label class="container_check">Register to the Newsletter.
-									<input type="checkbox" checked>
-									<span class="checkmark"></span>
-								</label>
-							</div> --}}
 							
-							<input type="submit" class="btn_1 full-width topay" value='Ödeme Yap'>
+							<button type="submit" class="btn_1 full-width topay" >Ödeme Yap</button>
 						</div>
 						<!-- /box_general -->
 						</div>
@@ -189,6 +137,7 @@
 					</div>
 				</div>
 			</form>
+			<input type="submit" name="" class="a" id="">
 			<!-- /row -->
 		</div>
 		<!-- /container -->
@@ -210,8 +159,14 @@
 </script>
 
 <script>
-	$('.topay').click(()=>{
-		$('.topay').prop(disabled,true);
+
+	document.querySelectorAll('form').forEach((form) => {
+		form.addEventListener('submit',()=>{
+			var button = form.querySelector('[type=submit]');
+
+			button.setAttribute('disabled','disabled');
+		})
 	});
+
 </script>
 @endsection
