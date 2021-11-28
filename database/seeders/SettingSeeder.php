@@ -19,7 +19,7 @@ class SettingSeeder extends Seeder
         Settings::create([
             'logo'      =>  'logo.png',
             'favicon'   =>  'favicon.png',
-            'title'     =>  $faker->sentence(1).'com',
+            'title'     =>  'bymmc.com.ua',
             'desc'      =>  $faker->sentence(5),
             'keyw'      =>  $faker->sentence(2),
             'author'    =>  $faker->name(),
