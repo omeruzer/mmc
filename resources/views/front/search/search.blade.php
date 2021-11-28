@@ -62,6 +62,7 @@
                                         </figure>
                                         <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
                                             <h3>{{$product->name}}</h3>
+                                            <div class=""><span>{{$featured->getProduct->code}}</span></div>
                                         </a>
                                         <div class="price_box">
                                             <span class="new_price">${{$product->price}}</span>

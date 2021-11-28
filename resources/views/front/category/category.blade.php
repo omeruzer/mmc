@@ -75,12 +75,19 @@
                                     </figure>
                                     <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
                                         <h3>{{$product->name}}</h3>
+                                        <div class=""><span>{{$product->code}}</span></div>
                                     </a>
                                     <div class="price_box">
                                         <span class="new_price">${{$product->price}}</span>
                                         {{-- <span class="old_price">$60.00</span> --}}
                                     </div>
-
+                                    <ul>
+                                        <form action="{{route('favorites.add')}}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$product->id}}">
+                                            <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" title="Favorilere Ekle"><i class="ti-heart"></i></button></li>
+                                        </form>
+                                    </ul>
                                     @if ($product->quantity > 0)
                                         <div class="">
                                             <form action=" {{ route('cart.add') }} " method="post">
