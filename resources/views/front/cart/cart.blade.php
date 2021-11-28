@@ -36,16 +36,16 @@
         <thead>
             <tr>
                 <th style="width: 40%">
-                    Product
+                    Ürün
                 </th>
                 <th>
-                    Price
+                    Fiyat
                 </th>
                 <th>
-                    Quantity
+                    Adet
                 </th>
                 <th >
-                    Subtotal
+                    Toplam
                 </th>
                 <th >
                     
