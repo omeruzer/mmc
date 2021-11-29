@@ -59,7 +59,7 @@
                                     {{-- <span class="ribbon off">-30%</span> --}}
                                     <figure>
                                         <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
-                                            <img style="width: 400px; height: 400px;" class="img-fluid" src="/assets/images/products/{{$product->img}}" data-src="img/products/shoes/1.jpg" alt="">
+                                            <img style="width: 400px; height: 400px;" class="img-fluid" src="/assets/images/products/{{$product->img}}" data-src="img/products/shoes/1.jpg" alt="{{$product->name}}">
                                         </a>
 
                                         @if ($product->quantity > 0)

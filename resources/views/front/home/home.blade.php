@@ -7,7 +7,7 @@
     <div id="carousel-home">
         <div class="owl-carousel owl-theme">
             <div class="owl-slide cover" style="background-image: url(/assets/images/slider/slider-1.png);">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.3)">
+                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <div class="container">
                         <div class="row justify-content-center justify-content-md-end">
                             <div class="col-lg-6 static">
@@ -24,7 +24,7 @@
             </div>
             <!--/owl-slide-->
             <div class="owl-slide cover" style="background-image: url(/assets/images/slider/slider-2.png);">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.3)">
+                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <div class="container">
                         <div class="row justify-content-center justify-content-md-start">
                             <div class="col-lg-6 static">
@@ -41,7 +41,7 @@
             </div>
             <!--/owl-slide-->
             <div class="owl-slide cover" style="background-image: url(/assets/images/slider/slider-3.png);">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.3)">
+                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <div class="container">
                         <div class="row justify-content-center justify-content-md-start">
                             <div class="col-lg-12 static">
@@ -68,7 +68,7 @@
         <li>
             <a href="#0" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="/assets/images/banner/banner-1.png" alt="" class="lazy">
-                <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.3)">
+                <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <h3>Bayan Batnik</h3>
                     <div><span class="btn_1">Alışverişe Başla</span></div>
                 </div>
@@ -77,7 +77,7 @@
         <li>
             <a href="#0" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="\assets\images\banner\banner-2.png" alt="" class="lazy">
-                <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.3)">
+                <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <h3>Bayan Takım</h3>
                     <div><span class="btn_1">Alışverişe Başla</span></div>
                 </div>
@@ -86,7 +86,7 @@
         <li>
             <a href="#0" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="/assets/images/banner/banner-3.png" alt="" class="lazy">
-                <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.3)">
+                <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <h3>Bayan Kazak</h3>
                     <div><span class="btn_1">Alışverişe Başla</span></div>
                 </div>
@@ -107,7 +107,7 @@
                         <span class="ribbon off">Öne Çıkan Fırsat</span>
                         <figure>
                             <a href="{{ route('product',[$featured->getProduct->getCategory->slug,$featured->getProduct->slug,$featured->getProduct->code]) }}">
-                                <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$featured->getProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$featured->getProduct->slug}}">
+                                <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$featured->getProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$featured->getProduct->name}}">
                             </a>
                             @if ($featured->getProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
@@ -171,7 +171,7 @@
                         <span class="ribbon new">Yeni</span>
                         <figure>
                             <a href="{{ route('product',[$newProduct->getCategory->slug,$newProduct->slug,$newProduct->code]) }}">
-                                <img style="width: 400px%;  max-height: 300px" class="owl" src="/assets/images/products/{{$newProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$newProduct->slug}}">
+                                <img style="width: 400px%;  max-height: 300px" class="owl" src="/assets/images/products/{{$newProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$newProduct->name}}">
                             </a>
                             @if ($newProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
@@ -251,7 +251,7 @@
                 <div class="col-lg-6">
                     <a class="box_news" href="{{ route('blog-detail',[$blog->slug]) }}">
                         <figure>
-                            <img src="/assets/images/blogs/{{$blog->img}}" alt="{{$blog->slug}}" width="400" height="266" class="lazy">
+                            <img src="/assets/images/blogs/{{$blog->img}}" alt="{{$blog->title}}" width="400" height="266" class="lazy">
                         </figure>
                         <ul>
                             <li>{{$blog->created_at}}</li>

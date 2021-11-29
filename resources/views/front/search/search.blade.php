@@ -46,7 +46,7 @@
                                         {{-- <span class="ribbon off">-30%</span> --}}
                                         <figure>
                                             <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
-                                                <img style="width: 400px; height: 400px;" class="img-fluid" src="/assets/images/products/{{$product->img}}" data-src="img/products/shoes/1.jpg" alt="">
+                                                <img style="width: 400px; height: 400px;" class="img-fluid" src="/assets/images/products/{{$product->img}}" data-src="img/products/shoes/1.jpg" alt="{{$product->name}}">
                                             </a>
 
                                             @if ($product->quantity > 0)
@@ -60,15 +60,21 @@
                                             @endif
                                             {{-- <div data-countdown="2019/05/15" class="countdown"></div> --}}
                                         </figure>
-                                        <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
+                                        <a style="text-decoration: none" href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
                                             <h3>{{$product->name}}</h3>
-                                            <div class=""><span>{{$featured->getProduct->code}}</span></div>
+                                            <div class=""><span style="color: #47C78E">{{$product->code}}</span></div>
                                         </a>
                                         <div class="price_box">
                                             <span class="new_price">${{$product->price}}</span>
                                             {{-- <span class="old_price">$60.00</span> --}}
                                         </div>
-
+                                        <ul>
+                                            <form action="{{route('favorites.add')}}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{$product->id}}">
+                                                <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" title="Favorilere Ekle"><i class="ti-heart"></i></button></li>
+                                            </form>
+                                        </ul>
                                         @if ($product->quantity > 0)
                                             <div class="">
                                                 <form action=" {{ route('cart.add') }} " method="post">
@@ -104,33 +110,13 @@
 
                      <!-- /col -->
                  </div>
-
-                <!-- /row -->
-                {{-- <div class="pagination__wrapper">
-                    <ul class="pagination">
-                        <li><a href="#0" class="prev" title="previous page">&#10094;</a></li>
-                        <li>
-                            <a href="#0" class="active">1</a>
-                        </li>
-                        <li>
-                            <a href="#0">2</a>
-                        </li>
-                        <li>
-                            <a href="#0">3</a>
-                        </li>
-                        <li>
-                            <a href="#0">4</a>
-                        </li>
-                        <li><a href="#0" class="next" title="next page">&#10095;</a></li>
-                    </ul>
-                </div> --}}
             </div>
             <!-- /col -->
         </div>
         <!-- /row -->
     </div>
     <!-- /container -->
-</main>
+</main> 
 @endsection
 @section('head')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">

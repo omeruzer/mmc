@@ -26,11 +26,11 @@
                     <div class="slider" style="width: 70%; margin: auto">
                         <div class="owl-carousel owl-theme main" style="width: 100%;">
                             <div class="item-box">
-                                <a href="/assets/images/products/{{$product->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$product->img}}" alt="{{$product->img}}" srcset=""></a>
+                                <a href="/assets/images/products/{{$product->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$product->img}}" alt="{{$product->name}}" srcset=""></a>
                             </div> 
                             @foreach ($images as $img)
                                 <div class="item-box">
-                                    <a href="/assets/images/products/{{$img->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$img->img}}" alt="{{$product->img}}" srcset=""></a>
+                                    <a href="/assets/images/products/{{$img->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$img->img}}" alt="{{$product->name}}" srcset=""></a>
                                 </div>                                
                             @endforeach
                        </div>
@@ -40,11 +40,11 @@
                     <div class="slider-two" style="width: 70%; margin: auto">
                         <div class="owl-carousel owl-theme thumbs">
                             <div style="background-image: url(/assets/front/img/products/shoes/1.jpg);" class="item active">
-                                <a href="/assets/images/products/{{$product->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$product->img}}" alt="" srcset=""></a>
+                                <a href="/assets/images/products/{{$product->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$product->name}}" alt="" srcset=""></a>
                             </div>
                             @foreach ($images as $img)                                
                                 <div style="background-image: url(/assets/front/img/products/shoes/1.jpg);" class="item active">
-                                    <a href="/assets/images/products/{{$img->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$img->img}}" alt="" srcset=""></a>
+                                    <a href="/assets/images/products/{{$img->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$img->name}}" alt="" srcset=""></a>
                                 </div>
                             @endforeach
 
@@ -276,7 +276,7 @@
                         {{-- <span class="ribbon new">New</span> --}}
                         <figure>
                             <a href="{{ route('product',[$similarProduct->getCategory->slug,$similarProduct->slug,$similarProduct->code]) }}">
-                                <img class="owl" src="/assets/images/products/{{$similarProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$similarProduct->slug}}">
+                                <img class="owl" src="/assets/images/products/{{$similarProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$similarProduct->name}}">
                             </a>
                             @if ($similarProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
