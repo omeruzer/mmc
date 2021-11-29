@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Ödeme | {{$set->title}}@endsection
+@section('title')Оформить заказ | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
 	
@@ -8,12 +8,12 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li><a href="{{route('cart')}}">Sepet</a></li>
-					<li>Ödeme</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li><a href="{{route('cart')}}">Корзина</a></li>
+					<li>Оформить заказ</li>
 				</ul>
 		</div>
-		<h1>Ödeme</h1>
+		<h1>Оформить заказ</h1>
 		<div class="row">
             <div class="col-xl-6">
                 @include('admin.layouts.partials.error')
@@ -28,36 +28,36 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<div class="step first">
-							<h3>1. Kullanıcı Bilgileri</h3>
+							<h3>1. Личные данные</h3>
 						<div class="tab-content checkout">
 							<div class="tab-pane fade show active" id="tab_1" role="tabpanel" aria-labelledby="tab_1">
 								<div class="form-group">
-									<input type="email" class="form-control" name='email' value="{{auth()->user()->email}}" placeholder="Email">
+									<input type="email" class="form-control" name='email' value="{{auth()->user()->email}}" placeholder="Эл. почта">
 								</div>
 								<hr>
 								<div class="row no-gutters">
 									<div class="col-6 form-group pr-1">
-										<input type="text" class="form-control" name='name' value="{{auth()->user()->name}}" placeholder="Name">
+										<input type="text" class="form-control" name='name' value="{{auth()->user()->name}}" placeholder="имя Фамилия">
 									</div>
 								</div>
 								<!-- /row -->
 								<div class="form-group">
-									<input type="text" class="form-control" name='address' value="{{auth()->user()->address}}" placeholder="Full Address">
+									<input type="text" class="form-control" name='address' value="{{auth()->user()->address}}" placeholder="Адрес">
 								</div>
 								<div class="row no-gutters">
 									<div class="col-6 form-group pr-1">
-										<input type="text" class="form-control" name='city' value="{{auth()->user()->city}}" placeholder="City">
+										<input type="text" class="form-control" name='city' value="{{auth()->user()->city}}" placeholder="город">
 									</div>
 									<div class="col-6 form-group pl-1">
 										<input type="text" class="form-control" name='postCode' value="{{auth()->user()->postCode}}" placeholder="Postal code">
 									</div>
 									<div class="col-6 form-group pl-1">
-										<input type="text" class="form-control" name='country' value="{{auth()->user()->country}}" placeholder="Ülke">
+										<input type="text" class="form-control" name='country' value="{{auth()->user()->country}}" placeholder="страна">
 									</div>
 								</div>
 								<!-- /row -->
 								<div class="form-group">
-									<input type="tel" class="form-control" name='phone' value="{{auth()->user()->phone}}" placeholder="Telefon">
+									<input type="tel" class="form-control" name='phone' value="{{auth()->user()->phone}}" placeholder="телефон">
 								</div>
 
 								<hr>
@@ -69,17 +69,17 @@
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="step middle payments">
-							<h3>2. Ödeme Ve Teslimat</h3>
-								<h6 class="pb-2">Ödeme Yöntemi</h6>
+							<h3>2. Оплата и доставка</h3>
+								<h6 class="pb-2">Способ оплаты</h6>
 								<ul>
 									<li>
-										<label class="container_radio">Karta Transfer<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<label class="container_radio">Karta Transfer
 											<input type="radio" name="payment" value="Kredi Kartı" checked>
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
-										<label class="container_radio">Kapıda Ödeme<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<label class="container_radio">Kapıda Ödeme
 											<input type="radio" name="payment" value="Kapıda Ödeme">
 											<span class="checkmark"></span>
 										</label>
@@ -88,19 +88,19 @@
 								<h6 class="pb-2">Teslimat Türü</h6>
 								<ul>
 									<li>
-										<label class="container_radio">Nova Poşta<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<label class="container_radio">Nova Poşta
 											<input type="radio" name="shipping" value="Nova Poşta" checked>
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
-										<label class="container_radio">Adrese Teslim<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<label class="container_radio">Adrese Teslim
 											<input type="radio" name="shipping" value="Adrese Teslim">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
-										<label class="container_radio">Gel Al<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<label class="container_radio">Gel Al
 											<input type="radio" name="shipping" value="Gel Al">
 											<span class="checkmark"></span>
 										</label>
@@ -114,7 +114,7 @@
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="step last">
-							<h3>3. Ödeme</h3>
+							<h3>3. Оформить заказ</h3>
 						<div class="box_general summary">
 							<ul>
 								@foreach (Cart::content() as $cartItem)
@@ -122,14 +122,14 @@
 								@endforeach
 							</ul>
 							<ul>
-								<li class="clearfix"><em><strong>Toplam</strong></em>  <span>${{Cart::subtotal()}}</span></li>
-								<li class="clearfix"><em><strong>Kargo</strong></em> <span>${{$shipp->track}}</span></li>
+								<li class="clearfix"><em><strong>Итого</strong></em>  <span>${{Cart::subtotal()}}</span></li>
+								<li class="clearfix"><em><strong>Стоимость доставки</strong></em> <span>${{$shipp->track}}</span></li>
 								
 							</ul>
-							<div class="total clearfix">Genel Toplam <span>${{ str_replace(',', '', Cart::total()) + $shipp->track }}</span></div>
+							<div class="total clearfix">К оплате <span>${{ str_replace(',', '', Cart::total()) + $shipp->track }}</span></div>
 							<input type="hidden" name="cartTotal" value="{{ str_replace(',', '', Cart::total()) + $shipp->track }}">
 							
-							<button type="submit" class="btn_1 full-width topay" >Ödeme Yap</button>
+							<button type="submit" class="btn_1 full-width topay" >Оформить заказ</button>
 						</div>
 						<!-- /box_general -->
 						</div>
