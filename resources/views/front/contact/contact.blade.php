@@ -1,12 +1,12 @@
 @extends('front.layouts.master')
-@section('title')İletişim | {{$set->title}}@endsection
+@section('title')Контакты | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
 	
     <div class="container margin_60">
         <div class="main_title">
-            <h2>İletişim</h2>
-            <p>Euismod phasellus ac lectus fusce parturient cubilia a nisi blandit sem cras nec tempor adipiscing rcu ullamcorper ligula.</p>
+            <h2>Контакты</h2>
+            <p>İletişim ile ilgili bir yazı.</p>
         </div>
         <div class="row justify-content-center">
             @foreach ($branchs as $branch)
@@ -31,19 +31,19 @@
                 <form action="{{ route('contact.send') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <input class="form-control" name="name" type="text" placeholder="Ad Soyad">
+                        <input class="form-control" name="name" type="text" placeholder="имя Фамилия">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="subject" placeholder="Konu">
+                        <input class="form-control" type="text" name="subject" placeholder="тема">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="email" name="email" placeholder="Email *">
+                        <input class="form-control" type="email" name="email" placeholder="Эл. почта *">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" style="height: 150px;" name="content" placeholder="Message *"></textarea>
+                        <textarea class="form-control" style="height: 150px;" name="content" placeholder="сообщение *"></textarea>
                     </div>
                     <div class="form-group">
-                        <input class="btn_1 full-width" type="submit" value="Gönder">
+                        <input class="btn_1 full-width" type="submit" value="отправлять">
                     </div>
                 </form>
             </div>

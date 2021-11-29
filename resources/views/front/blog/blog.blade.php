@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Blog Yazılarımız @endsection
+@section('title')БЛОГ@endsection
 @section('keyw'){{$seo->keyw}}@endsection
 @section('desc'){{$seo->desc}}@endsection
 @section('content')
@@ -8,11 +8,11 @@
         <div class="page_header">
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="{{ route('homepage') }}">Anasayfa</a></li>
-                    <li>Blog</li>
+                    <li><a href="{{ route('homepage') }}">Главная</a></li>
+                    <li>блог</li>
                 </ul>
             </div>
-            <h1>Blog Yazılarımız</h1>
+            <h1>блог</h1>
         </div>
         <!-- /page_header -->
         <div class="row">
@@ -31,7 +31,7 @@
                                     <h2><a href="{{ route('blog-detail',[$blog->slug]) }}">{{$blog->title}}</a></h2>
                                     <p>{{ Str::substr($blog->content, 0 , 150) }}...</p>
                                     <ul style="display: table">
-                                        <li><a href="{{ route('blog-detail',[$blog->slug]) }}"><button class="blogPostRead" type="submit">Yazıyı Oku </button></a></li>
+                                        <li><a href="{{ route('blog-detail',[$blog->slug]) }}"><button class="blogPostRead" type="submit">чтение </button></a></li>
                                     </ul>
                                 </div>
                             </article>

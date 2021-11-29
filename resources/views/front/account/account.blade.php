@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Hesabım | {{$set->title}}@endsection
+@section('title')Профиль | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
 	
@@ -8,11 +8,11 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li>Hesabım</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li>Профиль</li>
 				</ul>
 		</div>
-		<h1>Hesabım</h1>
+		<h1>Профиль</h1>
 	</div>
 	<!-- /page_header -->
 			<div class="row">

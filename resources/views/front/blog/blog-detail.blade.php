@@ -8,8 +8,8 @@
         <div class="page_header">
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="{{ route('homepage') }}">Anasayfa</a></li>
-                    <li><a href="{{ route('blog') }}">Bloglar</a></li>
+                    <li><a href="{{ route('homepage') }}">Главная</a></li>
+                    <li><a href="{{ route('blog') }}">блог</a></li>
                     <li>{{$blog->title}}</li>
                 </ul>
             </div>
@@ -38,9 +38,9 @@
                 </div>
                 <div class="container margin_60_35">
                     <div class="main_title">
-                        <h2>Bazı Ürünlerimiz</h2>
+                        <h2>Также вас могут заинтересовать</h2>
                         <span>Products</span>
-                        <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                        <p>ilginizi çekebilir.</p>
                     </div>
                     <div class="owl-carousel owl-theme products_carousel">
                         @foreach ($products as $product)
@@ -53,11 +53,11 @@
                                         </a>
                                         @if ($product->quantity > 0)
                                             <div class="" style="width: 100%; background-color:#47C78E; ">
-                                                <h5 style="color:#fff">Stokta Var</h5>
+                                                <h5 style="color:#fff">В Наличии</h5>
                                             </div>
                                         @else
                                             <div class="" style="width: 100%; background-color:#c6c6c6; ">
-                                                <h5 style="color:#fff">Stokta Yok</h5>
+                                                <h5 style="color:#fff">Нет В Наличии</h5>
                                             </div>
                                         @endif
                                     </figure>
@@ -73,7 +73,7 @@
                                         <form action="{{route('favorites.add')}}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$product->id}}">
-                                            <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" title="Favorilere Ekle"><i class="ti-heart"></i></button></li>
+                                            <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" ><i class="ti-heart"></i></button></li>
                                         </form>
                                     </ul>
                                     @if ($product->quantity > 0)
@@ -82,12 +82,12 @@
                                                 @csrf
                                                 <input type="hidden" name="qty" value=4>
                                                 <input type="hidden" name="id" value="{{ $product->id }}">
-                                                <input type="submit" value="Sepete Ekle" class="addCard">
+                                                <input type="submit" value="В Корзину" class="addCard">
                                             </form>
                                         </div>
                                     @else
                                         <div class="">
-                                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Stokta Yok"  class="addCard">
+                                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Нет В Наличии"  class="addCard">
                                         </div>
                                     @endif
                                 </div>
@@ -208,16 +208,10 @@
             <!-- /col -->
 
             <aside class="col-lg-3">
-                <div class="widget search_blog">
-                    <div class="form-group">
-                        <input type="text" name="search" id="search" class="form-control" placeholder="Search..">
-                        <button type="submit"><i class="ti-search"></i><span class="sr-only"></span></button>
-                    </div>
-                </div>
                 <!-- /widget -->
                 <div class="widget">
                     <div class="widget-title">
-                        <h4>Diğer Yazılarımız</h4>
+                        <h4>Также вас могут заинтересовать</h4>
                     </div>
                     <ul class="comments-list">
                         @foreach ($otherBlogs as $otherBlog)

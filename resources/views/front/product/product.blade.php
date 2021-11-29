@@ -269,9 +269,9 @@
     
     <div class="container margin_60_35" style="margin-top: 50px">
         <div class="main_title">
-            <h2>Вместе с этим товаром покупают</h2>
+            <h2>Также вас могут заинтересовать</h2>
             <span>Products</span>
-            <p>İnsanlar bu ürünle birlikte bunlarıda satın alıyor.</p>
+            <p>İlginizi Çekebilir.</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($similarProducts as $similarProduct)

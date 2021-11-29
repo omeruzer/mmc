@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title')Hakkımızda | {{$set->title}}@endsection
+@section('title')O НАС | {{$set->title}}@endsection
 
 @section('keyw'){{$about->keyw}}@endsection
 @section('desc'){{$about->desc}}@endsection
@@ -9,10 +9,15 @@
 
 <main class="bg_gray">
 	<div class="container margin_30">
-        <div class="container margin_10_35 add_bottom_30">
-            <div class="main_title">
-                <h2>By MMC Hakkında</h2>
+        <div class="container margin_30">
+            <div class="page_header">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="{{route('homepage')}}">Главная</a></li>
+                        <li>O нас</li>
+                    </ul>
             </div>
+            <h1>By MMC O нас</h1>
         </div>
 	    <!-- /page_header -->
         <div class="row justify-content-center">

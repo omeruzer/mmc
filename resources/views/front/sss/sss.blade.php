@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')SSS | {{$set->title}}@endsection
+@section('title')FAQ | {{$set->title}}@endsection
 @section('keyw'){{$seo->keyw}}@endsection
 @section('desc'){{$seo->desc}}@endsection
 @section('content')
@@ -9,11 +9,11 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li>Sıkça Sorulan Sorular</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li>FAQ</li>
 				</ul>
 		</div>
-		<h1>Sıkça Sorulan Sorular</h1>
+		<h1>FAQ</h1>
 	</div>
 	<!-- /page_header -->
         <div class="row justify-content-center">

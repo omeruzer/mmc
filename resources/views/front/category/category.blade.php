@@ -99,7 +99,7 @@
                                         </div>
                                     @else
                                         <div class="">
-                                            <input style="background-color: #c6c6c6 " type="submit" disabled value="        "  class="addCard">
+                                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Нет В Наличии"  class="addCard">
                                         </div>
                                     @endif
 
