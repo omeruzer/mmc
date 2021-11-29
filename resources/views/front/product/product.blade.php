@@ -40,11 +40,11 @@
                     <div class="slider-two" style="width: 70%; margin: auto">
                         <div class="owl-carousel owl-theme thumbs">
                             <div style="background-image: url(/assets/front/img/products/shoes/1.jpg);" class="item active">
-                                <a href="/assets/images/products/{{$product->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$product->name}}" alt="" srcset=""></a>
+                                <a href="/assets/images/products/{{$product->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$product->img}}" alt="{{$product->name}}" srcset=""></a>
                             </div>
                             @foreach ($images as $img)                                
                                 <div style="background-image: url(/assets/front/img/products/shoes/1.jpg);" class="item active">
-                                    <a href="/assets/images/products/{{$img->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$img->name}}" alt="" srcset=""></a>
+                                    <a href="/assets/images/products/{{$img->img}}" data-lightbox="Galeri1"><img style="width: 100%; height: 100%;" src="/assets/images/products/{{$img->img}}" alt="{{$product->name}}" srcset=""></a>
                                 </div>
                             @endforeach
 
@@ -78,7 +78,7 @@
                         <br>
                         <div class="row">
                             <div class="col-lg-5 col-md-6">
-                                <div class="price_main"><span class="new_price">${{$product->price}}</span><!--<span class="percentage">-20%</span> <span class="old_price">$160.00</span>--></div>
+                                <div class="price_main"><span class="new_price">{{$product->price}} ₴</span><!--<span class="percentage">-20%</span> <span class="old_price">$160.00</span>--></div>
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <input type="hidden" name="id" value="{{ $product->id }}">
@@ -135,15 +135,19 @@
                                         <table class="table table-sm table-striped">
                                             <tbody>
                                                 <tr>
-                                                    <td><strong>Renkler</strong></td>
+                                                    <td><strong>Marka</strong></td>
+                                                    <td>{{strtoupper($product->getBrand->name )}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Цвет</strong></td>
                                                     <td>{{$product->colors}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Kumaş</strong></td>
+                                                    <td><strong>Матеріал</strong></td>
                                                     <td>{{$product->material}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Üretici Firma</strong></td>
+                                                    <td><strong>Страна производитель</strong></td>
                                                     <td>{{$product->country}}</td>
                                                 </tr>
                                                 <tr>
@@ -155,7 +159,7 @@
                                                     <td>{{$product->packQty}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Bedenler</strong></td>
+                                                    <td><strong>Размер</strong></td>
                                                     <td>{{$product->size}}</td>
                                                 </tr>
                                             </tbody>
@@ -181,7 +185,7 @@
 
                         @if (count($comments) > 0)
                             <div class="card-body">
-                                <h3>Yorumlar ({{count($comments)}} Değerlendirme)</h3>
+                                <h3>Отзывы покупателей ({{count($comments)}} Отзывы )</h3>
                                 <div id="collapse-B" class="" role="tabpanel" aria-labelledby="heading-B">
                                     <div class="card-body" >
                                         <div class="container">
@@ -203,10 +207,10 @@
                         @else
                             <div class="card-body">
                                 <div class="">
-                                    <h6>Yorumlar (0 Değerlendirme)</h6>
+                                    <h6>Отзывы покупателей (0 Отзывы)</h6>
                                 </div>
                                 <div class="">
-                                    <span>Bu Üründe Yorum Bulunmuyor</span>
+                                    <span>нет отзывов</span>
                                 </div>
                             </div>
                         @endif
@@ -223,7 +227,7 @@
     <div class="container" >
         <div class="col-lg-6" style="margin: auto" >
             <div class="" style="text-align: center">
-                <h3>Yorum Yap</h3>
+                <h3>Написать отзыв</h3>
             </div>
             <div class="" >
                 <form action="{{route('comment.add')}}" method="post" >
@@ -232,20 +236,20 @@
                     <div class="container">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="">Ad Soyad</label>
-                                <input class="form-control" {{ Auth::user() ? '' : 'disabled'  }} value="{{ Auth::user() ? auth()->user()->name : '' }}"  autocomplete="off" name='name' type="text" placeholder="{{ Auth::user() ? 'Ad Soyad' : 'Yorum Yapmak İçin Giriş Yapmanız Gerekiyor'  }}">
+                                <label for="">имя Фамилия</label>
+                                <input class="form-control" {{ Auth::user() ? '' : 'disabled'  }} value="{{ Auth::user() ? auth()->user()->name : '' }}"  autocomplete="off" name='name' type="text" placeholder="{{ Auth::user() ? 'имя Фамилия' : 'Yorum Yapmak İçin Giriş Yapmanız Gerekiyor'  }}">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="">Yorum</label>
-                                <textarea class="form-control" {{ Auth::user() ? '' : 'disabled'  }} autocomplete="off" name="comment" placeholder="{{ Auth::user() ? 'Yorum' : 'Yorum Yapmak İçin Giriş Yapmanız Gerekiyor'  }}"></textarea>
+                                <label for="">отзыв</label>
+                                <textarea class="form-control" {{ Auth::user() ? '' : 'disabled'  }} autocomplete="off" name="comment" placeholder="{{ Auth::user() ? 'отзыв' : 'Yorum Yapmak İçin Giriş Yapmanız Gerekiyor'  }}"></textarea>
                             </div>
                         </div>
                         @if (Auth::user())
                             <div class="col-md-12" >
                                 <div class="form-group" style="float: right">
-                                    <input type="submit"  value="Yorum Yap"  class="addCard">
+                                    <input type="submit"  value="Написать отзыв"  class="addCard">
                                 </div>
                             </div>
                         @else
@@ -265,9 +269,9 @@
     
     <div class="container margin_60_35" style="margin-top: 50px">
         <div class="main_title">
-            <h2>Benzer Ürünlerimiz</h2>
+            <h2>Вместе с этим товаром покупают</h2>
             <span>Products</span>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+            <p>İnsanlar bu ürünle birlikte bunlarıda satın alıyor.</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($similarProducts as $similarProduct)
@@ -280,11 +284,11 @@
                             </a>
                             @if ($similarProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
-                                    <h5 style="color:#fff">Stokta Var</h5>
+                                    <h5 style="color:#fff">В Наличии</h5>
                                 </div>
                             @else
                                 <div class="" style="width: 100%; background-color:#c6c6c6; ">
-                                    <h5 style="color:#fff">Stokta Yok</h5>
+                                    <h5 style="color:#fff">Нет В Наличии</h5>
                                 </div>
                             @endif
                         </figure>
@@ -294,13 +298,13 @@
                             <div class=""><span>{{$similarProduct->code}}</span></div>
                         </a>
                         <div class="price_box">
-                            <span class="new_price">${{$similarProduct->price}}</span>
+                            <span class="new_price">{{$similarProduct->price}} ₴</span>
                         </div>
                         <ul>
                             <form action="{{route('favorites.add')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$similarProduct->id}}">
-                                <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" title="Favorilere Ekle"><i class="ti-heart"></i></button></li>
+                                <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left"><i class="ti-heart"></i></button></li>
                             </form>
                         </ul>
                         @if ($similarProduct->quantity > 0)
@@ -309,12 +313,12 @@
                                     @csrf
                                     <input type="hidden" name="qty" value=4>
                                     <input type="hidden" name="id" value="{{ $similarProduct->id }}">
-                                    <input type="submit" value="Sepete Ekle" class="addCard">
+                                    <input type="submit" value="В Корзину" class="addCard">
                                 </form>
                             </div>
                         @else
                             <div class="">
-                                <input style="background-color: #c6c6c6 " type="submit" disabled value="Stokta Yok"  class="addCard">
+                                <input style="background-color: #c6c6c6 " type="submit" disabled value="Нет В Наличии"  class="addCard">
                             </div>
                         @endif
                     </div>

@@ -13,7 +13,7 @@
                         <div class="container pl-lg-5">
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="{{ route('homepage') }}">Anasayfa</a></li>
+                                    <li><a href="{{ route('homepage') }}">Главная</a></li>
                                     <li>{{$searching}}</li>
                                 </ul>
                             </div>
@@ -51,11 +51,11 @@
 
                                             @if ($product->quantity > 0)
                                                 <div class="" style="width: 100%; background-color:#47C78E; ">
-                                                    <h5 style="color:#fff">Stokta Var</h5>
+                                                    <h5 style="color:#fff">В Наличии</h5>
                                                 </div>
                                             @else
                                                     <div class="" style="width: 100%; background-color:#c6c6c6; ">
-                                                        <h5 style="color:#fff">Stokta Yok</h5>
+                                                        <h5 style="color:#fff">Нет В Наличии</h5>
                                                     </div>
                                             @endif
                                             {{-- <div data-countdown="2019/05/15" class="countdown"></div> --}}
@@ -65,7 +65,7 @@
                                             <div class=""><span style="color: #47C78E">{{$product->code}}</span></div>
                                         </a>
                                         <div class="price_box">
-                                            <span class="new_price">${{$product->price}}</span>
+                                            <span class="new_price">{{$product->price}} ₴</span>
                                             {{-- <span class="old_price">$60.00</span> --}}
                                         </div>
                                         <ul>
@@ -81,12 +81,12 @@
                                                     @csrf
                                                     <input type="hidden" name="qty" value=4>
                                                     <input type="hidden" name="id" value="{{ $product->id }}">
-                                                    <input type="submit" value="Sepete Ekle" class="addCard">
+                                                    <input type="submit" value="В Корзину" class="addCard">
                                                 </form>
                                             </div>
                                         @else
                                             <div class="">
-                                                <input style="background-color: #c6c6c6 " type="submit" disabled value="Stokta Yok"  class="addCard">
+                                                <input style="background-color: #c6c6c6 " type="submit" disabled value="Нет В Наличии"  class="addCard">
                                             </div>
                                         @endif
 
@@ -96,7 +96,7 @@
 
                             @endforeach
                             <div class="pagination__wrapper">
-                                {{  request()->has('sortby') ? $products->appends(['sortby' => request('sortby'),'searching'=>request('searching')]) : $products->links() }}
+                                {{  request() ? $products->appends(['searching' => request('searching')]) : $products->links() }}
                             </div>
                         @else
                             <div class="container" style="margin-top:50px ">

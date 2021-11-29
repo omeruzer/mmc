@@ -90,7 +90,7 @@
                     <form action="{{route('searcing')}}" method="post">
                         {{ csrf_field() }}
                         <div class="custom-search-input">
-                            <input type="text" name="searching" autocomplete="off" placeholder="Ne Aramak İstediniz">
+                            <input type="text" name="searching" autocomplete="off" placeholder="Я ишу...">
                             <button type="submit"><i class="header-icon_search_custom"></i></button>
                         </div>
                     </form>
@@ -99,20 +99,20 @@
                     <ul class="top_tools">
                         <li>
                             <div class="dropdown dropdown-cart">
-                                <a href="{{ route('cart') }}"  class="cart_bt"><strong>{{Cart::count()}}</strong></a>
+                                <a style="text-decoration: none" href="{{ route('cart') }}"  class="cart_bt"><strong>{{Cart::count()}}</strong></a>
                             </div>
                             <!-- /dropdown-cart-->
                         </li>
                         <li>
                             @auth
-                            <a href="{{route('favorites')}}" class="wishlist"><span>Favoriler</span></a>
+                            <a style="text-decoration: none" href="{{route('favorites')}}" class="wishlist"><span>Favoriler</span></a>
                             @endauth
                         </li> 
                                                    
                         
                         <li>
                             <div class="dropdown dropdown-access">
-                                <a href="{{route('account')}}" class="access_link"><span>Account</span></a>
+                                <a style="text-decoration: none" href="{{route('account')}}"     class="access_link"><span>Account</span></a>
                             </div>
                             <!-- /dropdown-access-->
                         </li>
@@ -137,8 +137,8 @@
         <form action="{{route('searcing')}}" method="post">
             {{ csrf_field() }}
             <div class="search_mob_wp">
-                <input type="text" class="form-control" autocomplete="off" name="searching" placeholder="Ne Aramak İstediniz">
-                <input type="submit" class="btn_1 full-width" value="Искать">
+                <input type="text" class="form-control" autocomplete="off" name="searching" placeholder="Я ишу...">
+                <input type="submit" class="btn_1 full-width" value="Найти">
             </div>
         </form>
         

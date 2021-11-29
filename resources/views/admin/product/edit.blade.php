@@ -112,7 +112,7 @@
                             <div  class="form-check">
                                 <div class="">
                                     <label  class="form-check-label">
-                                        <input {{($featured->featured != null) ? "checked" : ''}} name="featured" style="cursor: pointer" class="form-check-input"  type="checkbox"> Öne Çıkar
+                                        <input {{($featured != null) ? "checked" : ''}} name="featured" style="cursor: pointer" class="form-check-input"  type="checkbox"> Öne Çıkar
                                     </label>
                                 </div>
                             </div>

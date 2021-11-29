@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Sepet | {{$set->title}}@endsection
+@section('title')Корзина | {{$set->title}}@endsection
 @section('keyw'){{$set->keyw}}@endsection
 @section('desc'){{$set->desc}}@endsection
 @section('content')
@@ -159,4 +159,7 @@
 @endsection
 @section('head')
 <link href="/assets/front/css/cart.css" rel="stylesheet">
+@endsection
+@section('footer')
+    <script src="/assets/front/js/main.js"></script>
 @endsection

@@ -102,6 +102,7 @@ class ProductController extends Controller
     }
    
     public function edit($slug){
+
         $product = Product::where('slug',$slug)->FirstOrFail();
 
         $categories = Category::all();
@@ -109,9 +110,10 @@ class ProductController extends Controller
         $brands = Brand::all();
 
         $featured = ProductDetail::where('product',$product->id)->first();
-        
-        // dd($featured->featured);
-        
+
+        //dd($featured);
+
+
         return view('admin.product.edit',compact('product','categories','brands','featured'));
     }
 

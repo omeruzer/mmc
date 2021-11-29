@@ -30,13 +30,13 @@
                             <li>
                                 <div class="btn-group">
                                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Sırala
+                                        Сортировать
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="?sortby=hits">Popülariteye Göre</a>
-                                        <a class="dropdown-item" href="?sortby=cheap">Ucuzdan Pahalıya</a>
-                                        <a class="dropdown-item" href="?sortby=expensive">Pahalıdan Ucuza</a>
-                                        <a class="dropdown-item" href="?sortby=new">Yeniden Eskiye</a>
+                                        <a class="dropdown-item" href="?sortby=hits"> Популярные </a>
+                                        <a class="dropdown-item" href="?sortby=cheap"> От дешевых к дорогим </a>
+                                        <a class="dropdown-item" href="?sortby=expensive"> От дорогих к дешевым </a>
+                                        <a class="dropdown-item" href="?sortby=new"> Новинки </a>
                                         <a class="dropdown-item" href="?sortby=old">Eskiden Yeniye</a>
                                         <a class="dropdown-item" href="?sortby=az">İsme Göre (A-Z)</a>
                                         <a class="dropdown-item" href="?sortby=za">İsme Göre (Z-A)</a>
@@ -78,7 +78,7 @@
                                         <div class=""><span style="color: #47C78E; ">{{$product->code}}</span></div>
                                     </a>
                                     <div class="price_box">
-                                        <span class="new_price">${{$product->price}}</span>
+                                        <span class="new_price">{{$product->price}} ₴</span>
                                         {{-- <span class="old_price">$60.00</span> --}}
                                     </div>
                                     <ul>
@@ -99,7 +99,7 @@
                                         </div>
                                     @else
                                         <div class="">
-                                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Нет В Наличии"  class="addCard">
+                                            <input style="background-color: #c6c6c6 " type="submit" disabled value="        "  class="addCard">
                                         </div>
                                     @endif
 
