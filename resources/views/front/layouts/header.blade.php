@@ -24,19 +24,22 @@
                         </div>
                         <ul>
                             <li>
-                                <a href="{{route('homepage')}}">Anasayfa</a>
+                                <a href="{{route('homepage')}}">ГЛАВНАЯ</a>
                             </li>
                             <li>
-                                <a href="{{route('blog')}}">Blog</a>
+                                <a href="{{route('blog')}}">блог</a>
                             </li>
                             <li>
-                                <a href="{{route('sss')}}">SSS</a>
+                                <a href="{{route('sss')}}">FAQ</a>
                             </li>
                             <li>
-                                <a href="{{route('about')}}">Hakkımızda</a>
+                                <a href="{{route('about')}}">O НАС </a>
                             </li>
                             <li>
-                                <a href="{{route('contact')}}">İletişim</a>
+                                <a href="{{route('contact')}}">КОНТАКТЫ</a>
+                            </li>
+                            <li>
+                                <a href="{{route('help')}}">помощь</a>
                             </li>
                         </ul>
                     </div>
@@ -69,7 +72,7 @@
                                                 <span class="hamburger-inner"></span>
                                             </span>
                                         </span>
-                                        Kategoriler
+                                        Каталог
                                     </a>
                                 </span>
                                 <div id="menu">
@@ -114,7 +117,7 @@
                             <!-- /dropdown-access-->
                         </li>
                         <li>
-                            <a href="javascript:void(0);" class="btn_search_mob"><span>Ara</span></a>
+                            <a href="javascript:void(0);" class="btn_search_mob"><span>Искать</span></a>
                         </li>
                         <li>
                             <a href="#menu" class="btn_cat_mob">
@@ -123,7 +126,7 @@
                                         <div class="hamburger-inner"></div>
                                     </div>
                                 </div>
-                                Kategoriler
+                                Каталог
                             </a>
                         </li>
                     </ul>
@@ -135,7 +138,7 @@
             {{ csrf_field() }}
             <div class="search_mob_wp">
                 <input type="text" class="form-control" autocomplete="off" name="searching" placeholder="Ne Aramak İstediniz">
-                <input type="submit" class="btn_1 full-width" value="Ara">
+                <input type="submit" class="btn_1 full-width" value="Искать">
             </div>
         </form>
         

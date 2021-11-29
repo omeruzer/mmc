@@ -12,7 +12,7 @@
                         <div class="container pl-lg-5">
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="{{ route('homepage') }}">Anasayfa</a></li>
+                                    <li><a href="{{ route('homepage') }}">Главная</a></li>
                                     <li>{{ $category->title }}</li>
                                 </ul>
                             </div>
@@ -64,11 +64,11 @@
 
                                         @if ($product->quantity > 0)
                                             <div class="" style="width: 100%; background-color:#47C78E; ">
-                                                <h5 style="color:#fff">Stokta Var</h5>
+                                                <h5 style="color:#fff">В Наличии</h5>
                                             </div>
                                         @else
                                                 <div class="" style="width: 100%; background-color:#c6c6c6; ">
-                                                    <h5 style="color:#fff">Stokta Yok</h5>
+                                                    <h5 style="color:#fff">Нет В Наличии</h5>
                                                 </div>
                                         @endif
                                         {{-- <div data-countdown="2019/05/15" class="countdown"></div> --}}
@@ -85,7 +85,7 @@
                                         <form action="{{route('favorites.add')}}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$product->id}}">
-                                            <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" title="Favorilere Ekle"><i class="ti-heart"></i></button></li>
+                                            <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left"><i class="ti-heart"></i></button></li>
                                         </form>
                                     </ul>
                                     @if ($product->quantity > 0)
@@ -94,12 +94,12 @@
                                                 @csrf
                                                 <input type="hidden" name="qty" value=4>
                                                 <input type="hidden" name="id" value="{{ $product->id }}">
-                                                <input type="submit" value="Sepete Ekle" class="addCard">
+                                                <input type="submit" value="В Корзину" class="addCard">
                                             </form>
                                         </div>
                                     @else
                                         <div class="">
-                                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Stokta Yok"  class="addCard">
+                                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Нет В Наличии"  class="addCard">
                                         </div>
                                     @endif
 
@@ -134,6 +134,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 @endsection
 @section('footer')
+<script src="/assets/front/js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

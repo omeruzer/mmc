@@ -72,7 +72,7 @@
                                             <form action="{{route('favorites.add')}}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{$product->id}}">
-                                                <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" title="Favorilere Ekle"><i class="ti-heart"></i></button></li>
+                                                <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" ><i class="ti-heart"></i></button></li>
                                             </form>
                                         </ul>
                                         @if ($product->quantity > 0)

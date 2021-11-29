@@ -69,7 +69,7 @@
             <a href="#0" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="/assets/images/banner/banner-1.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Bayan Batnik</h3>
+                    <h3>Женская Бантик</h3>
                     <div><span class="btn_1">Alışverişe Başla</span></div>
                 </div>
             </a>
@@ -78,7 +78,7 @@
             <a href="#0" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="\assets\images\banner\banner-2.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Bayan Takım</h3>
+                    <h3>женский костюм</h3>
                     <div><span class="btn_1">Alışverişe Başla</span></div>
                 </div>
             </a>
@@ -87,7 +87,7 @@
             <a href="#0" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="/assets/images/banner/banner-3.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Bayan Kazak</h3>
+                    <h3>Женская Свитер</h3>
                     <div><span class="btn_1">Alışverişe Başla</span></div>
                 </div>
             </a>
@@ -96,9 +96,9 @@
 
     <div class="container margin_60_35">
         <div class="main_title">
-            <h2>Öne Çıkan Ürünlerimiz</h2>
+            <h2>Наши рекомендуемые товары</h2>
             <span>Featured</span>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+            <p>Öne Çıkan Ürünlerle İlgili Yazı</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($featureds as $featured)
@@ -111,11 +111,11 @@
                             </a>
                             @if ($featured->getProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
-                                    <h5 style="color:#fff">Stokta Var</h5>
+                                    <h5 style="color:#fff">В Наличии</h5>
                                 </div>
                             @else
                                 <div class="" style="width: 100%; background-color:#c6c6c6; ">
-                                    <h5 style="color:#fff">Stokta Yok</h5>
+                                    <h5 style="color:#fff">Нет В Наличии</h5>
                                 </div>
                             @endif
                         </figure>
@@ -125,7 +125,7 @@
                             <div class=""><span>{{$featured->getProduct->code}}</span></div>
                         </a>
                         <div class="price_box">
-                            <span class="new_price">${{$featured->getProduct->price}}</span>
+                            <span class="new_price">₴{{$featured->getProduct->price}}</span>
                         </div>
                         <ul>
                             <form action="{{route('favorites.add')}}" method="post">
@@ -140,12 +140,12 @@
                                 @csrf
                                 <input type="hidden" name="qty" value=4>
                                 <input type="hidden" name="id" value="{{ $featured->getProduct->id }}">
-                                <input type="submit" value="Sepete Ekle" class="addCard">
+                                <input type="submit" value="В Корзину" class="addCard">
                             </form>
                         </div>
                         @else
                         <div class="">
-                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Stokta Yok"  class="addCard">
+                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Нет В Наличии"  class="addCard">
                         </div>
                         @endif
                     </div>
@@ -160,26 +160,26 @@
 
     <div class="container margin_60_35">
         <div class="main_title">
-            <h2>Yeni Gelen Ürünlerimiz</h2>
+            <h2>Горячие Новинки</h2>
             <span>New</span>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+            <p>Yeni Ürünlerle İlgili Yazı</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($newProducts as $newProduct)
                 <div class="item">
                     <div class="grid_item">
-                        <span class="ribbon new">Yeni</span>
+                        <span class="ribbon new">Новинки</span>
                         <figure>
                             <a href="{{ route('product',[$newProduct->getCategory->slug,$newProduct->slug,$newProduct->code]) }}">
                                 <img style="width: 400px%;  max-height: 300px" class="owl" src="/assets/images/products/{{$newProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$newProduct->name}}">
                             </a>
                             @if ($newProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
-                                    <h5 style="color:#fff">Stokta Var</h5>
+                                    <h5 style="color:#fff">В Наличии</h5>
                                 </div>
                             @else
                                 <div class="" style="width: 100%; background-color:#c6c6c6; ">
-                                    <h5 style="color:#fff">Stokta Yok</h5>
+                                    <h5 style="color:#fff">Нет В Наличии</h5>
                                 </div>
                             @endif
                         </figure>
@@ -189,13 +189,13 @@
                             <div class=""><span>{{$newProduct->code}}</span></div>
                         </a>
                         <div class="price_box">
-                            <span class="new_price">${{$newProduct->price}}</span>
+                            <span class="new_price">₴{{$newProduct->price}}</span>
                         </div>
                         <ul>
                             <form action="{{route('favorites.add')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$newProduct->id}}">
-                                <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" title="Favorilere Ekle"><i class="ti-heart"></i></button></li>
+                                <li><button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" ><i class="ti-heart"></i></button></li>
                             </form>
                         </ul>
  
@@ -205,12 +205,12 @@
                                 @csrf
                                 <input type="hidden" name="qty" value=4>
                                 <input type="hidden" name="id" value="{{ $newProduct->id }}">
-                                <input type="submit" value="Sepete Ekle" class="addCard">
+                                <input type="submit" value="В Корзину" class="addCard">
                             </form>
                         </div>
                         @else
                         <div class="">
-                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Stokta Yok"  class="addCard">
+                            <input style="background-color: #c6c6c6 " type="submit" disabled value="Нет В Наличии"  class="addCard">
                         </div>
                         @endif
                     </div>
@@ -241,9 +241,9 @@
 
     <div class="container margin_60_35">
         <div class="main_title">
-            <h2>Blog Yazılarımız</h2>
+            <h2>блог</h2>
             <span>Blog</span>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+            <p>Blogla İlgili Yazı</p>
         </div>
         <div class="row">
 
@@ -264,7 +264,7 @@
             @endforeach
                 <div class="container">
                     <div class="row" style="text-align: center">
-                        <a href="{{route('blog')}}"><button class="addCard blogBtn" type="submit">Tüm Yazıları Gör</button></a>
+                        <a href="{{route('blog')}}"><button class="addCard blogBtn" type="submit">Просмотреть все сообщения</button></a>
                     </div>
                 </div>
         </div>

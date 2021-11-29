@@ -15,7 +15,7 @@
         </div>
         <div class="breadcrumbs" style="margin: 10px">
             <ul>
-                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#">Главная</a></li>
                 <li><a href="{{route('category',[$product->getCategory->slug,$product->getCategory->id])}}">{{$product->getCategory->title}}</a></li>
                 <li>{{$product->name}}</li>
             </ul>
@@ -59,7 +59,7 @@
                 <div class="prod_info">
                     <h1><b>{{strtoupper($product->getBrand->name)}}</b> {{mb_convert_case($product->name,MB_CASE_TITLE)}}</h1>
                     {{-- <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span> --}}
-                    <p><small>Ürün Kodu: </small><b style="color: #47C78E">{{$product->code}}</b><br><br>Paket Fiyatı : <b style="color: #47C78E">${{$product->price*4}}</b><br><br>Kalan Stok : <b style="color: #47C78E">{{$product->quantity}}</b></p>
+                    <p><small>Код : </small><b style="color: #47C78E">{{$product->code}}</b><br><br>Ростовок Цена : <b style="color: #47C78E">${{$product->price*4}}</b><br><br>на складе : <b style="color: #47C78E">{{$product->quantity}}</b></p>
                     @if ($product->quantity > 0)
                     <form action=" {{ route('cart.add') }} " method="post">
                         @csrf
@@ -82,7 +82,7 @@
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <input type="hidden" name="id" value="{{ $product->id }}">
-                                <input type="submit" value="Sepete Ekle" class="addCard">
+                                <input type="submit" value="В Корзину" class="addCard">
                             </div>
                         </div>
                     </form>   
@@ -92,7 +92,7 @@
                             <div class="price_main"><span class="new_price" style="color: #c6c6c6">${{$product->price}}</span></div>
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <input style="background-color: #c6c6c6 " type="submit" value="Stokta Yok" disabled class="addCard">
+                            <input style="background-color: #c6c6c6 " type="submit" value="Нет В Наличии" disabled class="addCard">
                         </div>
                     </div>
                     @endif
@@ -126,11 +126,11 @@
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-lg-6">
-                                    <h3>Ürün Bilgileri</h3>
+                                    <h3>Описание </h3>
                                     <span>{!! $product->content !!}</span>
                                 </div>
                                 <div class="col-lg-5">
-                                    <h3>Ürün Özellikleri</h3>
+                                    <h3>Характеристики </h3>
                                     <div class="table-responsive">
                                         <table class="table table-sm table-striped">
                                             <tbody>

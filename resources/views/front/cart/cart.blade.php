@@ -8,11 +8,11 @@
     <div class="page_header">
         <div class="breadcrumbs">
             <ul>
-                <li><a href="{{ route('homepage') }}">Anasayfa</a></li>
-                <li>Sepet</li>
+                <li><a href="{{ route('homepage') }}">Главная</a></li>
+                <li>Корзина</li>
             </ul> 
         </div>
-        <h1>Sepet</h1>
+        <h1>Корзина</h1>
         <div class="row">
             <div class="col-xl-6">
                 @include('admin.layouts.partials.error')
@@ -144,9 +144,9 @@
     @else
         <div class="container" style="text-align: center">
             <h3>
-                Sepetinizde hiç ürün bulunmuyor.
+                В вашей корзине нет товаров..
                 <br><br>
-                Alışveriş yapmak için <a href="{{route('homepage')}}">Tıklayınız</a>
+                для покупок <a href="{{route('homepage')}}">кликните сюда</a>
             </h3>
         </div>
     @endif
