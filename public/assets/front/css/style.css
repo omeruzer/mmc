@@ -7335,10 +7335,6 @@ img.mfp-img {
   padding: 25px;
 }
 
-.cart-qty{
-  background-color: #0C0;
-}
-
 .cart-qty ul{
   list-style: none;
 
@@ -7350,5 +7346,7 @@ img.mfp-img {
 }
 
 .btn-qty{
-  padding: -20px;
+  background-color: #47C78E;
+  border: none;
+  padding: 5px 10px;
 }

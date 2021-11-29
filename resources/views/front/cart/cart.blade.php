@@ -24,13 +24,7 @@
 
     @if (count(Cart::content()) > 0)
     <div class="container">
-        <div class="" style="float: right">
-            <form action="{{route('cart.deleteAll')}}" class="deleteall" method="post">
-                @csrf
-                @method('DELETE')
-                <button id="cartDeleteall" class="btn btn-xs btn-danger" type="submit">Sepeti Boşalt <i class="fa fa-trash" ></i></button>
-            </form>
-        </div>
+
     </div>
     <table class="table table-striped cart-list">
         <thead>
@@ -61,8 +55,8 @@
                         </div>
                         <span class="item_cart">{{$cartItem->name}}</span>
                     </td>
-                    <td style="width: 10%"  >
-                        <strong>${{$cartItem->price}}</strong>
+                    <td style="width: 15%"  >
+                        <strong>{{$cartItem->price}} ₴</strong>
                     </td>
                     <td>
                         <div class="cart-qty" >
@@ -71,7 +65,7 @@
                                     <form action="{{ route('cart.decrease',$cartItem->rowId) }}" method="post">
                                         @csrf
                                         <input type="hidden" name="product" value={{$cartItem->id}}>
-                                        <input class="btn btn-info btn-qty" style="color:#fff" type="submit" value="-">
+                                        <button class=" btn-qty"  style="color:#fff" type="submit" >-</button>
                                     </form>
                                 </li>
                                 <li>
@@ -82,21 +76,21 @@
                                     <form action="{{ route('cart.increase',$cartItem->rowId) }}" method="post">
                                         @csrf
                                         <input type="hidden" name="product" value={{$cartItem->id}}>
-                                        <input class="btn btn-xs btn-info btn-qty"  style="color:#fff" type="submit" value="+">
+                                        <button class=" btn-qty"  style="color:#fff" type="submit" >+</button>
                                     </form>
                                 </li>
                             </ul>
 
                         </div>
                     </td>
-                    <td>
-                        <strong>${{$cartItem->subtotal}}</strong>
+                    <td style="width: 50%;">
+                        <strong>{{$cartItem->subtotal}} ₴</strong>
                     </td>
                     <td class="options">
                         <form action="{{route('cart.delete',$cartItem->rowId)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button style="float: right" class="btn btn-xs btn-info" type="submit"><i class="fa fa-trash" ></i></button>
+                            <i class="ti-trash " style="color: red; font-size: 20px"></i>
                         </form>
                     </td>
                 </tr>    
@@ -104,23 +98,31 @@
 
         </tbody>
         </table>
-
+        <div class="row add_top_30 flex-sm-row-reverse cart_actions">
+			<div class="col-sm-4 text-end">
+                <form action="{{route('cart.deleteAll')}}" class="deleteall" method="post">
+                    @csrf
+                    @method('DELETE')
+				    <button type="submit" class="btn btn-danger">Sepeti Boşalt <i class="fa fa-trash"></i></button>
+                </form>
+			</div>
+		</div>
         <div class="box_cart">
             <div class="container">
             <div class="row justify-content-end">
                 <div class="col-xl-4 col-lg-4 col-md-6">
             <ul>
                 <li>
-                    <span>Toplam</span> ${{Cart::subtotal()}}
+                    <span>Итого</span> {{Cart::subtotal()}} ₴
                 </li>
                 <li>
-                    <span>Kargo</span> ${{$shipp->track}}
+                    <span>Стоимость доставки</span> {{$shipp->track}} ₴
                 </li>
                 <li>
-                    <span>Genel Toplam</span> $ {{ str_replace(',', '', Cart::total()) + $shipp->track }}
+                    <span>К оплате</span> {{ str_replace(',', '', Cart::total()) + $shipp->track }}  ₴
                 </li>
             </ul>
-            <a href="{{route('payment')}}" class="btn_1 full-width cart">Ödeme</a>
+            <a href="{{route('payment')}}" class="btn_1 full-width cart"> Оформить заказ</a>
                     </div>
                 </div>
             </div>

@@ -67,7 +67,7 @@
                                         <div class=""><span>{{$product->code}}</span></div>
                                     </a>
                                     <div class="price_box">
-                                        <span class="new_price">${{$product->price}}</span>
+                                        <span class="new_price">{{$product->price}} ₴</span>
                                     </div>
                                     <ul>
                                         <form action="{{route('favorites.add')}}" method="post">

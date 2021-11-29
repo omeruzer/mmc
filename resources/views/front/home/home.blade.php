@@ -125,7 +125,7 @@
                             <div class=""><span>{{$featured->getProduct->code}}</span></div>
                         </a>
                         <div class="price_box">
-                            <span class="new_price">₴{{$featured->getProduct->price}}</span>
+                            <span class="new_price">{{$featured->getProduct->price}} ₴</span>
                         </div>
                         <ul>
                             <form action="{{route('favorites.add')}}" method="post">
@@ -189,7 +189,7 @@
                             <div class=""><span>{{$newProduct->code}}</span></div>
                         </a>
                         <div class="price_box">
-                            <span class="new_price">₴{{$newProduct->price}}</span>
+                            <span class="new_price">{{$newProduct->price}} ₴</span>
                         </div>
                         <ul>
                             <form action="{{route('favorites.add')}}" method="post">

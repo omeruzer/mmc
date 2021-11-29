@@ -7,11 +7,11 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li>İadelerim</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li>мои возвращения</li>
 				</ul>
 		</div>
-		<h1>İadelerim</h1>
+		<h1>мои возвращения</h1>
 	</div>
 	<!-- /page_header -->
         <div class="row justify-content-center">
@@ -21,83 +21,46 @@
                         <div class="myOrdersTable">
                             @if (count($orders) == 0)
                                 <p>
-                                    Daha önce hiç iade talebi oluşturmadınız. <br>
-                                    Alışverişe başlamak için <a href="{{route('homepage')}}">tıklayınız</a>
+                                    Вы никогда раньше не создавали запрос на возврат. <br>
+                                    для покупок <a href="{{route('homepage')}}">кликните сюда</a>
                                 </p>
                             @else
-                            {{-- <table class="table ">
-                                <thead>
-                                    <tr>
-                                        <th>Sipariş Numarası</th>
-                                        <th>Tutar</th>
-                                        <th>Ürün Adet</th>
-                                        <th>Durum</th>
-                                        <th>Detay</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($orders as $order)
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
                                         <tr>
-                                            <td>SP-00{{$order->id}}</td>
-                                            <td>{{$order->orderAmount+$shipp->track}}$</td>
-                                            <td>{{$order->getCart->cartProductQty()}}</td>
-                                            <td>{{$order->status}}</td>
-                                            <td>
-                                                <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Detaylar</button></a>
-                                                @if ($order->status != 'İade Talebi Oluşturuldu')
-                                                    <a href="{{route('returnOrder',$order->id)}}"><button class="btn btn-danger" onclick="return confirm('İade Talebi Etmek İstediğinize Emin Misniz?!')" type="submit">İade Talebi</button></a>
-                                                @endif
-                                            </td>
+                                            <th>номер заказа</th>
+                                            <th>цена</th>
+                                            <th>Ürün Adet</th>
+                                            <th>Durum</th>
+                                            <th>Detay</th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                                <thead>
-                                    <tr>
-                                        <th>Sipariş Numarası</th>
-                                        <th>Tutar</th>
-                                        <th>Ürün Adet</th>
-                                        <th>Durum</th>
-                                        <th>Detay</th>
-                                    </tr>
-                                </thead>
-                            </table> --}}
-
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Sipariş Numarası</th>
-                                        <th>Tutar</th>
-                                        <th>Ürün Adet</th>
-                                        <th>Durum</th>
-                                        <th>Detay</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($orders as $order)
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($orders as $order)
+                                            <tr>
+                                                <td>SP-00{{$order->id}}</td>
+                                                <td>{{$order->orderAmount+$shipp->track}}$</td>
+                                                <td>{{$order->getCart->cartProductQty()}}</td>
+                                                <td>{{$order->status}}</td>
+                                                <td>
+                                                    <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Detaylar</button></a>
+                                                    @if ($order->status != 'İade Talebi Oluşturuldu')
+                                                        <a href="{{route('returnOrder',$order->id)}}"><button class="btn btn-danger" onclick="return confirm('İade Talebi Etmek İstediğinize Emin Misniz?!')" type="submit">İade Talebi</button></a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                    <tfoot>
                                         <tr>
-                                            <td>SP-00{{$order->id}}</td>
-                                            <td>{{$order->orderAmount+$shipp->track}}$</td>
-                                            <td>{{$order->getCart->cartProductQty()}}</td>
-                                            <td>{{$order->status}}</td>
-                                            <td>
-                                                <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Detaylar</button></a>
-                                                @if ($order->status != 'İade Talebi Oluşturuldu')
-                                                    <a href="{{route('returnOrder',$order->id)}}"><button class="btn btn-danger" onclick="return confirm('İade Talebi Etmek İstediğinize Emin Misniz?!')" type="submit">İade Talebi</button></a>
-                                                @endif
-                                            </td>
+                                            <th>Sipariş Numarası</th>
+                                            <th>Tutar</th>
+                                            <th>Ürün Adet</th>
+                                            <th>Durum</th>
+                                            <th>Detay</th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Sipariş Numarası</th>
-                                        <th>Tutar</th>
-                                        <th>Ürün Adet</th>
-                                        <th>Durum</th>
-                                        <th>Detay</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                                    </tfoot>
+                                </table>
                             @endif
                         </div>
                     </div>
