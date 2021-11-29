@@ -40,17 +40,17 @@
                 <h3 data-bs-target="#collapse_1">Quick Links</h3>
                 <div class="collapse dont-collapse-sm links" id="collapse_1">
                     <ul>
-                        <li><a href="{{ route('homepage') }}">Anasayfa</a></li>
-                        <li><a href="{{ route('about') }}">Hakkımızda</a></li>
-                        <li><a href="{{ route('blog') }}">Blog</a></li>
-                        <li><a href="{{ route('blog') }}">SSS</a></li>
-                        <li><a href="{{ route('contact') }}">İletişim</a></li>
-                        <li><a href="{{ route('help') }}">Yardım</a></li>
+                        <li><a href="{{ route('homepage') }}">Главная</a></li>
+                        <li><a href="{{ route('about') }}">O Нас</a></li>
+                        <li><a href="{{ route('blog') }}">блог</a></li>
+                        <li><a href="{{ route('blog') }}">FAQ</a></li>
+                        <li><a href="{{ route('contact') }}">Контакты</a></li>
+                        <li><a href="{{ route('help') }}">Помощь</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3 data-bs-target="#collapse_2">Kategoriler</h3>
+                <h3 data-bs-target="#collapse_2">Каталог</h3>
                 <div class="collapse dont-collapse-sm links" id="collapse_2">
                     <ul>
 
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                    <h3 data-bs-target="#collapse_3">İletişim</h3>
+                    <h3 data-bs-target="#collapse_3">Контакты</h3>
                 <div class="collapse dont-collapse-sm contacts" id="collapse_3">
                     <ul>
                         <li><i class="ti-home"></i>{{$cont->address}}</li>
@@ -71,19 +71,19 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                    <h3 data-bs-target="#collapse_4">Ürünlerden İlk Siz Haberder Olun</h3>
+                    <h3 data-bs-target="#collapse_4">Подпишись на нашу рассылку</h3>
                 <div class="collapse dont-collapse-sm" id="collapse_4">
                     <div id="newsletter">
                         <div class="form-group">
                             <form action="{{route('newsletter')}}" method="post">
                                 @csrf
-                                <input type="email" name="email" id="email_newsletter" class="form-control" placeholder="E-mail Adresiniz">
+                                <input type="email" name="email" id="email_newsletter" class="form-control" placeholder="Эл. почта">
                                 <button type="submit" id="submit-newsletter"><i class="ti-angle-double-right"></i></button>
                             </form>
                         </div>
                     </div>
                     <div class="follow_us">
-                        <h5>Follow Us</h5>
+                        <h5>следить</h5>
                         <ul>
                             <li ><a href="https://www.facebook.com/{{$socialMedias->facebook}}"><i style="color: #fff" class="fab fa-2x fa-facebook itemlink"></i></a></li>
                             <li ><a href="https://www.instagram.com/{{$socialMedias->instagram}}/?hl=tr"><i style="color: #fff" class="fab fa-2x fa-instagram"></i></a></li>
@@ -102,8 +102,8 @@
                     <li><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="/assets/front/img/cards_all.svg" alt="" width="198" height="30" class="lazy"></li>
                 </ul>
                 <ul style="float: right" class="additional_links">
-                    <li><a href="{{route('terms.and.conditions')}}">Şartlar ve Koşullar</a></li>
-                    <li><a href="{{route('privacy')}}">Gizlilik</a></li>
+                    <li><a href="{{route('terms.and.conditions')}}">Условия и положения</a></li>
+                    <li><a href="{{route('privacy')}}">Политика Конфиденциальности</a></li>
                     <li><span>© {{date('Y')}} MMC</span></li>
                 </ul>
             </div>

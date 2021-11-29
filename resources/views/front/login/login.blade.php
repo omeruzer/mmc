@@ -10,8 +10,8 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{ route('homepage') }}">Anasayfa</a></li>
-					<li>Giriş Yap veya Üye Ol</li>
+					<li><a href="{{ route('homepage') }}">Главная</a></li>
+					<li>Вход или регистрироваться</li>
 				</ul>
 		</div>
 	</div>
@@ -24,20 +24,20 @@
 		<div class="row justify-content-center">
 			<div class="col-xl-6 col-lg-6 col-md-8">
 				<div class="box_account">
-					<h3 class="client">Giriş Yap</h3>
+					<h3 class="client">Вход</h3>
                     <form action="{{ route('login') }}" method="post">
 						@csrf
                         <div class="form_container">
                             <div class="form-group">
-                                <input type="email" autocomplete="off" value="{{old('email')}}" class="form-control" name="email" id="email" placeholder="E-mail">
+                                <input type="email" autocomplete="off" value="{{old('email')}}" class="form-control" name="email" id="email" placeholder="Эл. почта">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" id="password_in" value="" placeholder="Parola">
+                                <input type="password" class="form-control" name="password" id="password_in" value="" placeholder="Пароль">
                             </div>
                             {{-- <div class="clearfix add_bottom_15">
                                 <div class="float-right"><a id="forgot" style="float: right" href="javascript:void(0);">Lost Password?</a></div>
                             </div> --}}
-                            <div class="text-center"><input type="submit" value="Giriş Yap" class="btn_1 full-width"></div>
+                            <div class="text-center"><input type="submit" value="Вход" class="btn_1 full-width"></div>
                         </div>
                     </form>
 					<!-- /form_container -->
@@ -47,21 +47,21 @@
 
 			<div class="col-xl-6 col-lg-6 col-md-8">
 				<div class="box_account">
-					<h3 class="new_client">Üye Ol</h3>
+					<h3 class="new_client">регистрироваться</h3>
                     <form action="{{ route('register') }}" method="post">
                         @csrf
                         <div class="form_container">
                             <div class="form-group">
-                                <input type="text" autocomplete="off" value="{{ old('name') }}" class="form-control" name="name" placeholder="Ad Soyad">
+                                <input type="text" autocomplete="off" value="{{ old('name') }}" class="form-control" name="name" placeholder="имя Фамилия">
                             </div>
                             <div class="form-group">
-                                <input type="email" autocomplete="off" value="{{ old('email') }}" class="form-control" name="email"  placeholder="E-mail*">
+                                <input type="email" autocomplete="off" value="{{ old('email') }}" class="form-control" name="email"  placeholder="Эл. почта*">
                             </div>
                             <div class="form-group">
-                                <input type="password" autocomplete="off" class="form-control" name="password" placeholder="Parola*">
+                                <input type="password" autocomplete="off" class="form-control" name="password" placeholder="Пароль*">
                             </div>
                             <div class="form-group">
-                                <input type="password" autocomplete="off" class="form-control" name="password_confirmation" placeholder="Parola (Tekrar)*">
+                                <input type="password" autocomplete="off" class="form-control" name="password_confirmation" placeholder="Пароль (повторить)*">
                             </div>
 
                             {{-- <div class="form-group">
@@ -70,7 +70,7 @@
                                     <span class="checkmark"></span>
                                 </label>
                             </div> --}}
-                            <div class="text-center"><input type="submit" value="Üye Ol" class="btn_1 full-width"></div>
+                            <div class="text-center"><input type="submit" value="регистрироваться" class="btn_1 full-width"></div>
                         </div>
                     </form>
 					<!-- /form_container -->

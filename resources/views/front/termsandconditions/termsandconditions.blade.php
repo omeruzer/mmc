@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Gizlilik | {{$set->title}}@endsection
+@section('title')Условия и положения | {{$set->title}}@endsection
 @section('keyw'){{$termsandconditions->keyw}}@endsection
 @section('desc'){{$termsandconditions->desc}}@endsection
 
@@ -9,7 +9,7 @@
 	<div class="container margin_30">
         <div class="container margin_10_35 add_bottom_30">
             <div class="main_title">
-                <h2>By MMC Şartlar ve Koşullar</h2>
+                <h2>By MMC Условия и положения</h2>
             </div>
         </div>
 	    <!-- /page_header -->

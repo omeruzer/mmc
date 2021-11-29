@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Gizlilik | {{$set->title}}@endsection
+@section('title')Политика Конфиденциальности | {{$set->title}}@endsection
 @section('keyw'){{$privacy->keyw}}@endsection
 @section('desc'){{$privacy->desc}}@endsection
 
@@ -9,7 +9,7 @@
 	<div class="container margin_30">
         <div class="container margin_10_35 add_bottom_30">
             <div class="main_title">
-                <h2>By MMC Gizlilik</h2>
+                <h2>By MMC Политика Конфиденциальности</h2>
             </div>
         </div>
 	    <!-- /page_header -->
