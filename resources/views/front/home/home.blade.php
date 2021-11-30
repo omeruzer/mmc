@@ -230,7 +230,7 @@
             <div id="brands" class="owl-carousel owl-theme">
                 @foreach ($brands as $brand)
                     <div class="item">
-                        <a href="#0"><img style="filter: grayscale(100%);" src="/assets/images/brands/{{$brand->img}}" data-src="/assets/images/brands/{{$brand->img}}" alt="{{$brand->name}}" class="owl-lazy"></a>
+                        <a href="#0"><img style="filter: grayscale(100%); " src="/assets/images/brands/{{$brand->img}}" data-src="/assets/images/brands/{{$brand->img}}" alt="{{$brand->name}}" class="owl-lazy"></a>
                     </div><!-- /item -->
                 @endforeach
 
