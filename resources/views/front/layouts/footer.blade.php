@@ -37,7 +37,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">
-                <h3 data-bs-target="#collapse_1">Quick Links</h3>
+                <h3 data-bs-target="#collapse_1">Быстрые ссылки</h3>
                 <div class="collapse dont-collapse-sm links" id="collapse_1">
                     <ul>
                         <li><a href="{{ route('homepage') }}">Главная</a></li>
@@ -77,7 +77,7 @@
                         <div class="form-group">
                             <form action="{{route('newsletter')}}" method="post">
                                 @csrf
-                                <input type="email" name="email" id="email_newsletter" class="form-control" placeholder="Эл. почта">
+                                <input type="email" name="email" autocomplete="off" id="email_newsletter" class="form-control" placeholder="Эл. почта">
                                 <button type="submit" id="submit-newsletter"><i class="ti-angle-double-right"></i></button>
                             </form>
                         </div>

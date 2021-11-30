@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Favorilerim | {{$set->title}}@endsection
+@section('title')мои любимые | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
 		
@@ -7,12 +7,12 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li><a href="{{route('account')}}">Hesabım</a></li>
-					<li>Favorilerim</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li><a href="{{route('account')}}">Профиль</a></li>
+					<li>мои любимые</li>
 				</ul>
 		</div>
-		<h1>Favorilerim</h1>
+		<h1>мои любимые</h1>
 	</div>
     <div class="row">
         <div class="col-xl-6">
@@ -30,10 +30,10 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Ürün Resmi</th>
-                                                <th>Ürün Adı</th>
-                                                <th>Ürün Kodu</th>
-                                                <th>Ürün Fiyatı</th>
+                                                <th>Рисунок</th>
+                                                <th>Название</th>
+                                                <th>Код</th>
+                                                <th>цена</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -47,18 +47,18 @@
                                                     <td>{{$favorite->code}}</td>
                                                     <td>{{$favorite->price}}</td>
                                                     <td>
-                                                        <a href="{{route('product',[$favorite->slug,$favorite->slug,$favorite->code])}}"><button class="btn btn-info" type="submit">Ürüne Git</button></a>
-                                                        <a href="{{route('favorites.delete',$favorite->id)}}"><button class="btn btn-danger" type="submit">Ürünü Sil</button></a>
+                                                        <a href="{{route('product',[$favorite->slug,$favorite->slug,$favorite->code])}}"><button class="btn btn-info" type="submit">перейти к продукту</button></a>
+                                                        <a href="{{route('favorites.delete',$favorite->id)}}"><button onclick="return confirm('Вы уверены, что хотите его удалить?')" class="btn btn-danger" type="submit">удалить продукт</button></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Ürün Resmi</th>
-                                                <th>Ürün Adı</th>
-                                                <th>Ürün Kodu</th>
-                                                <th>Ürün Fiyatı</th>
+                                                <th>Рисунок</th>
+                                                <th>Название</th>
+                                                <th>Код</th>
+                                                <th>цена</th>
                                                 <th></th>
                                             </tr>
                                         </tfoot>
@@ -66,7 +66,7 @@
                                 @else
                                     <div class="container">
                                         <div class="" style="text-align: center">
-                                            <h3>Hiç Favori Ürününüz Yok</h3>
+                                            <h3>У вас нет любимого предмета</h3>
                                         </div>
                                     </div>
                                 @endif

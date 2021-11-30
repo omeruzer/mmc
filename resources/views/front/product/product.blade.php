@@ -106,7 +106,7 @@
                                 @csrf
                                 <input type="hidden" name="id" value="{{$product->id}}">
                                 <li>
-                                    <button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" title="Favorilere Ekle"><i class="ti-heart"></i> Favorilere Ekle</button>
+                                    <button type="submit" class="favoriteAdd" data-bs-toggle="tooltip" data-bs-placement="left" ><i class="ti-heart"></i> добавить в избранное</button>
                                 </li>
                             </form>
                         </li>

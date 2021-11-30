@@ -62,9 +62,9 @@ class HomeController extends Controller
 
         // ORDER
 
-        $amount = Order::where('status','!=','İade Talebi Oluşturuldu')->sum('orderAmount');
+        $amount = Order::sum('orderAmount');
 
-        $orderCount = Order::where('status','!=','İade Talebi Oluşturuldu')->count();
+        $orderCount = Order::count();
 
         $truckOrder = Order::where('status','Kargoya Verildi')->count();
         $endOrder = Order::where('status','Sipariş Tamamlandı')->count();

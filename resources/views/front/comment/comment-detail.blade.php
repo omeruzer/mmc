@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Yorumlarım | {{$set->title}}@endsection
+@section('title')мои комментарии | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
 		
@@ -7,12 +7,12 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li><a href="{{route('account')}}">Hesabım</a></li>
-					<li>Yorumlarım</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li><a href="{{route('account')}}">Профиль</a></li>
+					<li>мои комментарии</li>
 				</ul>
 		</div>
-		<h1>Yorumlarım</h1>
+		<h1>мои комментарии</h1>
 	</div>
     <div class="row">
         <div class="col-xl-6">
@@ -27,28 +27,28 @@
 					<div class="form_container">
                         <div class="myOrdersTable">
                             <div class="">
-                                <label for="">Ürün Resmi:</label><br>
+                                <label for="">Рисунок:</label><br>
                                 <img style="width: 20%;" src="/assets/images/products/{{$comment->getProduct->img}}" alt="" srcset="">
                             </div>
                             <div class="">
-                                <label for="">Ürün Adı:</label><br>
+                                <label for="">Название:</label><br>
                                 <p><span>{{$comment->getProduct->name}}</span></p>
                             </div>
                             <div class="">
-                                <label for="">Ürün Kod:</label><br>
+                                <label for="">Код:</label><br>
                                 <p><span>{{$comment->getProduct->code}}</span></p>
                             </div>
                             <div class="">
-                                <label for="">Yorum:</label><br>
+                                <label for="">Комментарий:</label><br>
                                 <p><span>{{$comment->comment}}</span></p>
                             </div>
                             <div class="">
-                                <label for="">Ürün Adı:</label><br>
+                                <label for="">Дата:</label><br>
                                 <p><span>{{$comment->created_at}}</span></p>
                             </div>
                             <div class="" style="float: right" >
-                                <a href="{{route('mycomment')}}"><button type="submit" class="btn btn-info"><span>Geri</span></button></a>
-                                <a href="{{route('comment.delete',$comment->id)}}"><button type="submit" onclick="return confirm('Silmek İstediğinize Emin Misiniz? Bir daha Geri Alamayacaksınız!')" class="btn btn-danger"><span>Yorumu Sil</span></button></a>
+                                <a href="{{route('mycomment')}}"><button type="submit" class="btn btn-info"><span>Вернись</span></button></a>
+                                <a href="{{route('comment.delete',$comment->id)}}"><button type="submit" onclick="return confirm('Вы уверены, что хотите его удалить?')" class="btn btn-danger"><span>удалить комментарий</span></button></a>
                             </div>
                         </div>
                     </div>

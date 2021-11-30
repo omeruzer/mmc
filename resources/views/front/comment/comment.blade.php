@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Yorumlarım | {{$set->title}}@endsection
+@section('title')мои комментарии | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
 		
@@ -7,12 +7,12 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li><a href="{{route('account')}}">Hesabım</a></li>
-					<li>Yorumlarım</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li><a href="{{route('account')}}">Профиль</a></li>
+					<li>мои комментарии</li>
 				</ul>
 		</div>
-		<h1>Yorumlarım</h1>
+		<h1>мои комментарии</h1>
 	</div>
     <div class="row">
         <div class="col-xl-6">
@@ -26,65 +26,18 @@
 				<div class="box_account">
 					<div class="form_container">
                         <div class="myOrdersTable">
-
-                            {{-- @if (count($comments) > 0)
-                                <table class="table ">
-                                    <thead>
-                                        <tr>
-                                            <th>Ürün Resmi</th>
-                                            <th>Ürün Adı</th>
-                                            <th>Ürün Kodu</th>
-                                            <th>Yorum</th>
-                                            <th>Tarih</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody> 
-                                        @foreach ($comments as $comment)
-                                            <tr>
-                                                <td style="width: 15%;">
-                                                    <img style="width: 50%;" src="/assets/images/products/{{$comment->getProduct->img}}" alt="" srcset="">
-                                                </td>
-                                                <td>{{Str::substr($comment->getProduct->name,0,20)}}...</td>
-                                                <td>{{$comment->getProduct->code}}</td>
-                                                <td>{{Str::substr($comment->comment,0,20)}}...</td>
-                                                <td>{{$comment->created_at}}</td>
-                                                <td>
-                                                    <a href="{{route('mycomment.detail',$comment->id)}}"><button class="btn btn-info" type="submit">Yoruma Git</button></a>
-                                                    <a href="{{route('comment.delete',$comment->id)}}"><button class="btn btn-danger" type="submit">Yorumu Sil</button></a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <thead>
-                                        <tr>
-                                            <th>Ürün Resmi</th>
-                                            <th>Ürün Adı</th>
-                                            <th>Ürün Kodu</th>
-                                            <th>Yorum</th>
-                                            <th>Tarih</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            @else
-                                <div class="container">
-                                    <div class="" style="text-align: center">
-                                        <h3>Hiç Yorumunuz Yok</h3>
-                                    </div>
-                                </div>
-                            @endif --}}
                             <div class="cart-body">
                                 @if (count($comments) > 0)
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Ürün Resmi</th>
-                                                <th>Ürün Adı</th>
-                                                <th>Ürün Kodu</th>
-                                                <th>Yorum</th>
-                                                <th>Tarih</th>
-                                                <th></th>
+                                                <th>Рисунок</th>
+                                                <th>Название</th>
+                                                <th>Код</th>
+                                                <th>Комментарий</th>
+                                                <th>Дата</th>
+                                                <th>перейти к комментарию</th>
+                                                <th>удалить комментарий</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -98,27 +51,30 @@
                                                     <td>{{Str::substr($comment->comment,0,20)}}...</td>
                                                     <td>{{$comment->created_at}}</td>
                                                     <td>
-                                                        <a href="{{route('mycomment.detail',$comment->id)}}"><button class="btn btn-info" type="submit">Yoruma Git</button></a>
-                                                        <a href="{{route('comment.delete',$comment->id)}}"><button class="btn btn-danger" type="submit">Yorumu Sil</button></a>
+                                                        <a href="{{route('mycomment.detail',$comment->id)}}"><button class="btn btn-info" type="submit">перейти к комментарию</button></a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{route('comment.delete',$comment->id)}}"><button onclick="return confirm('Вы уверены, что хотите его удалить?')" class="btn btn-danger" type="submit">удалить комментарий</button></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Ürün Resmi</th>
-                                                <th>Ürün Adı</th>
-                                                <th>Ürün Kodu</th>
-                                                <th>Yorum</th>
-                                                <th>Tarih</th>
-                                                <th></th>
+                                                <th>Рисунок</th>
+                                                <th>Название</th>
+                                                <th>Код</th>
+                                                <th>Комментарий</th>
+                                                <th>Дата</th>
+                                                <th>перейти к комментарию</th>
+                                                <th>удалить комментарий</th>
                                             </tr>
                                         </tfoot>
                                     </table> 
                                 @else
                                     <div class="container">
                                         <div class="" style="text-align: center">
-                                            <h3>Hiç Yorumunuz Yok</h3>
+                                            <h3>У вас нет комментариев</h3>
                                         </div>
                                     </div>
                                 @endif

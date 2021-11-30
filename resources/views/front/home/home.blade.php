@@ -12,9 +12,9 @@
                         <div class="row justify-content-center justify-content-md-end">
                             <div class="col-lg-6 static">
                                 <div class="slide-text text-end white">
-                                    <h2 class="owl-slide-animated owl-slide-title">Bayan Batnik İçin<br>Büyük Fırsatlar</h2>
+                                    <h2 class="owl-slide-animated owl-slide-title">женские толстовки по выгодным ценам</h2>
                                     <p class="owl-slide-animated owl-slide-subtitle">
-                                        Fırsatları Kaçırmamak İçin Hemen Alışverişe Başlayın
+                                        Начните делать покупки сейчас, чтобы не упустить выгодные предложения
                                     </p>
                                 </div>
                             </div>
@@ -29,9 +29,9 @@
                         <div class="row justify-content-center justify-content-md-start">
                             <div class="col-lg-6 static">
                                 <div class="slide-text white">
-                                    <h2 class="owl-slide-animated owl-slide-title">Bayan Kazaklarda<br>Kaçırılmıyacak Fırsatlar</h2>
+                                    <h2 class="owl-slide-animated owl-slide-title">Возможности, которые нельзя упускать в женских свитерах</h2>
                                     <p class="owl-slide-animated owl-slide-subtitle">
-                                        Fırsatları Kaçırmamak İçin Hemen Alışverişe Başlayın
+                                        Начните делать покупки сейчас, чтобы не упустить выгодные предложения
                                     </p>
                                 </div>
                             </div>
@@ -46,12 +46,12 @@
                         <div class="row justify-content-center justify-content-md-start">
                             <div class="col-lg-12 static">
                                 <div class="slide-text text-center black">
-                                    <h2 class="owl-slide-animated owl-slide-title" style="color: #fff">Telegram<br>Viber<br>Gruplarımız</h2>
+                                    <h2 class="owl-slide-animated owl-slide-title" style="color: #fff">Наши группы <br> Telegram <br> Viber</h2>
                                     <p class="owl-slide-animated owl-slide-subtitle" style="color: #fff">
-                                        Telegram ve Viber Gruplarımıza Katılarak Özel Fırsatlara Erişebilirsiniz.
+                                        Вы можете получить специальные предложения, присоединившись к нашим группам Telegram и Viber
                                     </p>
-                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="https://t.me/{{$socialMedias->telegram}}" role="button">Telegram Grubumuz <i style="color: #fff" class="fab fa-telegram-plane"></i></a></div>
-                                    <div style="margin-top: 5px" class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="{{$socialMedias->viber}}" role="button">Viber Grubumuz <i style="color: #fff" class="fab fa-viber"></i></a></div>
+                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="https://t.me/{{$socialMedias->telegram}}" role="button">Наша группа Telegram <i style="color: #fff" class="fab fa-telegram-plane"></i></a></div>
+                                    <div style="margin-top: 5px" class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="{{$socialMedias->viber}}" role="button">Наша группа Viber <i style="color: #fff" class="fab fa-viber"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -69,8 +69,8 @@
             <a href="#0" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="/assets/images/banner/banner-1.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Женская Бантик</h3>
-                    <div><span class="btn_1">Alışverişe Başla</span></div>
+                    <h3>Женская толстовки</h3>
+                    <div><span class="btn_1">начать покупки</span></div>
                 </div>
             </a>
         </li>
@@ -79,7 +79,7 @@
                 <img src="img/banners_cat_placeholder.jpg" data-src="\assets\images\banner\banner-2.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <h3>женский костюм</h3>
-                    <div><span class="btn_1">Alışverişe Başla</span></div>
+                    <div><span class="btn_1">начать покупки</span></div>
                 </div>
             </a>
         </li>
@@ -88,7 +88,7 @@
                 <img src="img/banners_cat_placeholder.jpg" data-src="/assets/images/banner/banner-3.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <h3>Женская Свитер</h3>
-                    <div><span class="btn_1">Alışverişe Başla</span></div>
+                    <div><span class="btn_1">начать покупки</span></div>
                 </div>
             </a>
         </li>
@@ -225,20 +225,18 @@
     
 
     <!-- MARKALAR -->    
-    {{-- <div class="bg_gray">
+    <div class="bg_gray">
         <div class="container margin_30">
             <div id="brands" class="owl-carousel owl-theme">
                 @foreach ($brands as $brand)
                     <div class="item">
-                        <a href="#0"><img style="background-color: none" src="/assets/images/brands/{{$brand->img}}" data-src="/assets/images/brands/{{$brand->img}}" alt="" class="owl-lazy"></a>
+                        <a href="#0"><img style="filter: grayscale(100%);" src="/assets/images/brands/{{$brand->img}}" data-src="/assets/images/brands/{{$brand->img}}" alt="" class="owl-lazy"></a>
                     </div><!-- /item -->
                 @endforeach
 
             </div><!-- /carousel -->
         </div><!-- /container -->
     </div>
-     --}}
-
     <div class="container margin_60_35">
         <div class="main_title">
             <h2>блог</h2>
