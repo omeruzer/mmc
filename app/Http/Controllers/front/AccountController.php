@@ -13,7 +13,7 @@ class AccountController extends Controller
     public function index(){
         
         if(!auth()->check()){
-            return redirect()->route('login')->with('mesaj')->with('message','Hesabım Sayfası için giriş yapmanız gerekmektedir.')->with('message_type','warning');
+            return redirect()->route('login')->with('mesaj')->with('message','Вам необходимо войти на страницу моего профиля.')->with('message_type','warning');
         }
 
         return view('front.account.account');
@@ -42,7 +42,7 @@ class AccountController extends Controller
         $save = User::where('id',auth()->id())->update($data);
 
         if($save){
-            return redirect()->route('user-account')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');
+            return redirect()->route('user-account')->with('message','Транзакция выполнена успешно')->with('message_type','success');
         }
     }
 
@@ -71,10 +71,10 @@ class AccountController extends Controller
             ]);
 
             if($passUpdate){
-                return redirect()->route('password-account')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');
+                return redirect()->route('password-account')->with('message','Транзакция выполнена успешно')->with('message_type','success');
             }
         }else{
-            return redirect()->route('password-account')->with('message','Eski Şifreniz Doğru Değil')->with('message_type','danger');
+            return redirect()->route('password-account')->with('message','ваш старый пароль неправильный')->with('message_type','danger');
         }
 
     }
@@ -104,7 +104,7 @@ class AccountController extends Controller
         $save = User::where('id',auth()->id())->update($data);
 
         if($save){
-            return redirect()->route('address-account')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');
+            return redirect()->route('address-account')->with('message','Транзакция выполнена успешно')->with('message_type','success');
         }
     }
 

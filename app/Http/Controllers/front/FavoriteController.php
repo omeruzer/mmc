@@ -37,7 +37,7 @@ class FavoriteController extends Controller
         ]);
 
         if($favorite){
-            return redirect()->route('favorites')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');
+            return redirect()->route('favorites')->with('message','Транзакция выполнена успешно')->with('message_type','success');
         }
         
     }
@@ -51,7 +51,7 @@ class FavoriteController extends Controller
         $delete = Favorite::where('product',$id)->where('user',auth()->id())->delete();
 
         if($delete){
-            return redirect()->route('favorites')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');
+            return redirect()->route('favorites')->with('message','Транзакция выполнена успешно')->with('message_type','success');
         }
     }
 }

@@ -37,7 +37,7 @@
                                         <a class="dropdown-item" href="?sortby=cheap"> От дешевых к дорогим </a>
                                         <a class="dropdown-item" href="?sortby=expensive"> От дорогих к дешевым </a>
                                         <a class="dropdown-item" href="?sortby=new"> Новинки </a>
-                                        <a class="dropdown-item" href="?sortby=old">Eskiden Yeniye</a>
+                                        <a class="dropdown-item" href="?sortby=old">от старого к новому</a>
                                         <a class="dropdown-item" href="?sortby=az">İsme Göre (A-Z)</a>
                                         <a class="dropdown-item" href="?sortby=za">İsme Göre (Z-A)</a>
                                     </div>

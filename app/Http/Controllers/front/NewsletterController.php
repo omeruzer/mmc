@@ -27,7 +27,7 @@ class NewsletterController extends Controller
         ]);
 
         if($add){
-            return redirect()->route('help')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');
+            return redirect()->route('help')->with('message','Транзакция выполнена успешно')->with('message_type','success');
         }else{
             return redirect()->route('help')->with('message','İşlem Sırasında Bir Sorun Gerçekleşti')->with('message_type','warning');
         }

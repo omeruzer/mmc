@@ -14,7 +14,7 @@ class CommentController extends Controller
     public function add(){
 
         if(!auth()->check()){
-            return redirect()->route('login')->with('mesaj')->with('message','Yorum yapmak için giriş yapmanız gerekmektedir.')->with('message_type','warning');
+            return redirect()->route('login')->with('mesaj')->with('message','Вы должны войти в систему, чтобы оставить комментарий.')->with('message_type','warning');
         }
 
         $this->validate(request(),[
@@ -35,7 +35,7 @@ class CommentController extends Controller
         $commentAdd = Comment::create($data);
 
         if($commentAdd){
-            return redirect()->back()->with('message','Yorumunuz Paylaşıldı')->with('message_type','success');
+            return redirect()->back()->with('message','Ваш комментарий был опубликован')->with('message_type','success');
         }
 
     }
@@ -46,7 +46,7 @@ class CommentController extends Controller
         $delete = Comment::where('id',$id)->delete();
 
         if($delete){
-            return redirect()->back()->with('message','Yorumunuz Silindi')->with('message_type','success');
+            return redirect()->back()->with('message','Ваш комментарий удален')->with('message_type','success');
         }
 
     }
@@ -54,7 +54,7 @@ class CommentController extends Controller
     public function index(){
 
         if(!auth()->check()){
-            return redirect()->route('login')->with('mesaj')->with('message','Yorumlarınızı görebilmek etmek giriş yapmanız gerekmektedir.')->with('message_type','warning');
+            return redirect()->route('login')->with('mesaj')->with('message','Вы должны войти в систему, чтобы просмотреть свои комментарии.')->with('message_type','warning');
         }
 
         $comments = Comment::with('getProduct')->where('comments.user',auth()->id())->orderByDesc('comments.id')->get();

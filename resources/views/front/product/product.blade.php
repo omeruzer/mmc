@@ -151,7 +151,7 @@
                                                     <td>{{$product->country}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Kalıp</strong></td>
+                                                    <td><strong>стиль</strong></td>
                                                     <td>{{$product->pattern}}</td>
                                                 </tr>
                                                 <tr>
@@ -193,7 +193,7 @@
                                                 <div class="row justify-content-between">
                                                     <div class="col-lg-12">
                                                         <div class="review_content">
-                                                            <h4>"{{$comment->getUser->name}}" <span><small>({{$comment->created_at}})</small></span> @if($user == $comment->user) <small><span><a href="{{route('comment.delete',$comment->id)}}">Yorumu sil <i class="fa fa-trash"></i></a></span></small> @endif</h4>
+                                                            <h4>"{{$comment->getUser->name}}" <span><small>({{$comment->created_at}})</small></span> @if($user == $comment->user) <small><span><a href="{{route('comment.delete',$comment->id)}}">удалить комментарий <i class="fa fa-trash"></i></a></span></small> @endif</h4>
                                                             <p>{{$comment->comment}}</p>
                                                         </div>
                                                     </div>

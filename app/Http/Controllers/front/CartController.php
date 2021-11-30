@@ -68,13 +68,13 @@ class CartController extends Controller
                             ['quantity' => $cartItem->qty , 'amount' => $product->price , 'status' => 'Beklemede' ]
                         );
     
-                        return redirect()->route('cart')->with('message','Ürün Sepete Eklendi')->with('message_type','success');
+                        return redirect()->route('cart')->with('message','добавлен в корзину')->with('message_type','success');
     
                     }
     
                 }else{
                     // Sepete eklenmek istenen ürünle sepetteki ürünün sepetteki adediyle toplamı, ürünün adedinden çoksa ürünü sepete ekleme
-                    return redirect()->route('cart')->with('message','Ürünün İstediğiniz Kadar Stoğu Yok')->with('message_type','warning');
+                    return redirect()->route('cart')->with('message','нет в наличии, как вы хотите')->with('message_type','warning');
                 }
     
             }else{
@@ -107,7 +107,7 @@ class CartController extends Controller
                             ['quantity' => $cartItem->qty , 'amount' => $product->price , 'status' => 'Beklemede' ]
                         );
     
-                        return redirect()->route('cart')->with('message','Ürün Sepete Eklendi')->with('message_type','success');
+                        return redirect()->route('cart')->with('message','добавлен в корзину')->with('message_type','success');
     
     
                     }else{
@@ -120,16 +120,16 @@ class CartController extends Controller
         
                             $cartItem = Cart::add($product->id, $product->name, request('qty') , $product->price,['code'=>$product->code, 'slug'=>$product->slug , 'category' => $product->getCategory->slug,'img' => $product->img]);     
                            
-                            return redirect()->route('cart')->with('message','Ürün Sepete Eklendi')->with('message_type','success');
+                            return redirect()->route('cart')->with('message','добавлен в корзину')->with('message_type','success');
     
                         }else{
-                            return redirect()->route('cart')->with('message','Ürünün İstediğiniz Kadar Stoğu Yok')->with('message_type','warning');
+                            return redirect()->route('cart')->with('message','нет в наличии, как вы хотите')->with('message_type','warning');
                         }
     
                     }
             
                 }else{
-                    return redirect()->route('cart')->with('message','Ürünün İstediğiniz Kadar Stoğu Yok')->with('message_type','warning');
+                    return redirect()->route('cart')->with('message','нет в наличии, как вы хотите')->with('message_type','warning');
                 }
             }
 
@@ -150,11 +150,11 @@ class CartController extends Controller
                     $cartItem = Cart::add($product->id, $product->name, request('qty') , $product->price,['code'=>$product->code, 'slug'=>$product->slug , 'category' => $product->getCategory->slug,'img' => $product->img]);
     
                     if($cartItem){
-                        return redirect()->route('cart')->with('message','Ürün Sepete Eklendi')->with('message_type','success');
+                        return redirect()->route('cart')->with('message','добавлен в корзину')->with('message_type','success');
                     }
     
                 }else{
-                    return redirect()->route('cart')->with('message','Ürünün İstediğiniz Kadar Stoğu Yok')->with('message_type','warning');
+                    return redirect()->route('cart')->with('message','нет в наличии, как вы хотите')->with('message_type','warning');
                 }
 
             }else{
@@ -180,11 +180,11 @@ class CartController extends Controller
                         $cartItem = Cart::add($product->id, $product->name, request('qty') , $product->price,['code'=>$product->code, 'slug'=>$product->slug , 'category' => $product->getCategory->slug,'img' => $product->img]);
     
                         if($cartItem){
-                            return redirect()->route('cart')->with('message','Ürün Sepete Eklendi')->with('message_type','success');
+                            return redirect()->route('cart')->with('message','добавлен в корзину')->with('message_type','success');
                         }
                         
                     }else{
-                        return redirect()->route('cart')->with('message','Ürünün İstediğiniz Kadar Stoğu Yok')->with('message_type','warning');
+                        return redirect()->route('cart')->with('message','нет в наличии, как вы хотите')->with('message_type','warning');
                     }
                 }else{
                     // SEPETTE BU ÜRÜN YOKSA
@@ -197,24 +197,15 @@ class CartController extends Controller
                         $cartItem = Cart::add($product->id, $product->name, request('qty') , $product->price,['code'=>$product->code, 'slug'=>$product->slug , 'category' => $product->getCategory->slug,'img' => $product->img]);
     
                         if($cartItem){
-                            return redirect()->route('cart')->with('message','Ürün Sepete Eklendi')->with('message_type','success');
+                            return redirect()->route('cart')->with('message','добавлен в корзину')->with('message_type','success');
                         }
 
                     }else{
-                        return redirect()->route('cart')->with('message','Ürünün İstediğiniz Kadar Stoğu Yok')->with('message_type','warning');
+                        return redirect()->route('cart')->with('message','нет в наличии, как вы хотите')->with('message_type','warning');
                     }
-                }
-
-
-                
-                
+                }             
             }
      
-
-
-
-
-
         }
 
 
@@ -230,7 +221,7 @@ class CartController extends Controller
 
         Cart::remove($rowId);
         
-        return redirect()->route('cart')->with('mesaj','İşlem Başaryla Gerçekleşti')->with('mesaj_tur','success');
+        return redirect()->route('cart')->with('mesaj','Транзакция выполнена успешно')->with('mesaj_tur','success');
     }
 
     public function deleteAll(){
@@ -242,7 +233,7 @@ class CartController extends Controller
 
         Cart::destroy();    
 
-        return redirect()->route('cart')->with('mesaj','İşlem Başaryla Gerçekleşti')->with('mesaj_tur','success');
+        return redirect()->route('cart')->with('mesaj','Транзакция выполнена успешно')->with('mesaj_tur','success');
 
     }
 
@@ -263,7 +254,7 @@ class CartController extends Controller
                     'quantity' => $quantity
                 ]);
             }else{
-                return redirect()->route('cart')->with('message','Ürünün İstediğiniz Kadar Stoğu Yok')->with('message_type','warning');
+                return redirect()->route('cart')->with('message','нет в наличии, как вы хотите')->with('message_type','warning');
             }
 
         }
@@ -278,7 +269,7 @@ class CartController extends Controller
             Cart::update($rowId,$qty);
             return redirect()->route('cart');
         }else{
-            return redirect()->route('cart')->with('message','Ürünün İstediğiniz Kadar Stoğu Yok')->with('message_type','warning');
+            return redirect()->route('cart')->with('message','нет в наличии, как вы хотите')->with('message_type','warning');
         }
     }
 

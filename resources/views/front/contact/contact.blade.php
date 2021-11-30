@@ -2,12 +2,20 @@
 @section('title')Контакты | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
-	
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                @include('admin.layouts.partials.error')
+                @include('admin.layouts.partials.alert')
+            </div>
+        </div>
+    </div>
     <div class="container margin_60">
         <div class="main_title">
             <h2>Контакты</h2>
             <p>İletişim ile ilgili bir yazı.</p>
         </div>
+        
         <div class="row justify-content-center">
             @foreach ($branchs as $branch)
                 <div class="col-lg-3">

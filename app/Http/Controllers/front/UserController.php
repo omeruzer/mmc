@@ -47,18 +47,11 @@ class UserController extends Controller
 
             return redirect()->intended('/');
         }else{
-            $errors = ['email' => 'E-mail veya Şifre Hatalı'];
+            $errors = ['email' => 'Электронная почта или пароль неверный'];
             return back()->withErrors($errors)->withInput();
         }
 
 
-    }
-
-    public function registerForm(){
-
-        $seo = RegisterSeo::find(1);
-
-        return view('front.register.register',compact('seo'));
     }
 
     public function register(){

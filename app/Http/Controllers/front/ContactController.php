@@ -33,7 +33,7 @@ class ContactController extends Controller
             ]);
 
             if($message){
-                return redirect()->route('contact');
+                return redirect()->route('contact')->with('message','Транзакция выполнена успешно')->with('message_type','success');;
             }
         }
     }

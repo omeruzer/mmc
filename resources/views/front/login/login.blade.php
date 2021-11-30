@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Giriş Yap | {{$set->title}}@endsection
+@section('title')Вход или регистрироваться   | {{$set->title}}@endsection
 @section('keyw'){{$seo->keyw}}@endsection
 @section('desc'){{$seo->desc}}@endsection
 <section></section>
