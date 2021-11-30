@@ -135,7 +135,7 @@
                                         <table class="table table-sm table-striped">
                                             <tbody>
                                                 <tr>
-                                                    <td><strong>Marka</strong></td>
+                                                    <td><strong>Марка</strong></td>
                                                     <td>{{strtoupper($product->getBrand->name )}}</td>
                                                 </tr>
                                                 <tr>
@@ -155,7 +155,7 @@
                                                     <td>{{$product->pattern}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Paket Adedi</strong></td>
+                                                    <td><strong>Ростовок Количество</strong></td>
                                                     <td>{{$product->packQty}}</td>
                                                 </tr>
                                                 <tr>

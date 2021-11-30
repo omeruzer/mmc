@@ -7350,3 +7350,8 @@ img.mfp-img {
   border: none;
   padding: 5px 10px;
 }
+
+.deletebtn{
+  background-color: none;
+  border: none;
+}

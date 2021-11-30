@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Ödeme | {{$set->title}}@endsection
+@section('title')Оформить заказ | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
     <div class="container">
@@ -14,8 +14,8 @@
                             </g>
                         </svg>
                     </div>
-                <h2>Siparişinizi Aldık!</h2>
-                <p>Siparişlerinizi <a href="{{route('myOrders')}}">Siparişlerim</a> sayfasından görebilirsiniz!</p>
+                <h2>мы получили ваш заказ!</h2>
+                <p>ваши заказы <a href="{{route('myOrders')}}">мои заказы</a> Вы можете увидеть это на странице!</p>
                 </div>
             </div>
         </div>

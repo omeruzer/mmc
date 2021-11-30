@@ -28,11 +28,11 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>номер заказа</th>
-                                            <th>цена</th>
-                                            <th>Ürün Adet</th>
-                                            <th>Durum</th>
-                                            <th>Detay</th>
+                                            <th>Заказ №</th>
+                                            <th>К оплате</th>
+                                            <th>Количество</th>
+                                            <th>Статус</th>
+                                            <th>Деталь</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -43,21 +43,18 @@
                                                 <td>{{$order->getCart->cartProductQty()}}</td>
                                                 <td>{{$order->status}}</td>
                                                 <td>
-                                                    <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Detaylar</button></a>
-                                                    @if ($order->status != 'İade Talebi Oluşturuldu')
-                                                        <a href="{{route('returnOrder',$order->id)}}"><button class="btn btn-danger" onclick="return confirm('İade Talebi Etmek İstediğinize Emin Misniz?!')" type="submit">İade Talebi</button></a>
-                                                    @endif
+                                                    <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Деталь</button></a>
                                                 </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Sipariş Numarası</th>
-                                            <th>Tutar</th>
-                                            <th>Ürün Adet</th>
-                                            <th>Durum</th>
-                                            <th>Detay</th>
+                                            <th>Заказ №</th>
+                                            <th>К оплате</th>
+                                            <th>Количество</th>
+                                            <th>Статус</th>
+                                            <th>Деталь</th>
                                         </tr>
                                     </tfoot>
                                 </table>

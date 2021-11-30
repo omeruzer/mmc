@@ -118,15 +118,15 @@
 						<div class="box_general summary">
 							<ul>
 								@foreach (Cart::content() as $cartItem)
-									<li class="clearfix"><em>{{$cartItem->qty}}x {{Str::substr($cartItem->name,0,15)}}...</em>  <span>${{$cartItem->price}}</span><span style="color: #47C68E">${{$cartItem->subtotal()}}</span></li>
+									<li class="clearfix"><em>{{$cartItem->qty}}x {{Str::substr($cartItem->name,0,15)}}...</em>  <span>{{$cartItem->price}} ₴</span><span style="color: #47C68E">{{$cartItem->subtotal()}} ₴</span></li>
 								@endforeach
 							</ul>
 							<ul>
-								<li class="clearfix"><em><strong>Итого</strong></em>  <span>${{Cart::subtotal()}}</span></li>
-								<li class="clearfix"><em><strong>Стоимость доставки</strong></em> <span>${{$shipp->track}}</span></li>
+								<li class="clearfix"><em><strong>Итого</strong></em>  <span>{{Cart::subtotal()}} ₴</span></li>
+								<li class="clearfix"><em><strong>Стоимость доставки</strong></em> <span>${{$shipp->track}} ₴</span></li>
 								
 							</ul>
-							<div class="total clearfix">К оплате <span>${{ str_replace(',', '', Cart::total()) + $shipp->track }}</span></div>
+							<div class="total clearfix">К оплате <span>{{ str_replace(',', '', Cart::total()) + $shipp->track }} ₴</span></div>
 							<input type="hidden" name="cartTotal" value="{{ str_replace(',', '', Cart::total()) + $shipp->track }}">
 							
 							<button type="submit" class="btn_1 full-width topay" >Оформить заказ</button>

@@ -6,8 +6,8 @@
                     <div class="box">
                         <i class="ti-truck"></i>
                         <div class="justify-content-center">
-                            <h3>Hızlı Kargo</h3>
-                            <p>Aynı Gün Kargo</p>
+                            <h3>быстрая доставка</h3>
+                            <p>Карго в тот же день</p>
                         </div>
                     </div>
                 </li>
@@ -15,8 +15,8 @@
                     <div class="box">
                         <i class="ti-wallet"></i>
                         <div class="justify-content-center">
-                            <h3>Güvenli Ödeme</h3>
-                            <p>100% Güvenli Ödeme</p>
+                            <h3>Безопасный оплаты</h3>
+                            <p>100% Безопасный оплаты</p>
                         </div>
                     </div>
                 </li>
@@ -24,8 +24,8 @@
                     <div class="box">
                         <i class="ti-headphone-alt"></i>
                         <div class="justify-content-center">
-                            <h3>7/24 Destek</h3>
-                            <p>Her Zaman Online Destek</p>
+                            <h3>7/24 помощь</h3>
+                            <p>Любое время онлайн помощь</p>
                         </div>
                     </div>
                 </li>

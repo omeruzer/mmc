@@ -104,7 +104,7 @@
             @foreach ($featureds as $featured)
                 <div class="item">
                     <div class="grid_item">
-                        <span class="ribbon off">Öne Çıkan Fırsat</span>
+                        <span class="ribbon off">рекомендуемые </span>
                         <figure>
                             <a href="{{ route('product',[$featured->getProduct->getCategory->slug,$featured->getProduct->slug,$featured->getProduct->code]) }}">
                                 <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$featured->getProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$featured->getProduct->name}}">

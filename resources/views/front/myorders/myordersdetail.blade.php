@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title')Siparişlerim | {{$set->title}}@endsection
+@section('title')Мои заказы | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
 		
@@ -7,31 +7,31 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li>Siparişlerim</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li>Мои заказы</li>
 				</ul>
 		</div>
-		<h1>Siparişlerim</h1>
+		<h1>Мои заказы</h1>
 	</div>
 	<!-- /page_header -->
 		<div class="row justify-content-center">
 			<div class="col-xl-12 col-lg-12 col-md-12">
 				<div class="box_account">
 					<div class="form_container">
-                        <h3>SP-00{{$orders->id}} Numaralı Sipariş Detayı</h3>
+                        <h3>Заказ № SP-00{{$orders->id}} Деталь</h3>
                         <div class="productDetailTable">
                             <div class="cart-body">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Ürün Resmi</th>
-                                            <th>Ürün Adı</th>
-                                            <th>Ürün Kodu</th>
-                                            <th>Marka</th>
-                                            <th>Kategori</th>
-                                            <th>Fiyat</th>
-                                            <th>Adet</th>
-                                            <th>Toplam</th>
+                                            <th>Рисунок</th>
+                                            <th>Название</th>
+                                            <th>Код </th>
+                                            <th>Марка</th>
+                                            <th>Каталог</th>
+                                            <th>цена</th>
+                                            <th>Количество</th>
+                                            <th>Сумма</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -52,14 +52,14 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Ürün Resmi</th>
-                                            <th>Ürün Adı</th>
-                                            <th>Ürün Kodu</th>
-                                            <th>Marka</th>
-                                            <th>Kategori</th>
-                                            <th>Fiyat</th>
-                                            <th>Adet</th>
-                                            <th>Toplam</th>
+                                            <th>Рисунок</th>
+                                            <th>Название</th>
+                                            <th>Код </th>
+                                            <th>Марка</th>
+                                            <th>Каталог</th>
+                                            <th>цена</th>
+                                            <th>Количество</th>
+                                            <th>Сумма</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -75,12 +75,12 @@
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-6">
 				<div class="box_account">
 					<div class="form_container" >
-                        <h3>Sipariş Bilgileri</h3>
+                        <h3>запросить информацию</h3>
                         <hr>
                         <div class="productDetailTable" >
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="desc">Sipariş Durumu:</label>
+                                    <label for="desc">Статус:</label>
                                     @if ($orders->status == 'Sipariş İptal Edildi'  || $orders->status == 'İade Talebi Oluşturuldu')
                                         <p class="status" style="color: red">{{$orders->status}}</p>
                                     @else
@@ -97,20 +97,20 @@
                                         @endif 
                                 </div>
                                 <div class="form-group">
-                                    <label for="desc">Toplam:</label>
+                                    <label for="desc">Итого:</label>
                                     <p>${{$orders->orderAmount - $shipp->track}}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="desc">Kargo:</label>
+                                    <label for="desc">Стоимость доставки:</label>
                                     <p>${{$shipp->track}}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="desc">Genel Tutar:</label>
+                                    <label for="desc">К оплате:</label>
                                     <p style="color: #47C68E"><b>${{ ($orders->orderAmount) }}</b></p>
                                 </div>
                                 <div class="form-group" style="float: right">
                                     @if ($orders->status != 'İade Talebi Oluşturuldu')
-                                        <a href="{{route('returnOrder',$orders->id)}}"><button class="btn btn-danger" onclick="return confirm('İade Talebi Etmek İstediğinize Emin Misniz?!')" type="submit">İade Talebi Oluştur <i class="fa fa-undo"></i></button></a>
+                                        <a href="{{route('returnOrder',$orders->id)}}"><button class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите его вернуть?')" type="submit">создать запрос на возврат <i class="fa fa-undo"></i></button></a>
                                     @else
                                     
                                     @endif

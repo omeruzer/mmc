@@ -1,5 +1,5 @@
  @extends('front.layouts.master')
-@section('title')Siparişlerim | {{$set->title}}@endsection
+@section('title')Мои заказы | {{$set->title}}@endsection
 @section('content')
 <main class="bg_gray">
 		
@@ -7,11 +7,11 @@
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="{{route('homepage')}}">Anasayfa</a></li>
-					<li>Siparişlerim</li>
+					<li><a href="{{route('homepage')}}">Главная</a></li>
+					<li>Мои заказы</li>
 				</ul>
 		</div>
-		<h1>Siparişlerim</h1>
+		<h1>Мои заказы</h1>
 	</div>
 	<!-- /page_header -->
         <div class="row justify-content-center">
@@ -21,18 +21,18 @@
                         <div class="myOrdersTable">
                             @if (count($orders) == 0)
                                 <p>
-                                    Daha önce hiç sipariş vermediniz. <br>
-                                    Alışverişe başlamak için <a href="{{route('homepage')}}">tıklayınız</a>
+                                    Вы еще ничего не заказывали. <br>
+                                    для покупок <a href="{{route('homepage')}}">кликните сюда</a>
                                 </p>
                             @else
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Sipariş Numarası</th>
-                                            <th>Tutar</th>
-                                            <th>Ürün Adet</th>
-                                            <th>Durum</th>
-                                            <th>Detay</th>
+                                            <th>Заказ №</th>
+                                            <th>К оплате</th>
+                                            <th>Количество</th>
+                                            <th>Статус</th>
+                                            <th>Деталь</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -43,18 +43,18 @@
                                                 <td>{{$order->getCart->cartProductQty()}}</td>
                                                 <td>{{$order->status}}</td>
                                                 <td>
-                                                    <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Detaylar</button></a>
+                                                    <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Деталь</button></a>
                                                 </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Sipariş Numarası</th>
-                                            <th>Tutar</th>
-                                            <th>Ürün Adet</th>
-                                            <th>Durum</th>
-                                            <th>Detay</th>
+                                            <th>Заказ №</th>
+                                            <th>К оплате</th>
+                                            <th>Количество</th>
+                                            <th>Статус</th>
+                                            <th>Деталь</th>
                                         </tr>
                                     </tfoot>
                                 </table>

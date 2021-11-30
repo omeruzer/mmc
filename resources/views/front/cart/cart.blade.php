@@ -30,16 +30,16 @@
         <thead>
             <tr>
                 <th style="width: 40%">
-                    Ürün
+                    Продукт
                 </th>
                 <th>
-                    Fiyat
+                    Цена
                 </th>
                 <th>
-                    Adet
+                    Количество
                 </th>
                 <th >
-                    Toplam
+                    Сумма
                 </th>
                 <th >
                     
@@ -90,7 +90,7 @@
                         <form action="{{route('cart.delete',$cartItem->rowId)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <i class="ti-trash " style="color: red; font-size: 20px"></i>
+                                <button class="deletebtn" type="submit"><i class="ti-trash " style="color: red; font-size: 20px"></i></button>
                         </form>
                     </td>
                 </tr>    
