@@ -241,7 +241,6 @@
             <p>Вы можете узнать, прочитав наши статьи.</p>
         </div>
         <div class="row">
-
             @foreach ($blogs as $blog)
                 <div class="col-lg-6">
                     <a class="box_news" href="{{ route('blog-detail',[$blog->slug]) }}">
@@ -257,11 +256,11 @@
                 </div>
                 <!-- /box_news -->
             @endforeach
-                <div class="container">
-                    <div class="row" style="text-align: center">
-                        <a href="{{route('blog')}}"><button class="addCard blogBtn" type="submit">Просмотреть все сообщения</button></a>
-                    </div>
+            <div class="container">
+                <div class="row" style="text-align: center">
+                    <a href="{{route('blog')}}"><button class="addCard blogBtn" type="submit">Просмотреть все сообщения</button></a>
                 </div>
+            </div>
         </div>
         <!-- /row -->
     </div>
