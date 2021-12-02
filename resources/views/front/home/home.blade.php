@@ -98,7 +98,7 @@
         <div class="main_title">
             <h2>Наши рекомендуемые товары</h2>
             <span>Featured</span>
-            <p>Öne Çıkan Ürünlerle İlgili Yazı</p>
+            <p>выгодные кампании по выбранным товарам</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($featureds as $featured)
@@ -162,7 +162,7 @@
         <div class="main_title">
             <h2>Горячие Новинки</h2>
             <span>New</span>
-            <p>Yeni Ürünlerle İlgili Yazı</p>
+            <p>новые модели подходящие к сезону</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($newProducts as $newProduct)
@@ -238,7 +238,7 @@
         <div class="main_title">
             <h2>блог</h2>
             <span>Blog</span>
-            <p>Blogla İlgili Yazı</p>
+            <p>Вы можете узнать, прочитав наши статьи.</p>
         </div>
         <div class="row">
 
