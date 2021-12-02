@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Mail\NewOrderMail;
+use App\Models\BankAccount;
 use App\Models\CartProduct;
 use App\Models\Order;
 use App\Models\Product;
@@ -24,7 +25,9 @@ class PaymentController extends Controller
 
         $user = auth();
 
-        return view('front.payment.payment',compact('user'));
+        $bank = BankAccount::inRandomOrder()->first();
+
+        return view('front.payment.payment',compact('user','bank'));
     }
 
     public function toPay(){

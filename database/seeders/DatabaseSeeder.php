@@ -37,5 +37,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SssSeoSeeder::class);
         $this->call(PrivacySeeder::class);
         $this->call(TermsandConditionsSeeder::class);
+        $this->call(BankAccountSeeder::class);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AboutController;
+use App\Http\Controllers\admin\BankAccountController;
 use App\Http\Controllers\admin\BlogCategoryController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\BranchController;
@@ -328,6 +329,16 @@ Route::group(['prefix' => 'admin'],function(){
         Route::group(['prefix' => 'termsandconditions'],function(){
             Route::get('/',[AdminTermsandConditionsController::class,'index'])->name('admin.terms.and.conditions');
             Route::post('/',[AdminTermsandConditionsController::class,'post'])->name('admin.terms.and.conditions.post');
+        });
+
+        Route::group(['prefix'=>'bankaccount'],function(){
+            Route::get('/', [BankAccountController::class,'index'])->name('admin.bankaccount');
+            Route::get('/create/add', [BankAccountController::class,'create'])->name('admin.bankaccount.create');
+            Route::post('/create', [BankAccountController::class,'create'])->name('admin.bankaccount.created');
+            Route::get('/edit/{slug}', [BankAccountController::class,'edit'])->name('admin.bankaccount.edit');
+            Route::post('/edit/{slug}', [BankAccountController::class,'save'])->name('admin.bankaccount.save');
+            Route::get('/delete/{slug}', [BankAccountController::class,'delete'])->name('admin.bankaccount.delete');
+    
         });
 
     });

@@ -49,7 +49,7 @@
 										<input type="text" class="form-control" name='city' value="{{auth()->user()->city}}" placeholder="город">
 									</div>
 									<div class="col-6 form-group pl-1">
-										<input type="text" class="form-control" name='postCode' value="{{auth()->user()->postCode}}" placeholder="Postal code">
+										<input type="text" class="form-control" name='postCode' value="{{auth()->user()->postCode}}" placeholder="почтовый индекс">
 									</div>
 									<div class="col-6 form-group pl-1">
 										<input type="text" class="form-control" name='country' value="{{auth()->user()->country}}" placeholder="страна">
@@ -74,13 +74,20 @@
 								<ul>
 									<li>
 										<label class="container_radio">Karta Transfer
-											<input type="radio" name="payment" value="Kredi Kartı" checked>
+											<input class="card-checked" type="radio" name="payment" value="Kredi Kartı">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
+										<div class="card-info">
+											<label for="">Информация об аккаунте</label>
+											<p>Название банка : {{$bank->bankName}}</p>
+											<p>номер счета : {{$bank->accountNumber}}</p>
+										</div>
+									</li>
+									<li>
 										<label class="container_radio">Kapıda Ödeme
-											<input type="radio" name="payment" value="Kapıda Ödeme">
+											<input class="door" type="radio" name="payment" value="Kapıda Ödeme">
 											<span class="checkmark"></span>
 										</label>
 									</li>
@@ -89,7 +96,7 @@
 								<ul>
 									<li>
 										<label class="container_radio">Nova Poşta
-											<input type="radio" name="shipping" value="Nova Poşta" checked>
+											<input type="radio" name="shipping" value="Nova Poşta">
 											<span class="checkmark"></span>
 										</label>
 									</li>
@@ -166,6 +173,24 @@
 			button.setAttribute('disabled','disabled');
 		})
 	});
+
+</script>
+	
+<script>
+	
+	$('.card-info').hide();
+
+	$('.card-checked').click(function () { 
+
+		if($('.card-checked').prop("checked") == 'checked'){
+			$('.card-info').hide();
+		}else{
+			$('.card-info').show();
+
+		}
+	});
+
+
 
 </script>
 @endsection

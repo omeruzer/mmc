@@ -62,6 +62,12 @@
                             </a>
                         </li>
                         <li class="submenu">
+                            <a class="" href="{{route('admin.bankaccount')}}">
+                                <i class="fas fa-credit-card"></i>
+                                <span> Banka Hesapları </span>
+                            </a>
+                        </li>
+                        <li class="submenu">
                             <a class="" href="{{route('admin.sss')}}">
                                 <i class="fa fa-question"></i>
                                 <span> SSS </span>
