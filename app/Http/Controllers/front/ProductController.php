@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Comment;
 use App\Models\Image;
 use App\Models\Product;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,6 +15,18 @@ class ProductController extends Controller
 {
 
     public function index($category,$slug){
+
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
 
         $product = Product::where('slug',$slug)->firstOrFail();
 
@@ -36,6 +49,18 @@ class ProductController extends Controller
     }
 
     public function search(){
+
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
 
         $searching = request('searching');
 

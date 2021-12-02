@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CartProduct;
 use App\Models\Carts;
 use App\Models\Product;
+use App\Models\Visitor;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,19 @@ class CartController extends Controller
 {
 
     public function index(){
+
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
+        
         $shipping = 45;
 
         return view('front.cart.cart',compact('shipping'));

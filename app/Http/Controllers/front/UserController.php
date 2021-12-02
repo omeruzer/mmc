@@ -8,6 +8,7 @@ use App\Models\Carts;
 use App\Models\LoginSeo;
 use App\Models\RegisterSeo;
 use App\Models\User;
+use App\Models\Visitor;
 use Dotenv\Validator;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -20,6 +21,18 @@ class UserController extends Controller
 {
     
     public function loginForm(){
+
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
         
         $seo = LoginSeo::find(1);
 

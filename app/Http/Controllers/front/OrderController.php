@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,6 +12,18 @@ class OrderController extends Controller
 {
 
     public function index(){
+
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
 
         if(!auth()->check()){
             return redirect()->route('login')->with('mesaj')->with('message','Siparişlerinizi Görebilmek için giriş yapmanız gerekmektedir.')->with('message_type','warning');
@@ -25,6 +38,18 @@ class OrderController extends Controller
 
     public function detail($id){
 
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
+
         if(!auth()->check()){
             return redirect()->route('login')->with('mesaj')->with('message','Siparişlerinizi Görebilmek için giriş yapmanız gerekmektedir.')->with('message_type','warning');
         }
@@ -35,6 +60,18 @@ class OrderController extends Controller
     }
 
     public function returnOrder($id){
+
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
 
         $order = Order::where('id',$id)->update([
             'status' => 'İade Talebi Oluşturuldu'
@@ -47,6 +84,18 @@ class OrderController extends Controller
     }
 
     public function backOrder(){
+
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
 
         $orders = Order::with('getCart')->whereHas('getCart', function($query){ $query->where('user', Auth::id()); })->orderByDesc('created_at')->where('status','İade Talebi Oluşturuldu')->get();
 

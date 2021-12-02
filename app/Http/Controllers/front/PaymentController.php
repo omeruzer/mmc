@@ -8,6 +8,7 @@ use App\Models\BankAccount;
 use App\Models\CartProduct;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Visitor;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -16,6 +17,18 @@ class PaymentController extends Controller
 {
 
     public function index(){
+
+        $ip         =   $_SERVER['REMOTE_ADDR'];
+        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+
+        Visitor::create([
+            'ip'            =>      $ip,
+            'language'      =>      $language,
+            'url'           =>      $url,
+            'browser'       =>      $browser
+        ]);
 
         if(!auth()->check()){
             return redirect()->route('login')->with('mesaj')->with('message','Sepetinizde ki ürünleri sipariş etmek için giriş yapmanız gerekmektedir.')->with('message_type','warning');

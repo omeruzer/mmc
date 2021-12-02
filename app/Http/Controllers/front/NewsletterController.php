@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class NewsletterController extends Controller
 {
+    
     public function add(Request $request){
         
         $validate = FacadesValidator::make($request->all(),[
