@@ -109,20 +109,20 @@
 		</div>
         <div class="box_cart">
             <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-xl-4 col-lg-4 col-md-6">
-            <ul>
-                <li>
-                    <span>Итого</span> {{Cart::subtotal()}} ₴
-                </li>
-                <li>
-                    <span>Стоимость доставки</span> {{$shipp->track}} ₴
-                </li>
-                <li>
-                    <span>К оплате</span> {{ str_replace(',', '', Cart::total()) + $shipp->track }}  ₴
-                </li>
-            </ul>
-            <a href="{{route('payment')}}" class="btn_1 full-width cart"> Оформить заказ</a>
+                <div class="row justify-content-end">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <ul>
+                            <li>
+                                <span>Итого</span> {{Cart::subtotal()}} ₴
+                            </li>
+                            <li>
+                                <span>Стоимость доставки</span> {{$shipp->track}} ₴
+                            </li>
+                            <li>
+                                <span>К оплате</span> {{ str_replace(',', '', Cart::total()) + $shipp->track }}  ₴
+                            </li>
+                        </ul>
+                        <a href="{{route('payment')}}" class="btn_1 full-width cart"> Оформить заказ</a>
                     </div>
                 </div>
             </div>

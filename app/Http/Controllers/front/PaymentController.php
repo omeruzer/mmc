@@ -39,7 +39,6 @@ class PaymentController extends Controller
             'shipping' => 'required',
         ]);
 
-
         $request = [
             'cart' => session('activeCartId'),
             'name'=> request('name'),

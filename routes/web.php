@@ -333,3 +333,7 @@ Route::group(['prefix' => 'admin'],function(){
     });
 
 });
+
+Route::fallback(function () {
+    return view('front.error.404');
+});

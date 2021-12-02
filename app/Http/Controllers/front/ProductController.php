@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
     public function index($category,$slug){
 
         $product = Product::where('slug',$slug)->firstOrFail();
@@ -23,6 +24,12 @@ class ProductController extends Controller
         $user = Auth::id();
 
         $images = Image::where('product',$product->id)->get();
+
+        
+
+        $hit = Product::where('slug',$slug)->update([
+            'hit'   =>  $product->hit+1
+        ]);
         
         return view('front.product.product',compact('product','similarProducts','comments','user','images'));
         

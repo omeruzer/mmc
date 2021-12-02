@@ -15,17 +15,20 @@ class BrandSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create(); 
-
-        for ($i=0; $i < 3 ; $i++) {
-            
-            $name = $faker->sentence(2);
-
-            Brand::create([
-               'name' => $name,
-               'img'  => 'brand_'. $i+1 .'.png',
-               'slug' => Str::slug($name)
-            ]);
-        }
+        Brand::create([
+            'name' => 'by MMC',
+            'img'  => 'bymmc.png',
+            'slug' => Str::slug('by MMC')
+        ]);
+        Brand::create([
+            'name' => 'MARQUEZ',
+            'img'  => 'marquez.png',
+            'slug' => Str::slug('MARQUEZ')
+        ]);
+        Brand::create([
+            'name' => 'M-UZER',
+            'img'  => 'muzer.png',
+            'slug' => Str::slug('M-UZER')
+        ]);
     }
 }

@@ -68,7 +68,7 @@
                           <td style="font-weight: lighter">{{$order->created_at}}</td>
                           <td>
                             <a href="{{route('admin.order.detail',$order->id)}}"><button class="btn btn-primary" type="submit"><i class="fa fa-book-open"></i></button></a>
-                            <a href=""><button onclick="return confirm('Silmek İstediğinize Emin Misiniz? Bir daha Geri Alamayacaksınız!')" class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button></a>
+                            <a href="{{route('admin.order.delete',$order->id)}}"><button onclick="return confirm('Silmek İstediğinize Emin Misiniz? Bir daha Geri Alamayacaksınız!')" class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button></a>
                           </td>
                         </span>
                       @endif
