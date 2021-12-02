@@ -41,17 +41,17 @@ class HomeController extends Controller
         $lastWeekVisitor    =   DB::select('SELECT DISTINCT ip FROM visitors WHERE created_at >= NOW() - INTERVAL 7 day');
         $lastDayVisitor     =   DB::select('SELECT DISTINCT ip FROM visitors WHERE created_at >= NOW() - INTERVAL 1 day');
 
-        $ip         =   $_SERVER['REMOTE_ADDR'];
-        $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
-        $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
+        // $ip         =   $_SERVER['REMOTE_ADDR'];
+        // $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        // $url        =   $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+        // $browser    =   substr($_SERVER['HTTP_USER_AGENT'],0,12);
 
-        Visitor::create([
-            'ip'            =>      $ip,
-            'language'      =>      $language,
-            'url'           =>      $url,
-            'browser'       =>      $browser
-        ]);
+        // Visitor::create([
+        //     'ip'            =>      $ip,
+        //     'language'      =>      $language,
+        //     'url'           =>      $url,
+        //     'browser'       =>      $browser
+        // ]);
 
         $visitors = Visitor::distinct('ip')->orderByDesc('id')->get();
 
