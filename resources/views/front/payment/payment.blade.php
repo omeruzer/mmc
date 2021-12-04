@@ -73,7 +73,7 @@
 								<h6 class="pb-2">Способ оплаты</h6>
 								<ul>
 									<li>
-										<label class="container_radio">Karta Transfer
+										<label class="container_radio">Оплата картой
 											<input class="card-checked" type="radio" name="payment" value="Kredi Kartı">
 											<span class="checkmark"></span>
 										</label>
@@ -86,28 +86,28 @@
 										</div>
 									</li>
 									<li>
-										<label class="container_radio">Kapıda Ödeme
+										<label class="container_radio">Наложенным платежом
 											<input class="door" type="radio" name="payment" value="Kapıda Ödeme">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 								</ul>
-								<h6 class="pb-2">Teslimat Türü</h6>
+								<h6 class="pb-2">Тип доставки</h6>
 								<ul>
 									<li>
-										<label class="container_radio">Nova Poşta
+										<label class="container_radio">Новая почта
 											<input type="radio" name="shipping" value="Nova Poşta">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
-										<label class="container_radio">Adrese Teslim
+										<label class="container_radio">Адресная доставка
 											<input type="radio" name="shipping" value="Adrese Teslim">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
-										<label class="container_radio">Gel Al
+										<label class="container_radio">Самовывоз
 											<input type="radio" name="shipping" value="Gel Al">
 											<span class="checkmark"></span>
 										</label>

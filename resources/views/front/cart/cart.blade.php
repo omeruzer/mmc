@@ -103,7 +103,7 @@
                 <form action="{{route('cart.deleteAll')}}" class="deleteall" method="post">
                     @csrf
                     @method('DELETE')
-				    <button type="submit" class="btn btn-danger">Sepeti Boşalt <i class="fa fa-trash"></i></button>
+				    <button type="submit" class="btn btn-danger">опустошить корзину <i class="fa fa-trash"></i></button>
                 </form>
 			</div>
 		</div>

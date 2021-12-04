@@ -66,7 +66,7 @@ class PaymentController extends Controller
             'phone' => htmlspecialchars(request('phone')),
             'paymentType' => request('payment'),
             'shipping' => request('shipping'),
-            'status'=> 'Siparişiniz Alındı',
+            'status'=> 'заказ принят',
             'orderAmount'=> request('cartTotal'),
         ];
         //dd($request['orderAmount']);

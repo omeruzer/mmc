@@ -81,7 +81,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="desc">Статус:</label>
-                                    @if ($orders->status == 'Sipariş İptal Edildi'  || $orders->status == 'İade Talebi Oluşturuldu')
+                                    @if ($orders->status == 'Заказ отменён'  || $orders->status == 'Запрос на возврат создан')
                                         <p class="status" style="color: red">{{$orders->status}}</p>
                                     @else
                                         <p class="status" style="color: #47C68E">{{$orders->status}}</p>
@@ -104,7 +104,7 @@
                                     <p style="color: #47C68E"><b>${{ ($orders->orderAmount) }}</b></p>
                                 </div>
                                 <div class="form-group" style="float: right">
-                                    @if ($orders->status != 'İade Talebi Oluşturuldu')
+                                    @if ($orders->status != 'Запрос на возврат создан')
                                         <a href="{{route('returnOrder',$orders->id)}}"><button class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите его вернуть?')" type="submit">создать запрос на возврат <i class="fa fa-undo"></i></button></a>
                                     @else
                                     

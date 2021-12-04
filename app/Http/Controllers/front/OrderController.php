@@ -74,11 +74,11 @@ class OrderController extends Controller
         ]);
 
         $order = Order::where('id',$id)->update([
-            'status' => 'İade Talebi Oluşturuldu'
+            'status' => 'Запрос на возврат создан'
         ]);
 
         if($order){
-            return redirect()->back()->with('message','İade Talebi Oluşturuldu.')->with('message_type','warning');
+            return redirect()->back()->with('message','Запрос на возврат создан.')->with('message_type','warning');
         }  
 
     }

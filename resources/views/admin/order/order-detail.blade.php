@@ -71,12 +71,12 @@
                                     <div class="form-group">
                                         <label for="desc">Sipariş Durumu</label>
                                         <select class="form-control" name="status" id="status">
-                                            <option {{old('status',$order->status) == "Siparişiniz Alındı" ? "selected" : ""}}>Siparişiniz Alındı</option>
-                                            <option {{old('status',$order->status) == 'Siparişiniz Hazırlanıyor' ? 'selected' : ""}}>Siparişiniz Hazırlanıyor</option>
-                                            <option {{old('status',$order->status) == 'Kargoya Verildi' ? 'selected' : ""}}>Kargoya Verildi</option>
-                                            <option {{old('status',$order->status) == 'Sipariş Tamamlandı' ? 'selected' : ""}}>Sipariş Tamamlandı</option>
-                                            <option {{old('status',$order->status) == 'Sipariş İptal Edildi' ? 'selected' : ""}}>Sipariş İptal Edildi</option>
-                                            <option {{old('status',$order->status) == 'İade Talebi Oluşturuldu' ? 'selected' : ""}}>İade Talebi Oluşturuldu</option>
+                                            <option {{old('status',$order->status) == "заказ принят" ? "selected" : ""}}>заказ принят</option>
+                                            <option {{old('status',$order->status) == 'Заказ обрабатывается' ? 'selected' : ""}}>Заказ обрабатывается</option>
+                                            <option {{old('status',$order->status) == 'Заказ отправлен' ? 'selected' : ""}}>Заказ отправлен</option>
+                                            <option {{old('status',$order->status) == 'заказ выполнен' ? 'selected' : ""}}>заказ выполнен</option>
+                                            <option {{old('status',$order->status) == 'Заказ отменён' ? 'selected' : ""}}>Заказ отменён</option>
+                                            <option {{old('status',$order->status) == 'Запрос на возврат создан' ? 'selected' : ""}}>Запрос на возврат создан</option>
                                         </select>
                                     </div>
                                     <div class="form-group track">
@@ -189,7 +189,7 @@
     $('.track').hide();
 
     $('#status').on('change', function () {
-    if(this.value == 'Kargoya Verildi' || this.value == 'Sipariş Tamamlandı' ){
+    if(this.value == 'Заказ отправлен' || this.value == 'заказ выполнен' ){
         $('.track').show();
     }else{ 
         $('.track').hide();
