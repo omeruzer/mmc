@@ -110,7 +110,7 @@
                     @else
                         <div class="container">
                             <div class="col-lg-12" style="text-align: center">
-                                <h1>Bu Kategoride Hiç Ürünümüz Yok</h1>
+                                <h1>У нас нет товаров в этой категории</h1>
                             </div>
                         </div>
                     @endif

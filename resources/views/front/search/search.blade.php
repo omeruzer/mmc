@@ -102,7 +102,7 @@
                             <div class="container" style="margin-top:50px ">
                                 <div class="col-lg-12" style="text-align: center">
                                     <h4>
-                                        Aradığınız Kelimeye Ait Bir Ürün Bulamadık. <br> <span>Alışverişe Devam Etmek İçin <a href="{{route('homepage')}}">Tıklayınız</a></span>
+                                        Мы не смогли найти продуктов, соответствующих вашему поисковому запросу.. <br> <span>для покупок <a href="{{route('homepage')}}">кликните сюда</a></span>
                                     </h4>
                                 </div>
                             </div>                        
