@@ -89,12 +89,7 @@
                                 </div>
                                 <div class="form-group trackCode">
                                     <label for="desc">Kargo Takip Numarası:</label>
-                                    <p><b>{{$orders->trackCode}}</b> | 
-                                        @if ((($orders->status == 'Kargoya Verildi') || ($orders->status == 'Sipariş Tamamlandı')))
-                                            <a href="https://tracking.novaposhta.ua/#/uk" style="color: #47C68E" href="#">Kargom Nerede?</a>
-                                        @else
-                                        
-                                        @endif 
+                                    <p><b>{{$orders->trackCode}}</b></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Итого:</label>
