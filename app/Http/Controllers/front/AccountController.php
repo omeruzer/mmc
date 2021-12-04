@@ -57,14 +57,14 @@ class AccountController extends Controller
 
         $this->validate(request(),[
             'name' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email',
             'phone' => 'required',
         ]);
 
         $data = [
-            'name' => request('name'),
-            'email' => request('email'),
-            'phone' => request('phone'),
+            'name' => htmlspecialchars(request('name')),
+            'email' => htmlspecialchars(request('email')),
+            'phone' => htmlspecialchars(request('phone')),
         ];
 
         $save = User::where('id',auth()->id())->update($data);
@@ -98,9 +98,9 @@ class AccountController extends Controller
             'newPassword' => 'required|confirmed|min:5|max:15',
         ]);
 
-        $pass = request('password');
+        $pass = htmlspecialchars(request('password'));
 
-        $newPass = request('newPassword');
+        $newPass = htmlspecialchars(request('newPassword'));
 
         $password = User::where('id',auth()->id())->firstOrCreate();
 
@@ -141,17 +141,17 @@ class AccountController extends Controller
 
     public function addressAccountPost(){
         $this->validate(request(),[
-            'address' => 'required',
-            'country' => 'required',
-            'city' => 'required',
-            'postCode' => 'required',
+            'address'   => 'required',
+            'country'   => 'required',
+            'city'      => 'required',
+            'postCode'  => 'required',
         ]);
 
         $data = [
-            'address' => request('address'),
-            'country' => request('country'),
-            'city' => request('city'),
-            'postCode' => request('postCode'),
+            'address'   => htmlspecialchars(request('address')),
+            'country'   => htmlspecialchars(request('country')),
+            'city'      => htmlspecialchars(request('city')),
+            'postCode'  => htmlspecialchars(request('postCode')),
         ];
 
         $save = User::where('id',auth()->id())->update($data);

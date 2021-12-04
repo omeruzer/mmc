@@ -23,9 +23,9 @@ class CommentController extends Controller
             'comment' => 'required',
         ]);
 
-        $product = request('product');
+        $product = htmlspecialchars(request('product'));
         $user = Auth::id();
-        $comment = request('comment');
+        $comment = htmlspecialchars(request('comment'));
 
         $data = [
             'product' => $product,

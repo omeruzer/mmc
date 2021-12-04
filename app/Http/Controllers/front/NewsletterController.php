@@ -21,7 +21,7 @@ class NewsletterController extends Controller
             return redirect()->route('help')->withErrors($validate)->withInput();
         }
 
-        $email = request('email');
+        $email = htmlspecialchars(request('email'));
 
         $add = Newsletter::create([
             'email' => $email

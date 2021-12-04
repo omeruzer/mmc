@@ -47,8 +47,8 @@ class UserController extends Controller
 
         $credentials = [
 
-            'email' => request('email'),
-            'password' => request('password'),
+            'email' => htmlspecialchars(request('email')),
+            'password' => htmlspecialchars(request('password')),
             'active' => 1
 
         ];
@@ -79,17 +79,17 @@ class UserController extends Controller
             return redirect()->route('register.form')->withErrors($rules)->withInput();
         }
 
-        $name    =   request('name');
-        $email      =   request('email');
-        $password      =   request('password');
+        $name       =   htmlspecialchars(request('name'));
+        $email      =   htmlspecialchars(request('email'));
+        $password   =   htmlspecialchars(request('password'));
 
         $user = User::create([
 
-            'name'               =>  $name,
-            'email'                 =>  $email,
-            'password'             =>  Hash::make($password),
-            'active'               =>  1,
-            'manager'               =>  0
+            'name'      =>  $name,
+            'email'     =>  $email,
+            'password'  =>  Hash::make($password),
+            'active'    =>  1,
+            'manager'   =>  0
             
         ]);
         Auth::login($user);

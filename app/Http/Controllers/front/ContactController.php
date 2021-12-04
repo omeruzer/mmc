@@ -39,10 +39,10 @@ class ContactController extends Controller
             ]);
 
             $message = Messages::create([
-                'name' => request('name'),
-                'subject' => request('subject'),
-                'email' => request('email'),
-                'content' => request('content')
+                'name' => htmlspecialchars(request('name')),
+                'subject' => htmlspecialchars(request('subject')),
+                'email' => htmlspecialchars(request('email')),
+                'content' => htmlspecialchars(request('content'))
             ]);
 
             if($message){

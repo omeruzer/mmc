@@ -62,7 +62,7 @@ class ProductController extends Controller
             'browser'       =>      $browser
         ]);
 
-        $searching = request('searching');
+        $searching = htmlspecialchars(request('searching'));
 
 
             $products = Product::with('getCategory')->where('name','like','%'.$searching.'%')
