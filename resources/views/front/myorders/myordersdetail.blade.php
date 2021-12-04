@@ -44,9 +44,9 @@
                                             <td>{{$order->getProducts->code}}</td>
                                             <td>{{$order->getProducts->getCategory->title}}</td>
                                             <td>{{$order->getProducts->getBrand->name}}</td>
-                                            <td>${{$order->getProducts->price}}</td>
+                                            <td>{{$order->getProducts->price}} ₴</td>
                                             <td>{{$order->quantity}}</td>
-                                            <td>${{ ($order->getProducts->price) * ($order->quantity) }}</td>
+                                            <td>{{ ($order->getProducts->price) * ($order->quantity) }} ₴</td>
                                         </tr>
                                     @endforeach  
                                     </tbody>
@@ -88,20 +88,20 @@
                                     @endif
                                 </div>
                                 <div class="form-group trackCode">
-                                    <label for="desc">Kargo Takip Numarası:</label>
+                                    <label for="desc">Номер отслеживания доставки:</label>
                                     <p><b>{{$orders->trackCode}}</b></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Итого:</label>
-                                    <p>${{$orders->orderAmount - $shipp->track}}</p>
+                                    <p>{{$orders->orderAmount - $shipp->track}} ₴</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Стоимость доставки:</label>
-                                    <p>${{$shipp->track}}</p>
+                                    <p>{{$shipp->track}} ₴</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">К оплате:</label>
-                                    <p style="color: #47C68E"><b>${{ ($orders->orderAmount) }}</b></p>
+                                    <p style="color: #47C68E"><b>{{ ($orders->orderAmount) }} ₴</b></p>
                                 </div>
                                 <div class="form-group" style="float: right">
                                     @if ($orders->status != 'Запрос на возврат создан')
@@ -125,15 +125,18 @@
 <link href="/assets/front/css/account.css" rel="stylesheet">
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="/assets/font-awesome/css/all.css" rel="stylesheet" type="text/css" />
-
+<link rel='stylesheet' href='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Tracking/styles/tracking.css' />
 @endsection 
 @section('footer')
+
+<script type='text/javascript' id='track' charset='utf-8' data-lang='ru' apiKey='d371e5b7749285cd62c44f7d6b744ef9' data-town='city-not-default' data-town-name='undefined' data-town-id='undefined' src='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Tracking/dist/track.min.js'></script>
+
     <script>
         $('.trackCode').hide()
         
         var status = $('.status').html()
         
-        if(status == 'Kargoya Verildi' || status == 'Sipariş Tamamlandı' ){
+        if(status == 'Заказ отправлен' || status == 'заказ выполнен' ){
             $('.trackCode').show()
         }else{
             $('.trackCode').hide()

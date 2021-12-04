@@ -39,7 +39,7 @@
                                         @foreach ($orders as $order)
                                             <tr>
                                                 <td>SP-00{{$order->id}}</td>
-                                                <td>{{$order->orderAmount}}$</td>
+                                                <td>{{$order->orderAmount}} ₴</td>
                                                 <td>{{$order->getCart->cartProductQty()}}</td>
                                                 <td>{{$order->status}}</td>
                                                 <td>
