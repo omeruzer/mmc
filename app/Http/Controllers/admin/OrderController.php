@@ -59,7 +59,7 @@ class OrderController extends Controller
 
     public function backOrder(){
 
-        $orders = Order::where('status','İade Talebi Oluşturuldu')->orderByDesc('id')->get();
+        $orders = Order::where('status','Запрос на возврат создан')->orderByDesc('id')->get();
 
         return view('admin.order.return-order',compact('orders'));
     }

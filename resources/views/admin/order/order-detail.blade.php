@@ -114,9 +114,9 @@
                                         <td>{{$product->getProducts->code}}</td>
                                         <td>{{$product->getProducts->getCategory->title}}</td>
                                         <td>{{$product->getProducts->getBrand->name}}</td>
-                                        <td>{{$product->getProducts->price}}</td>
+                                        <td>{{$product->getProducts->price}} ₴</td>
                                         <td>{{$product->quantity}}</td>
-                                        <td>{{ ($product->getProducts->price) * ($product->quantity) }}</td>
+                                        <td>{{ ($product->getProducts->price) * ($product->quantity) }} ₴</td>
                                     </tr>
                                 @endforeach   
                             </tbody>
@@ -144,15 +144,15 @@
                                 <div class="">
                                     <div class="form-group" >
                                         <label for="desc">Toplam:</label>
-                                        <p>${{$order->orderAmount - $shipp->track}}</p>
+                                        <p>{{$order->orderAmount - $shipp->track}} ₴</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="desc">Kargo:</label>
-                                        <p>${{$shipp->track}}</p>
+                                        <p>{{$shipp->track}} ₴</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="desc">Genel Tutar:</label>
-                                        <p><b>${{ ($order->orderAmount)}}</b></p>
+                                        <p><b>{{ ($order->orderAmount)}} ₴</b></p>
                                     </div>
                                 </div>
                             </div>
