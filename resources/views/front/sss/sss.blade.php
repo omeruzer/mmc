@@ -52,7 +52,23 @@
 
 			$('.question').click(function (e) {
 
-				$(this).next().slideToggle();				
+				$(this).next().slideToggle();	
+
+			});
+
+			$('.question').click(function (e) {
+
+				var i = $('#arrow').attr('class');
+
+				if(i == 'fa fa-arrow-down'){
+					$('#arrow').removeAttr('class');
+					$('#arrow').attr('class', 'fa fa-arrow-up');
+
+				}else{
+					$('#arrow').removeAttr('class');
+					$('#arrow').attr('class', 'fa fa-arrow-down');
+
+				}		
 
 			});
 

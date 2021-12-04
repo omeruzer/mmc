@@ -34,13 +34,13 @@
 					<a class="box_topic" href="{{route('address-account')}}">
 						<i class="fa fa-map-marker-alt"></i>
 						<h3>Адрес доставки</h3>
-						<p>Здесь вы можете увидеть свой адрес.</p>
+						<p>Здесь вы можете  <br> увидеть свой адрес.</p>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<a class="box_topic" href="{{route('favorites')}}">
 						<i class="fa fa-heart"></i>
-						<h3> Список желаний </h3>
+						<h3> мои любимые </h3>
 						<p>Здесь вы можете увидеть свое избранное.</p>
 					</a>
 				</div>
@@ -48,7 +48,7 @@
 					<a class="box_topic" href="{{route('myOrders')}}">
 						<i class="fa fa-shipping-fast"></i>
 						<h3>Мои заказы</h3>
-						<p>Вы можете увидеть свои заказы здесь.</p>
+						<p>Вы можете увидеть <br> свои заказы здесь.</p>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-6">
@@ -76,7 +76,7 @@
 					<a class="box_topic" href="{{ route('logout') }}">
 						<i class="fa fa-sign-out-alt"></i>
 						<h3>Выход</h3>
-						<p>Вы - конец вашей сессии.</p>
+						<p>Вы - конец <br> вашей сессии.</p>
 					</a>
 				</div>
 			</div>

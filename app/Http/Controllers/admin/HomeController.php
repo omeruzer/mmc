@@ -73,7 +73,7 @@ class HomeController extends Controller
         $cancelOrder = Order::where('status','Sipariş İptal Edildi')->count();
         $returnOrder = Order::where('status','İade Talebi Oluşturuldu')->count();
 
-        return view('admin.home.home',compact('returnOrder','cancelOrder','WaitOrder','NewOrder','endOrder','truckOrder','orderCount','amount','userCount','categoryCount','productCount','branchCount','blogCount','brandCount','messageCount','managerCount','decliningstocks','browser','ip','language','url','visitors','lastMonthVisitor','lastWeekVisitor','lastDayVisitor','newProducts'));
+        return view('admin.home.home',compact('returnOrder','cancelOrder','WaitOrder','NewOrder','endOrder','truckOrder','orderCount','amount','userCount','categoryCount','productCount','branchCount','blogCount','brandCount','messageCount','managerCount','decliningstocks','visitors','lastMonthVisitor','lastWeekVisitor','lastDayVisitor','newProducts'));
     }
 
     public function visitorDelete(){

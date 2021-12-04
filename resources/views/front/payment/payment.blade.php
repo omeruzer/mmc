@@ -130,7 +130,7 @@
 							</ul>
 							<ul>
 								<li class="clearfix"><em><strong>Итого</strong></em>  <span>{{Cart::subtotal()}} ₴</span></li>
-								<li class="clearfix"><em><strong>Стоимость доставки</strong></em> <span>${{$shipp->track}} ₴</span></li>
+								<li class="clearfix"><em><strong>Стоимость доставки</strong></em> <span>{{$shipp->track}} ₴</span></li>
 								
 							</ul>
 							<div class="total clearfix">К оплате <span>{{ str_replace(',', '', Cart::total()) + $shipp->track }} ₴</span></div>
