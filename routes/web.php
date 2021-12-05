@@ -122,7 +122,7 @@ Route::get('/comment/{id}',[FrontCommentController::class,'delete'])->name('comm
 Route::get('/mycomment',[FrontCommentController::class,'index'])-> name('mycomment');
 Route::get('/mycomment/{id}',[FrontCommentController::class,'detail'])-> name('mycomment.detail');
 
-Route::get('/sss',[FrontSSSController::class,'index'])->name('sss');
+Route::get('/faq',[FrontSSSController::class,'index'])->name('sss');
 
 Route::get('/order/back',[FrontOrderController::class,'backOrder'])->name('order.back');
 

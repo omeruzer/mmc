@@ -240,28 +240,34 @@
             <span>Blog</span>
             <p>Вы можете узнать, прочитав наши статьи.</p>
         </div>
-        <div class="row">
-            @foreach ($blogs as $blog)
-                <div class="col-lg-6">
-                    <a class="box_news" href="{{ route('blog-detail',[$blog->slug]) }}">
-                        <figure>
-                            <img src="/assets/images/blogs/{{$blog->img}}" alt="{{$blog->title}}" width="400" height="266" class="lazy">
-                        </figure>
-                        <ul>
-                            <li>{{$blog->created_at}}</li>
-                        </ul>
-                        <h4>{{$blog->title}}</h4>
-                        <p>{{ Str::substr($blog->content, 0, 100)  }}...</p>
-                    </a>
-                </div>
-                <!-- /box_news -->
-            @endforeach
-            <div class="container">
-                <div class="row" style="text-align: center">
-                    <a href="{{route('blog')}}"><button class="addCard blogBtn" type="submit">Просмотреть все сообщения</button></a>
+        @if (count($blogs) > 0 )
+            <div class="row">
+                @foreach ($blogs as $blog)
+                    <div class="col-lg-6">
+                        <a class="box_news" href="{{ route('blog-detail',[$blog->slug]) }}">
+                            <figure>
+                                <img src="/assets/images/blogs/{{$blog->img}}" alt="{{$blog->title}}" width="400" height="266" class="lazy">
+                            </figure>
+                            <ul>
+                                <li>{{$blog->created_at}}</li>
+                            </ul>
+                            <h4>{{$blog->title}}</h4>
+                            <p>{{ Str::substr($blog->content, 0, 100)  }}...</p>
+                        </a>
+                    </div>
+                    <!-- /box_news -->
+                @endforeach
+                <div class="container">
+                    <div class="row" style="text-align: center">
+                        <a href="{{route('blog')}}"><button class="addCard blogBtn" type="submit">Просмотреть все сообщения</button></a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @else
+            <p style="text-align: center; font-size: 18px" >
+                нам грустно. В настоящее время у нас нет записи в блоге...
+            </p>
+        @endif
         <!-- /row -->
     </div>
     

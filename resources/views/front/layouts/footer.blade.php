@@ -43,7 +43,7 @@
                         <li><a href="{{ route('homepage') }}">Главная</a></li>
                         <li><a href="{{ route('about') }}">O Нас</a></li>
                         <li><a href="{{ route('blog') }}">блог</a></li>
-                        <li><a href="{{ route('blog') }}">FAQ</a></li>
+                        <li><a href="{{ route('sss') }}">FAQ</a></li>
                         <li><a href="{{ route('contact') }}">Контакты</a></li>
                         <li><a href="{{ route('help') }}">Помощь</a></li>
                     </ul>

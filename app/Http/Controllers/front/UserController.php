@@ -76,7 +76,7 @@ class UserController extends Controller
         ]);
 
         if($rules->fails()){
-            return redirect()->route('register.form')->withErrors($rules)->withInput();
+            return redirect()->route('login.form')->withErrors($rules)->withInput();
         }
 
         $name       =   htmlspecialchars(request('name'));
