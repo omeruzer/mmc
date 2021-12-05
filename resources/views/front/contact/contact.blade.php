@@ -13,7 +13,6 @@
     <div class="container margin_60">
         <div class="main_title">
             <h2>Контакты</h2>
-            <p>İletişim ile ilgili bir yazı.</p>
         </div>
         
         <div class="row justify-content-center">
@@ -33,7 +32,7 @@
     <!-- /container -->
 <div class="bg_white">
     <div class="container margin_60_35">
-        <h4 class="pb-3">Bize Ulaşın</h4>
+        <h4 class="pb-3">Связаться с нами</h4>
         <div class="row">
             <div class="col-lg-4 col-md-6 add_bottom_25">
                 <form action="{{ route('contact.send') }}" method="POST">

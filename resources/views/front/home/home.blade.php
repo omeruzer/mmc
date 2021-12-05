@@ -66,28 +66,28 @@
 
     <ul id="banners_grid" class="clearfix">
         <li>
-            <a href="#0" class="img_container">
+            <a href="/category/zenskie-xudi/8" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="/assets/images/banner/banner-1.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Женская толстовки</h3>
+                    <h3>ЖЕНСКИЕ худи</h3>
                     <div><span class="btn_1">начать покупки</span></div>
                 </div>
             </a>
         </li>
         <li>
-            <a href="#0" class="img_container">
+            <a href="/category/zenskii-kostyum/7" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="\assets\images\banner\banner-2.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>женский костюм</h3>
+                    <h3>ЖЕНСКИЕ костюм</h3>
                     <div><span class="btn_1">начать покупки</span></div>
                 </div>
             </a>
         </li>
         <li>
-            <a href="#0" class="img_container">
+            <a href="/category/zenskie-svitera/6" class="img_container">
                 <img src="img/banners_cat_placeholder.jpg" data-src="/assets/images/banner/banner-3.png" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Женская Свитер</h3>
+                    <h3>ЖЕНСКИЕ Свитер</h3>
                     <div><span class="btn_1">начать покупки</span></div>
                 </div>
             </a>
