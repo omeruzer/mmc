@@ -59,7 +59,7 @@
                 <div class="prod_info">
                     <h1><b>{{strtoupper($product->getBrand->name)}}</b> {{mb_convert_case($product->name,MB_CASE_TITLE)}}</h1>
                     {{-- <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span> --}}
-                    <p><small>Код : </small><b style="color: #47C78E">{{$product->code}}</b><br><br>Ростовок Цена : <b style="color: #47C78E">${{$product->price*4}}</b><br><br>на складе : <b style="color: #47C78E">{{$product->quantity}}</b></p>
+                    <p><small>Код : </small><b style="color: #47C78E">{{$product->code}}</b><br><br>Ростовок Цена : <b style="color: #47C78E">{{$product->price*4}} ₴</b><br><br>на складе : <b style="color: #47C78E">{{$product->quantity}}</b></p>
                     @if ($product->quantity > 0)
                     <form action=" {{ route('cart.add') }} " method="post">
                         @csrf
@@ -89,7 +89,7 @@
                     @else
                     <div class="row">
                         <div class="col-lg-5 col-md-6">
-                            <div class="price_main"><span class="new_price" style="color: #c6c6c6">${{$product->price}}</span></div>
+                            <div class="price_main"><span class="new_price" style="color: #c6c6c6">{{$product->price}} ₴</span></div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <input style="background-color: #c6c6c6 " type="submit" value="Нет В Наличии" disabled class="addCard">
