@@ -57,7 +57,7 @@ class ProductController extends Controller
     
                 if($img->isValid()){
 
-                    $img->move('assets\images\products',$imgName);
+                    $img->move('assets/images/products/',$imgName);
 
                 }
                 Product::create([
@@ -183,7 +183,7 @@ class ProductController extends Controller
 
                 unlink($path); // Eski Resmi Dosyadan Siler
 
-                $img->move('assets/images/products',$imgName); // Yeni Resmi Dosyaya Yükler
+                $img->move('assets/images/products/',$imgName); // Yeni Resmi Dosyaya Yükler
 
                 $data['img'] = $imgName;
             }

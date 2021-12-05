@@ -29,7 +29,7 @@ class ImageController extends Controller
                 $imgName = rand(0,999).'-'.time(). '.' . $img->extension();
     
                 if($img->isValid()){
-                    $img->move('assets\images\products',$imgName);
+                    $img->move('assets/images/products/',$imgName);
                 }
 
                 $save = Image::where('product',$id)->create([
