@@ -31,9 +31,9 @@ class PaymentController extends Controller
         ]);
 
         if(!auth()->check()){
-            return redirect()->route('login')->with('mesaj')->with('message','Sepetinizde ki ürünleri sipariş etmek için giriş yapmanız gerekmektedir.')->with('message_type','warning');
+            return redirect()->route('login')->with('mesaj')->with('message','Вы должны войти в систему, чтобы заказать товары в корзине.')->with('message_type','warning');
         }elseif(count(Cart::content()) == 0){
-            return redirect()->route('cart')->with('mesaj')->with('message','Ödeme yapmak için sepetinizde ürün bulunması gerekmektedir.')->with('message_type','warning');
+            return redirect()->route('cart')->with('mesaj')->with('message','Для оплаты у вас должен быть товар в корзине.')->with('message_type','warning');
         }
 
         $user = auth();

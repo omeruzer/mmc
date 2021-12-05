@@ -4,8 +4,8 @@
         <div class="container">
             <div class="row small-gutters">
                 <div class="col-xl-3 col-lg-3 d-lg-flex align-items-center">
-                    <div id="logo">
-                        <a href="{{ route('homepage') }}"><img style="size: 25%" src="/assets/images/logo/{{$set->logo}}" alt="" width="100" height="35"></a>
+                    <div id="logo" >
+                        <a href="{{ route('homepage') }}"><img style="width: auto" src="/assets/images/logo/{{$set->logo}}" alt="" width="100" height="35"></a>
                     </div>
                 </div>
                 <nav class="col-xl-6 col-lg-7">
