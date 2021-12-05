@@ -66,12 +66,12 @@ class HomeController extends Controller
 
         $orderCount = Order::count();
 
-        $truckOrder = Order::where('status','Kargoya Verildi')->count();
-        $endOrder = Order::where('status','Sipariş Tamamlandı')->count();
-        $NewOrder = Order::where('status','!=','İade Talebi Oluşturuldu')->where('isRead',0)->count();
-        $WaitOrder = Order::where('status','!=','İade Talebi Oluşturuldu')->where('isRead',1)->count();
-        $cancelOrder = Order::where('status','Sipariş İptal Edildi')->count();
-        $returnOrder = Order::where('status','İade Talebi Oluşturuldu')->count();
+        $truckOrder = Order::where('status','Заказ отправлен')->count();
+        $endOrder = Order::where('status','заказ выполнен')->count();
+        $NewOrder = Order::where('status','!=','Запрос на возврат создан')->where('isRead',0)->count();
+        $WaitOrder = Order::where('status','!=','Запрос на возврат создан')->where('isRead',1)->count();
+        $cancelOrder = Order::where('status','Заказ отменён')->count();
+        $returnOrder = Order::where('status','Запрос на возврат создан')->count();
 
         return view('admin.home.home',compact('returnOrder','cancelOrder','WaitOrder','NewOrder','endOrder','truckOrder','orderCount','amount','userCount','categoryCount','productCount','branchCount','blogCount','brandCount','messageCount','managerCount','decliningstocks','visitors','lastMonthVisitor','lastWeekVisitor','lastDayVisitor','newProducts'));
     }
