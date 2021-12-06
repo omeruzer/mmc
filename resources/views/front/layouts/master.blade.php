@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+    <!-- Chrome, Firefox ve Opera içim -->
+    <meta name="theme-color" content="#47c78e">
+    <!-- iOS Safari için -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#47c78e">
+    <!-- Windows Phone için -->
+    <meta name="msapplication-navbutton-color" content="#47c78e">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
