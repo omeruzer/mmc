@@ -13,6 +13,20 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <title>@yield('title')</title>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QTD57R0F22"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QTD57R0F22');
+    </script>
+
+    {{-- JIVO CHAT --}}
+
+    <script src="//code-eu1.jivosite.com/widget/jngYLerFb7" async></script>
+
     <!-- Font Awesome CSS -->
     <link href="/assets/font-awesome/css/all.css" rel="stylesheet" type="text/css" />
 
