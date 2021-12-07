@@ -105,7 +105,7 @@
                 <div class="item">
                     <div class="grid_item">
                         <span class="ribbon off">рекомендуемые </span>
-                        <figure>
+                        <figure style="margin: auto;width: 80%">
                             <a href="{{ route('product',[$featured->getProduct->getCategory->slug,$featured->getProduct->slug,$featured->getProduct->code]) }}">
                                 <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$featured->getProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$featured->getProduct->name}}">
                             </a>
@@ -169,9 +169,9 @@
                 <div class="item">
                     <div class="grid_item">
                         <span class="ribbon new">Новинки</span>
-                        <figure>
+                        <figure style="margin: auto;width: 80%">
                             <a href="{{ route('product',[$newProduct->getCategory->slug,$newProduct->slug,$newProduct->code]) }}">
-                                <img style="width: 400px%;  max-height: 300px" class="owl" src="/assets/images/products/{{$newProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$newProduct->name}}">
+                                <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$newProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$newProduct->name}}">
                             </a>
                             @if ($newProduct->quantity > 0)
                                 <div class="" style="width: 100%; background-color:#47C78E; ">
