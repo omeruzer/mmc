@@ -30,12 +30,16 @@
                 <form action="{{route('admin.bankaccount.save',$bankAccount->id)}}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group">
+                        <label for="name"> Ad Soyad</label>
+                        <input type="text" autocomplete="off" name="name" class="form-control" value="{{$bankAccount->name}}" placeholder="Ad Soyad" >
+                    </div>
+                    <div class="form-group">
                         <label for="name"> Banka Adı</label>
-                        <input type="text" autocomplete="off" name="bankName" class="form-control" value="{{$bankAccount->bankName}}" placeholder="E-mail" >
+                        <input type="text" autocomplete="off" name="bankName" class="form-control" value="{{$bankAccount->bankName}}" placeholder="Banka Adı" >
                     </div>
                     <div class="form-group">
                         <label for="name"> Hesap Numarası</label>
-                        <input type="text" autocomplete="off" name="accountNumber" class="form-control" value="{{$bankAccount->accountNumber}}" placeholder="E-mail" >
+                        <input type="text" autocomplete="off" name="accountNumber" class="form-control" value="{{$bankAccount->accountNumber}}" placeholder="Hesap Numarası" >
                     </div>
                     <button type="submit" class="btn btn-success">Ekle</button>
                 </form>

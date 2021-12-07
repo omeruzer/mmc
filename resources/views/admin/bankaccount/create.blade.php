@@ -30,6 +30,10 @@
                 <form action="{{route('admin.bankaccount.created')}}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group">
+                        <label for="name"> Ad Soyad</label>
+                        <input type="text" autocomplete="off" name="name" class="form-control" placeholder="Ad Soyad" >
+                    </div>
+                    <div class="form-group">
                         <label for="name"> Banka Adı</label>
                         <input type="text" autocomplete="off" name="bankName" class="form-control" placeholder="Banka Adı" >
                     </div>

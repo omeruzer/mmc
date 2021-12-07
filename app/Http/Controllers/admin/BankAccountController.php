@@ -21,12 +21,14 @@ class BankAccountController extends Controller
         if(request()->isMethod('POST')){
 
             $this->validate(request(),[
+                'name'          => 'required',
                 'bankName'      => 'required',
                 'accountNumber' => 'required',
             ]);
 
             BankAccount::create([
-                'bankName' => request('bankName'),
+                'name'          => request('name'),
+                'bankName'      => request('bankName'),
                 'accountNumber' => request('accountNumber'),
             ]);
 
@@ -45,12 +47,14 @@ class BankAccountController extends Controller
     public function save($id){
 
         $this->validate(request(),[
+            'name'          => 'required',
             'bankName'      => 'required',
             'accountNumber' => 'required',
         ]);
 
         BankAccount::where('id',$id)->update([
-            'bankName' => request('bankName'),
+            'name'          => request('name'),
+            'bankName'      => request('bankName'),
             'accountNumber' => request('accountNumber'),
         ]);
 

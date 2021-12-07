@@ -81,6 +81,7 @@
 									<li>
 										<div class="card-info">
 											<label for="">Информация об аккаунте</label>
+											<p>имя Фамилия : {{$bank->name}}</p>
 											<p>Название банка : {{$bank->bankName}}</p>
 											<p>номер счета : {{$bank->accountNumber}}</p>
 										</div>

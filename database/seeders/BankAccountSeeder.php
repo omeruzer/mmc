@@ -18,10 +18,12 @@ class BankAccountSeeder extends Seeder
 
         for($i=0;$i<3;$i++){
 
+            $name       = $faker->name();
             $bankName = $faker->sentence(1);
             $accountNumber = rand(46845468,96845468);
 
             BankAccount::create([
+                'name'          =>  $name,
                 'bankName'      =>  $bankName,
                 'accountNumber' =>  $accountNumber
             ]);

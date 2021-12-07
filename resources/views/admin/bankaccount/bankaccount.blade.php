@@ -38,6 +38,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Ad Soyad</th>
                         <th>Banka Numarası</th>
                         <th>Banka Adı</th>
                         <th>İşlemler</th>
@@ -47,6 +48,7 @@
                     @foreach ($bankAccounts as $bankAccount)
                         <tr>
                             <td>{{$bankAccount->id}}</td>
+                            <td>{{$bankAccount->name}}</td>
                             <td>{{$bankAccount->accountNumber}}</td>
                             <td>{{$bankAccount->bankName}}</td>
                             <td>
