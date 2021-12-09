@@ -32,11 +32,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '171114868521887');
+    fbq('init', '430667125370348');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=171114868521887&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=430667125370348&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
 
@@ -70,7 +70,7 @@
 
     <!-- BASE CSS -->
     <link href="/assets/front/css/bootstrap.custom.min.css" rel="stylesheet">
-    <link href="/assets/front/css/style.css" rel="stylesheet">
+    <link href="/assets/front/css/style.css" rel="stylesheet">  
 
 	<!-- SPECIFIC CSS -->
     <link href="/assets/front/css/home_1.css" rel="stylesheet">

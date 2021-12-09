@@ -27,7 +27,7 @@
 					<div class="form_container">
                         <div class="myOrdersTable">
                             <div class="">
-                                <label for="">Рисунок:</label><br>
+                                <label for="">Товар:</label><br>
                                 <img style="width: 20%;" src="/assets/images/products/{{$comment->getProduct->img}}" alt="" srcset="">
                             </div>
                             <div class="">

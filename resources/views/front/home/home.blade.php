@@ -12,7 +12,7 @@
                         <div class="row justify-content-center justify-content-md-end">
                             <div class="col-lg-6 static">
                                 <div class="slide-text text-end white">
-                                    <h2 class="owl-slide-animated owl-slide-title">женские толстовки по выгодным ценам</h2>
+                                    <h2 class="owl-slide-animated owl-slide-title">женская одежда по выгодным ценам</h2>
                                     <p class="owl-slide-animated owl-slide-subtitle">
                                         Начните делать покупки сейчас, чтобы не упустить выгодные предложения
                                     </p>
@@ -29,7 +29,7 @@
                         <div class="row justify-content-center justify-content-md-start">
                             <div class="col-lg-6 static">
                                 <div class="slide-text white">
-                                    <h2 class="owl-slide-animated owl-slide-title">Возможности, которые нельзя упускать в женских свитерах</h2>
+                                    <h2 class="owl-slide-animated owl-slide-title">Наши выгодные предложения</h2>
                                     <p class="owl-slide-animated owl-slide-subtitle">
                                         Начните делать покупки сейчас, чтобы не упустить выгодные предложения
                                     </p>
@@ -98,7 +98,7 @@
         <div class="main_title">
             <h2>Наши рекомендуемые товары</h2>
             <span>Featured</span>
-            <p>выгодные кампании по выбранным товарам</p>
+            <p>выгодные предложения по выбранным товарам</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($featureds as $featured)
@@ -162,7 +162,7 @@
         <div class="main_title">
             <h2>Горячие Новинки</h2>
             <span>New</span>
-            <p>новые модели подходящие к сезону</p>
+            <p>новые модели этого сезона</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($newProducts as $newProduct)
@@ -259,7 +259,7 @@
                 @endforeach
                 <div class="container">
                     <div class="row" style="text-align: center">
-                        <a href="{{route('blog')}}"><button class="addCard blogBtn" type="submit">Просмотреть все сообщения</button></a>
+                        <a href="{{route('blog')}}"><button class="addCard blogBtn" type="submit">Новости сайта</button></a>
                     </div>
                 </div>
             </div>

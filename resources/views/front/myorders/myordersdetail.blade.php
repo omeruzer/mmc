@@ -24,11 +24,11 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Рисунок</th>
+                                            <th>товар</th>
                                             <th>Название</th>
                                             <th>Код </th>
-                                            <th>Марка</th>
                                             <th>Каталог</th>
+                                            <th>бренд</th>
                                             <th>цена</th>
                                             <th>Количество</th>
                                             <th>Сумма</th>
@@ -52,11 +52,11 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Рисунок</th>
+                                            <th>товар</th>
                                             <th>Название</th>
                                             <th>Код </th>
-                                            <th>Марка</th>
                                             <th>Каталог</th>
+                                            <th>бренд</th>
                                             <th>цена</th>
                                             <th>Количество</th>
                                             <th>Сумма</th>
@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="form-group" style="float: right">
                                     @if ($orders->status != 'Запрос на возврат создан')
-                                        <a href="{{route('returnOrder',$orders->id)}}"><button class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите его вернуть?')" type="submit">создать запрос на возврат <i class="fa fa-undo"></i></button></a>
+                                        <a href="{{route('returnOrder',$orders->id)}}"><button class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите его вернуть?')" type="submit"> Возврат <i class="fa fa-undo"></i></button></a>
                                     @else
                                     
                                     @endif

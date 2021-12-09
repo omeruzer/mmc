@@ -30,7 +30,7 @@
         <thead>
             <tr>
                 <th style="width: 40%">
-                    Продукт
+                    товар
                 </th>
                 <th>
                     Цена

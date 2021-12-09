@@ -38,8 +38,8 @@
                                         <a class="dropdown-item" href="?sortby=expensive"> От дорогих к дешевым </a>
                                         <a class="dropdown-item" href="?sortby=new"> Новинки </a>
                                         <a class="dropdown-item" href="?sortby=old">от старого к новому</a>
-                                        <a class="dropdown-item" href="?sortby=az">İsme Göre (A-Z)</a>
-                                        <a class="dropdown-item" href="?sortby=za">İsme Göre (Z-A)</a>
+                                        <a class="dropdown-item" href="?sortby=az">по названию (A-Z)</a>
+                                        <a class="dropdown-item" href="?sortby=za">по названию (Z-A)</a>
                                     </div>
                                   </div>
                             </li>

@@ -89,10 +89,16 @@
 										</div>
 									</li>
 									<li>
-										<label class="container_radio">Наложенным платежом
+										<label class="container_radio">Наложенным платежом <span>(при 10% предоплате)</span>
 											<input class="door" type="radio" name="payment" value="Kapıda Ödeme">
 											<span class="checkmark"></span>
 										</label>
+									</li>
+									<li>
+										<label class="container_radio"> оплата в магазинах
+											<input class="door" type="radio" name="payment" value="Mağazadan ödeme">
+											<span class="checkmark"></span>
+										</label><span></span>
 									</li>
 								</ul>
 								<h6 class="pb-2">Тип доставки</h6>
@@ -104,8 +110,20 @@
 										</label>
 									</li>
 									<li>
-										<label class="container_radio">Адресная доставка
-											<input type="radio" name="shipping" value="Adrese Teslim">
+										<label class="container_radio">укрпочта
+											<input type="radio" name="shipping" value="Ukr poşta">
+											<span class="checkmark"></span>
+										</label>
+									</li>
+									<li>
+										<label class="container_radio">деливери
+											<input type="radio" name="shipping" value="Delivery">
+											<span class="checkmark"></span>
+										</label>
+									</li>
+									<li>
+										<label class="container_radio">Justin
+											<input type="radio" name="shipping" value="Justin">
 											<span class="checkmark"></span>
 										</label>
 									</li>

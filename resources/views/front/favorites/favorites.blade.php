@@ -47,8 +47,8 @@
                                                     <td>{{$favorite->code}}</td>
                                                     <td>{{$favorite->price}}</td>
                                                     <td>
-                                                        <a href="{{route('product',[$favorite->slug,$favorite->slug,$favorite->code])}}"><button class="btn btn-info" type="submit">перейти к продукту</button></a>
-                                                        <a href="{{route('favorites.delete',$favorite->id)}}"><button onclick="return confirm('Вы уверены, что хотите его удалить?')" class="btn btn-danger" type="submit">удалить продукт</button></a>
+                                                        <a href="{{route('product',[$favorite->slug,$favorite->slug,$favorite->code])}}"><button class="btn btn-info" type="submit">перейти к товару</button></a>
+                                                        <a href="{{route('favorites.delete',$favorite->id)}}"><button onclick="return confirm('Вы уверены, что хотите его удалить?')" class="btn btn-danger" type="submit">удалить товар</button></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

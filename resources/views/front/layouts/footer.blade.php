@@ -7,7 +7,7 @@
                         <i class="ti-truck"></i>
                         <div class="justify-content-center">
                             <h3>быстрая доставка</h3>
-                            <p>Карго в тот же день</p>
+                            <p>отправка в тот же день</p>
                         </div>
                     </div>
                 </li>
@@ -15,8 +15,8 @@
                     <div class="box">
                         <i class="ti-wallet"></i>
                         <div class="justify-content-center">
-                            <h3>Безопасный оплаты</h3>
-                            <p>100% Безопасный оплаты</p>
+                            <h3>Безопасная оплата</h3>
+                            <p>100% Безопасная оплата</p>   
                         </div>
                     </div>
                 </li>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="follow_us">
-                        <h5>следить</h5>
+                        <h5>подписаться</h5>
                         <ul>
                             <li ><a href="https://www.facebook.com/{{$socialMedias->facebook}}"><i style="color: #fff" class="fab fa-2x fa-facebook itemlink"></i></a></li>
                             <li ><a href="https://www.instagram.com/{{$socialMedias->instagram}}/?hl=tr"><i style="color: #fff" class="fab fa-2x fa-instagram"></i></a></li>

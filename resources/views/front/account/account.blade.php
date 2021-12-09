@@ -76,7 +76,7 @@
 					<a class="box_topic" href="{{ route('logout') }}">
 						<i class="fa fa-sign-out-alt"></i>
 						<h3>Выход</h3>
-						<p>Вы - конец <br> вашей сессии.</p>
+						<p>Выйти из личного <br> кабинета</p>
 					</a>
 				</div>
 			</div>

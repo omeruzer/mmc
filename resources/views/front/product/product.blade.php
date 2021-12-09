@@ -59,13 +59,13 @@
                 <div class="prod_info">
                     <h1><b>{{strtoupper($product->getBrand->name)}}</b> {{mb_convert_case($product->name,MB_CASE_TITLE)}}</h1>
                     {{-- <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span> --}}
-                    <p><small>Код : </small><b style="color: #47C78E">{{$product->code}}</b><br><br>Ростовок Цена : <b style="color: #47C78E">{{$product->price*4}} ₴</b><br><br>на складе : <b style="color: #47C78E">{{$product->quantity}}</b></p>
+                    <p><small>Код : </small><b style="color: #47C78E">{{$product->code}}</b><br><br>цена за упаковку : <b style="color: #47C78E">{{$product->price*4}} ₴</b><br><br>на складе : <b style="color: #47C78E">{{$product->quantity}}</b></p>
                     @if ($product->quantity > 0)
                     <form action=" {{ route('cart.add') }} " method="post">
                         @csrf
                         <div class="prod_   ">
                             <div class="row">
-                                <label class="col-xl-5 col-lg-5  col-md-6 col-6"><strong>Adet</strong></label>
+                                <label class="col-xl-5 col-lg-5  col-md-6 col-6"><strong>шт</strong></label>
                                 <div class="col-xl-4 col-lg-5 col-md-6 col-6">
                                     <div class="numbers-row">
                                         <input type="text" value=4 id="quantity_1" class="qty2" name="qty">
@@ -135,7 +135,7 @@
                                         <table class="table table-sm table-striped">
                                             <tbody>
                                                 <tr>
-                                                    <td><strong>Марка</strong></td>
+                                                    <td><strong>Бренд</strong></td>
                                                     <td>{{strtoupper($product->getBrand->name )}}</td>
                                                 </tr>
                                                 <tr>
@@ -143,7 +143,7 @@
                                                     <td>{{$product->colors}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Матеріал</strong></td>
+                                                    <td><strong>Состав</strong></td>
                                                     <td>{{$product->material}}</td>
                                                 </tr>
                                                 <tr>
@@ -151,15 +151,15 @@
                                                     <td>{{$product->country}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>стиль</strong></td>
+                                                    <td><strong>Размер</strong></td>
                                                     <td>{{$product->pattern}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Ростовок Количество</strong></td>
+                                                    <td><strong>количество в упаковке</strong></td>
                                                     <td>{{$product->packQty}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Размер</strong></td>
+                                                    <td><strong>Размерный ряд</strong></td>
                                                     <td>{{$product->size}}</td>
                                                 </tr>
                                             </tbody>
@@ -271,7 +271,7 @@
         <div class="main_title">
             <h2>Также вас могут заинтересовать</h2>
             <span>Products</span>
-            <p>İlginizi Çekebilir.</p>
+            <p>Это может вас заинтересовать..</p>
         </div>
         <div class="owl-carousel owl-theme products_carousel">
             @foreach ($similarProducts as $similarProduct)

@@ -31,7 +31,7 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Рисунок</th>
+                                                <th>Товар</th>
                                                 <th>Название</th>
                                                 <th>Код</th>
                                                 <th>Комментарий</th>
@@ -61,7 +61,7 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Рисунок</th>
+                                                <th>Товар</th>
                                                 <th>Название</th>
                                                 <th>Код</th>
                                                 <th>Комментарий</th>

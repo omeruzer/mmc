@@ -40,7 +40,7 @@
                     <div class="main_title">
                         <h2>Также вас могут заинтересовать</h2>
                         <span>Products</span>
-                        <p>ilginizi çekebilir.</p>
+                        <p>Это может вас заинтересовать.</p>
                     </div>
                     <div class="owl-carousel owl-theme products_carousel">
                         @foreach ($products as $product)

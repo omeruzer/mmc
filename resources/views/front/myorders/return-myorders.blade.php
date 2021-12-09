@@ -32,7 +32,7 @@
                                             <th>К оплате</th>
                                             <th>Количество</th>
                                             <th>Статус</th>
-                                            <th>Деталь</th>
+                                            <th>Детали</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -43,7 +43,7 @@
                                                 <td>{{$order->getCart->cartProductQty()}}</td>
                                                 <td>{{$order->status}}</td>
                                                 <td>
-                                                    <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Деталь</button></a>
+                                                    <a href="{{route('myOrdersDetail',$order->id)}}"><button class="btn btn-info" type="submit">Детали</button></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -54,7 +54,7 @@
                                             <th>К оплате</th>
                                             <th>Количество</th>
                                             <th>Статус</th>
-                                            <th>Деталь</th>
+                                            <th>Детали</th>
                                         </tr>
                                     </tfoot>
                                 </table>

@@ -97,7 +97,7 @@ class OrderController extends Controller
             'browser'       =>      $browser
         ]);
 
-        $orders = Order::with('getCart')->whereHas('getCart', function($query){ $query->where('user', Auth::id()); })->orderByDesc('created_at')->where('status','İade Talebi Oluşturuldu')->get();
+        $orders = Order::with('getCart')->whereHas('getCart', function($query){ $query->where('user', Auth::id()); })->orderByDesc('created_at')->where('status','Запрос на возврат создан')->get();
 
         return view('front.myorders.return-myorders',compact('orders'));
     }
