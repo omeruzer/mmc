@@ -22,8 +22,6 @@ class CreateUserTable extends Migration
             $table->boolean('active')->default(1)->comment('0 Pasif - 1 Aktif');
             $table->string('address')->nullable();
             $table->string('city')->nullable();
-            $table->string('postCode')->nullable();
-            $table->string('country')->nullable()->default('Ukrayna');
             $table->string('phone')->nullable();
             $table->timestamps();
         });

@@ -71,8 +71,6 @@ class UserController extends Controller
                 'address'   => request('address'),
                 'phone'     => request('phone'),
                 'city'     => request('city'),
-                'country'     => request('country'),
-                'postCode'     => request('postCode'),
             ];
 
             if(request('active')){
@@ -117,8 +115,6 @@ class UserController extends Controller
             'address'   =>  request('address'),
             'phone'     =>  request('phone'),
             'city'     => request('city'),
-            'country'     => request('country'),
-            'postCode'     => request('postCode'),
         ];
 
         if(request('active') == 'on'){

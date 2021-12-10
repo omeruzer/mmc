@@ -24,7 +24,7 @@
                     <div class="box">
                         <i class="ti-headphone-alt"></i>
                         <div class="justify-content-center">
-                            <h3>7/24 помощь</h3>
+                            <h3>24/7 помощь</h3>
                             <p>Любое время онлайн помощь</p>
                         </div>
                     </div>

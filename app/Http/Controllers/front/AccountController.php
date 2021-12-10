@@ -142,16 +142,12 @@ class AccountController extends Controller
     public function addressAccountPost(){
         $this->validate(request(),[
             'address'   => 'required',
-            'country'   => 'required',
             'city'      => 'required',
-            'postCode'  => 'required',
         ]);
 
         $data = [
             'address'   => htmlspecialchars(request('address')),
-            'country'   => htmlspecialchars(request('country')),
             'city'      => htmlspecialchars(request('city')),
-            'postCode'  => htmlspecialchars(request('postCode')),
         ];
 
         $save = User::where('id',auth()->id())->update($data);

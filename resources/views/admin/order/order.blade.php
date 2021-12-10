@@ -47,7 +47,7 @@
                           <td><b>{{$order->name }}</b></td>
                           <td><b>{{$order->paymentType}}</b></td>
                           <td><b>{{$order->shipping}}</b></td>
-                          <td><b>{{$order->orderAmount+$shipp->track}} ₴</b></td>
+                          <td><b>{{$order->orderAmount}} ₴</b></td>
                           <td><b>{{$order->status}}</b></td>
                           <td><b>{{$order->created_at}}</b></td>
                           <td>

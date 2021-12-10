@@ -36,12 +36,6 @@
                                 <div class="form-group">
                                     <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->city}}" name="city" id="email_2" placeholder="город">
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->country}}" name="country" id="email_2" placeholder="страна">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" autocomplete="off" class="form-control" value="{{auth()->user()->postCode}}" name="postCode" id="email_2" placeholder="почтовый индекс">
-                                </div>
         
                                 <div class="text-center"><input type="submit" value="Сохранить" class="btn_1 full-width"></div>
                             </div>

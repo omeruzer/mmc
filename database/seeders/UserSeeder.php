@@ -27,8 +27,6 @@ class UserSeeder extends Seeder
                 'active'    =>  rand(0,1),
                 'address'   =>  $faker->address(),
                 'city'      =>  $faker->city(),
-                'postCode'  =>  $faker->postcode(),
-                'country'   =>  $faker->country(),
                 'phone'     =>  $faker->phoneNumber(),
             ]);
         }
@@ -41,8 +39,6 @@ class UserSeeder extends Seeder
             'active'    =>  1,
             'address'   =>  $faker->address(),
             'city'      =>  $faker->city(),
-            'postCode'  =>  $faker->postcode(),
-            'country'   =>  $faker->country(),
             'phone'     =>  $faker->phoneNumber(),
         ]);
 

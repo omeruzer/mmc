@@ -31,36 +31,59 @@
 							<h3>1. Личные данные</h3>
 						<div class="tab-content checkout">
 							<div class="tab-pane fade show active" id="tab_1" role="tabpanel" aria-labelledby="tab_1">
-								<div class="form-group">
-									<input type="email" class="form-control" name='email' value="{{auth()->user()->email}}" placeholder="Эл. почта">
-								</div>
-								<hr>
-								<div class="row no-gutters">
-									<div class="col-6 form-group pr-1">
+								<div class="">
+									<label for="">Kişisel Bilgiler</label>
+									<div class="form-group">
+										<input type="email" class="form-control" name='email' value="{{auth()->user()->email}}" placeholder="Эл. почта">
+									</div>
+									<div class="form-group">
 										<input type="text" class="form-control" name='name' value="{{auth()->user()->name}}" placeholder="имя Фамилия">
 									</div>
-								</div>
-								<!-- /row -->
-								<div class="form-group">
-									<input type="text" class="form-control" name='address' value="{{auth()->user()->address}}" placeholder="Адрес">
-								</div>
-								<div class="row no-gutters">
-									<div class="col-6 form-group pr-1">
-										<input type="text" class="form-control" name='city' value="{{auth()->user()->city}}" placeholder="город">
+									<div class="form-group">
+										<input type="tel" class="form-control" name='phone' value="{{auth()->user()->phone}}" placeholder="телефон">
 									</div>
-									<div class="col-6 form-group pl-1">
-										<input type="text" class="form-control" name='postCode' value="{{auth()->user()->postCode}}" placeholder="почтовый индекс">
-									</div>
-									<div class="col-6 form-group pl-1">
-										<input type="text" class="form-control" name='country' value="{{auth()->user()->country}}" placeholder="страна">
-									</div>
-								</div>
-								<!-- /row -->
-								<div class="form-group">
-									<input type="tel" class="form-control" name='phone' value="{{auth()->user()->phone}}" placeholder="телефон">
 								</div>
 
+								<!-- /row -->
 								<hr>
+								<div class="home-address">
+									<label for="">Adres Bilgileri</label>
+									<div class="form-group">
+										<input type="text" class="form-control" name='address' value="{{auth()->user()->address}}" placeholder="Адрес">
+									</div>
+									<div class="row no-gutters">
+										<div class="form-group">
+											<input type="text" class="form-control" name='city' value="{{auth()->user()->city}}" placeholder="город">
+										</div>
+									</div>
+								</div>
+
+								<div class="delivery-address">
+									<label for="">Kargo Adresi Bilgileri</label>
+									<div class="form-group">
+										<input type="text" class="form-control" name='delivery-address' placeholder="Kargo Adresi">
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name='delivery-city'  placeholder="город">
+									</div>
+								</div>
+
+								<div class="shopps">
+									<div class="step middle payments">
+										<h6 class="pb-2">Hangi mağazamızdan teslim alacağınızı seçiniz</h6>
+										<ul>
+											@foreach ($branchs as $branch)
+												<li>
+													<label class="container_radio">{{$branch->name}}
+														<input class="" type="radio" name="branch" value="{{$branch->name}}">
+														<span class="checkmark"></span>
+													</label>
+													<i>{{$branch->address}}</i>
+												</li>
+											@endforeach
+										</ul>
+									</div>
+								</div>
 							</div>
 							<!-- /tab_2 -->
 						</div>
@@ -78,7 +101,7 @@
 											<span class="checkmark"></span>
 										</label>
 									</li>
-									<li>
+									<li style="display: none">
 										<div class="card-info">
 											<label for="">Информация об аккаунте</label>
 											<div class="" style="margin-top: 15px">
@@ -96,7 +119,7 @@
 									</li>
 									<li>
 										<label class="container_radio"> оплата в магазинах
-											<input class="door" type="radio" name="payment" value="Mağazadan ödeme">
+											<input class="shopp" type="radio" name="payment" value="Mağazadan ödeme">
 											<span class="checkmark"></span>
 										</label><span></span>
 									</li>
@@ -105,40 +128,36 @@
 								<ul>
 									<li>
 										<label class="container_radio">Новая почта
-											<input type="radio" name="shipping" value="Nova Poşta">
+											<input type="radio" name="shipping" class="novaposta" value="Nova Poşta">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
 										<label class="container_radio">укрпочта
-											<input type="radio" name="shipping" value="Ukr poşta">
+											<input type="radio" name="shipping" class="ukrposta" value="Ukr poşta">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
 										<label class="container_radio">деливери
-											<input type="radio" name="shipping" value="Delivery">
+											<input type="radio" name="shipping" class="delivery"  value="Delivery">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
 										<label class="container_radio">Justin
-											<input type="radio" name="shipping" value="Justin">
+											<input type="radio" name="shipping" class="justin"  value="Justin">
 											<span class="checkmark"></span>
 										</label>
 									</li>
 									<li>
 										<label class="container_radio">Самовывоз
-											<input type="radio" name="shipping" value="Gel Al">
+											<input type="radio" class="coming" name="shipping" value="Gel Al">
 											<span class="checkmark"></span>
 										</label>
 									</li>
-									
 								</ul>
-							
 						</div>
-						<!-- /step -->
-						
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="step last">
@@ -196,8 +215,61 @@
 	});
 
 </script>
-	
+
 <script>
+
+	$('.delivery-address').hide();
+	$('.shopps').hide();
+
+$('.card-checked').click(function () { 
+
+	if($('.card-checked').prop("checked",true)){
+		$('.home-address').show();
+		$('.delivery-address').hide();
+		$('.shopps').hide();
+		$('.coming').prop("checked",false)
+
+	}
+});
+	
+$('.door').click(function () { 
+
+	if($('.door').prop("checked",true)){
+		console.log('gsdg');
+		$('.home-address').hide();
+		$('.delivery-address').show();
+		$('.shopps').hide();
+		$('.coming').prop("checked",false)
+	}
+
+});
+
+$('.shopp').click(function () { 
+
+	if($('.shopp').prop("checked",true)){
+		$('.home-address').hide();
+		$('.delivery-address').hide();
+		$('.shopps').show();
+		$('.coming').prop("checked",true)
+	}
+
+});
+
+$('.coming').click(function () { 
+
+	if($('.coming').prop("checked",true)){
+		$('.shopp').prop("checked",true)
+		$('.home-address').hide();
+			$('.delivery-address').hide();
+			$('.shopps').show();
+	}
+
+});
+
+
+</script>
+	
+{{-- <script>
 	
 	$('.card-info').hide();
 
@@ -213,5 +285,5 @@
 
 
 
-</script>
+</script> --}}
 @endsection

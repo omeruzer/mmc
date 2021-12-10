@@ -55,12 +55,12 @@
                                     <p>{{$order->city}}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="desc">Ülke</label>
-                                    <p>{{$order->country}}</p>
+                                    <label for="desc">Ödeme Türü</label>
+                                    <p>{{$order->paymentType}}</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Posta Kodu</label>
-                                    <p>{{$order->postCode}}</p>
+                                    <p>{{$order->shipping}}</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Sipariş Tarihi</label>

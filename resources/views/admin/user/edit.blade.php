@@ -65,14 +65,6 @@
                         <input type="text" name="city" class="form-control" value="{{$user->city}}" placeholder="Şehir" >
                     </div>
                     <div class="form-group">
-                        <label for="name"> Ülke</label>
-                        <input type="text" name="country" class="form-control" value="{{$user->country}}" placeholder="Ülke" >
-                    </div>
-                    <div class="form-group">
-                        <label for="name"> Posta Kodu</label>
-                        <input type="text" name="postCode" class="form-control" value="{{$user->postCode}}" placeholder="Posta kodu" >
-                    </div>
-                    <div class="form-group">
                         <label for="name"> Telefon</label>
                         <input type="text" name="phone" class="form-control" value="{{$user->phone}}" placeholder="Telefon" >
                     </div>

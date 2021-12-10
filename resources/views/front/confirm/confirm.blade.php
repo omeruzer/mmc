@@ -35,6 +35,6 @@
     <script>
         setTimeout(function(){
             window.location = "/";
-        },30000);
+        },3000);
     </script>
 @endsection

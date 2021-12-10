@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use App\Mail\NewOrderMail;
 use App\Models\BankAccount;
+use App\Models\Branch;
 use App\Models\CartProduct;
 use App\Models\Order;
 use App\Models\Product;
@@ -40,75 +41,199 @@ class PaymentController extends Controller
 
         $bank = BankAccount::inRandomOrder()->first();
 
-        return view('front.payment.payment',compact('user','bank'));
+        $branchs = Branch::all();
+
+        return view('front.payment.payment',compact('user','bank','branchs'));
     }
 
     public function toPay(){
 
-        $this->validate(request(),[
-            'name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'country' => 'required',
-            'shipping' => 'required',
-        ]);
-
-        $request = [
-            'cart' => session('activeCartId'),
-            'name'=> htmlspecialchars(request('name')),
-            'email'=> htmlspecialchars(request('email')),
-            'address'=> htmlspecialchars(request('address')),
-            'city' => htmlspecialchars(request('city')),
-            'postCode' => htmlspecialchars(request('postCode')),
-            'country' => htmlspecialchars(request('country')),
-            'phone' => htmlspecialchars(request('phone')),
-            'paymentType' => request('payment'),
-            'shipping' => request('shipping'),
-            'status'=> 'заказ принят',
-            'orderAmount'=> request('cartTotal'),
-        ];
-        //dd($request['orderAmount']);
-        $order = Order::create($request);
-
-
-        $mailData = [
-            'title' => '1 Yeni Siparişiniz Var!',
-            'amount' => request('cartTotal'),
-            'address' => request('address'),
-            'city' => request('city'),
-            'country' => request('country'),
-            'postCode' => request('postCode'),
-            'date' => $order->updated_at,
-            'work' => 'Devler gibi eserler bırakmak için, karıncalar gibi çalışmak gerekir'
-        ];
-
-        $products = CartProduct::where('cart',session('activeCartId'))->get(['product','quantity']);
-
-        foreach ($products as $product) {
-            # code...
-            $id = $product->product;
-            $qty = $product->quantity;
-
-            $productQty = Product::where('id',$id)->first()->quantity;
-
-            $del = Product::where('id',$id)->update([
-                'quantity' => ($productQty) - ($qty),
+        if(request('payment') == 'Kredi Kartı'){
+            $this->validate(request(),[
+                'name' => 'required',
+                'phone' => 'required',
+                'email' => 'required',
+                'address' => 'required',
+                'city' => 'required',
+                'shipping' => 'required',
             ]);
-
+        }else if(request('payment') == 'Kapıda Ödeme'){
+            $this->validate(request(),[
+                'name' => 'required',
+                'phone' => 'required',
+                'email' => 'required',
+                'address' => 'required',
+                'city' => 'required',
+                'shipping' => 'required',
+            ]);
+        }else if(request('payment') == 'Mağazadan ödeme'){
+            $this->validate(request(),[
+                'name' => 'required',
+                'phone' => 'required',
+                'email' => 'required',
+                'branch' => 'required',
+                'city' => 'required',
+                'shipping' => 'required',
+            ]);
         }
-
         
-        Mail::to('omeruzer1021@gmail.com')->send(new NewOrderMail($mailData));
+        if(request('payment') == 'Kredi Kartı'){
+            $request = [
+                'cart' => session('activeCartId'),
+                'name'=> htmlspecialchars(request('name')),
+                'email'=> htmlspecialchars(request('email')),
+                'address'=> htmlspecialchars(request('address')),
+                'city' => htmlspecialchars(request('city')),
+                'phone' => htmlspecialchars(request('phone')),
+                'paymentType' => request('payment'),
+                'shipping' => request('shipping'),
+                'status'=> 'заказ принят',
+                'orderAmount'=> request('cartTotal'),
+            ];
+            //dd($request['orderAmount']);
+            $order = Order::create($request);
+    
+    
+            $mailData = [
+                'title' => '1 Yeni Siparişiniz Var!',
+                'amount' => request('cartTotal'),
+                'address' => request('address'),
+                'city' => request('city'),
+                'date' => $order->updated_at,
+                'work' => 'Devler gibi eserler bırakmak için, karıncalar gibi çalışmak gerekir'
+            ];
+    
+            $products = CartProduct::where('cart',session('activeCartId'))->get(['product','quantity']);
+    
+            foreach ($products as $product) {
+                # code...
+                $id = $product->product;
+                $qty = $product->quantity;
+    
+                $productQty = Product::where('id',$id)->first()->quantity;
+    
+                $del = Product::where('id',$id)->update([
+                    'quantity' => ($productQty) - ($qty),
+                ]);
+    
+            }
+    
+            
+            Mail::to('omeruzer1021@gmail.com')->send(new NewOrderMail($mailData));
+    
+            Cart::destroy();
+            session()->forget('activeCartId');
+    
+            if($order){
+               return redirect()->route('confirm');
+    
+            }
+        }else if(request('payment') == 'Kapıda Ödeme'){
+            $request = [
+                'cart' => session('activeCartId'),
+                'name'=> htmlspecialchars(request('name')),
+                'email'=> htmlspecialchars(request('email')),
+                'address'=> htmlspecialchars(request('delivery-address')),
+                'city' => htmlspecialchars(request('delivery-city')),
+                'phone' => htmlspecialchars(request('phone')),
+                'paymentType' => request('payment'),
+                'shipping' => request('shipping'),
+                'status'=> 'заказ принят',
+                'orderAmount'=> request('cartTotal'),
+            ];
+            //dd($request['orderAmount']);
+            $order = Order::create($request);
+    
+    
+            $mailData = [
+                'title' => '1 Yeni Siparişiniz Var!',
+                'amount' => request('cartTotal'),
+                'address' => request('branch'),
+                'city' => 'Odessa',
+                'date' => $order->updated_at,
+                'work' => 'Devler gibi eserler bırakmak için, karıncalar gibi çalışmak gerekir'
+            ];
+    
+            $products = CartProduct::where('cart',session('activeCartId'))->get(['product','quantity']);
+    
+            foreach ($products as $product) {
+                # code...
+                $id = $product->product;
+                $qty = $product->quantity;
+    
+                $productQty = Product::where('id',$id)->first()->quantity;
+    
+                $del = Product::where('id',$id)->update([
+                    'quantity' => ($productQty) - ($qty),
+                ]);
+    
+            }
+    
+            
+            Mail::to('omeruzer1021@gmail.com')->send(new NewOrderMail($mailData));
+    
+            Cart::destroy();
+            session()->forget('activeCartId');
+    
+            if($order){
+               return redirect()->route('confirm');
+    
+            }
+        }else if('Gel-Al'){
 
-        Cart::destroy();
-        session()->forget('activeCartId');
-
-        if($order){
-           return redirect()->route('confirm');
-
+            $request = [
+                'cart' => session('activeCartId'),
+                'name'=> htmlspecialchars(request('name')),
+                'email'=> htmlspecialchars(request('email')),
+                'address'=> htmlspecialchars(request('branch')),
+                'city' => htmlspecialchars('Odessa'),
+                'phone' => htmlspecialchars(request('phone')),
+                'paymentType' => request('payment'),
+                'shipping' => request('shipping'),
+                'status'=> 'заказ принят',
+                'orderAmount'=> request('cartTotal'),
+            ];
+            //dd($request['orderAmount']);
+            $order = Order::create($request);
+    
+    
+            $mailData = [
+                'title' => '1 Yeni Siparişiniz Var!',
+                'amount' => request('cartTotal'),
+                'address' => request('branch'),
+                'city' => 'Odessa',
+                'date' => $order->updated_at,
+                'work' => 'Devler gibi eserler bırakmak için, karıncalar gibi çalışmak gerekir'
+            ];
+    
+            $products = CartProduct::where('cart',session('activeCartId'))->get(['product','quantity']);
+    
+            foreach ($products as $product) {
+                # code...
+                $id = $product->product;
+                $qty = $product->quantity;
+    
+                $productQty = Product::where('id',$id)->first()->quantity;
+    
+                $del = Product::where('id',$id)->update([
+                    'quantity' => ($productQty) - ($qty),
+                ]);
+    
+            }
+    
+            
+            Mail::to('omeruzer1021@gmail.com')->send(new NewOrderMail($mailData));
+    
+            Cart::destroy();
+            session()->forget('activeCartId');
+    
+            if($order){
+               return redirect()->route('confirm');
+    
+            }
         }
+
+
         
     }
 }
