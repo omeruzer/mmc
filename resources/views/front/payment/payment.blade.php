@@ -268,6 +268,14 @@ $('.coming').click(function () {
 
 
 </script>
+
+<script type="text/javascript">
+
+	$('.topay').click(function() {
+		fbq('init', '430667125370348');
+		fbq('track','Sipariş Verildi');
+	});
+</script>
 	
 {{-- <script>
 	

@@ -122,7 +122,10 @@
                                 <span>К оплате</span> {{ str_replace(',', '', Cart::total()) + $shipp->track }}  ₴
                             </li>
                         </ul>
-                        <a href="{{route('payment')}}" class="btn_1 full-width cart"> Оформить заказ</a>
+                        <form action="{{route('payment')}}" method="get">
+                            <input type="submit"  class="btn_1 full-width cart goToPay" value="Оформить заказ">
+                        </form>
+                        {{-- <a href=""><button type="submit"  class="btn_1 full-width cart goToPay"> Оформить заказ</button></a> --}}
                     </div>
                 </div>
             </div>
@@ -164,4 +167,13 @@
 @endsection
 @section('footer')
     <script src="/assets/front/js/main.js"></script>
+
+    <script type="text/javascript">
+
+        $('.cart').click(function() {x
+            fbq('init', '430667125370348');
+            fbq('track','Ödeme Ekranına Gelindi');
+        });
+    </script>
+    
 @endsection

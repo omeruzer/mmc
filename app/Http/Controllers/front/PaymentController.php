@@ -48,6 +48,16 @@ class PaymentController extends Controller
 
     public function toPay(){
 
+        $this->validate(request(),[
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'payment' => 'required',
+            'shipping' => 'required'
+        ]);
+
         if(request('payment') == 'Kredi Kartı'){
             $this->validate(request(),[
                 'name' => 'required',
@@ -55,7 +65,8 @@ class PaymentController extends Controller
                 'email' => 'required',
                 'address' => 'required',
                 'city' => 'required',
-                'shipping' => 'required',
+                'payment' => 'required',
+                'shipping' => 'required'
             ]);
         }else if(request('payment') == 'Kapıda Ödeme'){
             $this->validate(request(),[
@@ -64,7 +75,8 @@ class PaymentController extends Controller
                 'email' => 'required',
                 'address' => 'required',
                 'city' => 'required',
-                'shipping' => 'required',
+                'payment' => 'required',
+                'shipping' => 'required'
             ]);
         }else if(request('payment') == 'Mağazadan ödeme'){
             $this->validate(request(),[
@@ -73,7 +85,8 @@ class PaymentController extends Controller
                 'email' => 'required',
                 'branch' => 'required',
                 'city' => 'required',
-                'shipping' => 'required',
+                'payment' => 'required',
+                'shipping' => 'required'
             ]);
         }
         

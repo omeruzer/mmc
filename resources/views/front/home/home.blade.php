@@ -273,3 +273,12 @@
     
 </main> 
 @endsection
+@section('footer')
+<script type="text/javascript">
+
+    $('.addCard').click(function() {
+        fbq('init', '430667125370348');
+        fbq('track','Sepete Eklendi');
+    });
+</script>
+@endsection

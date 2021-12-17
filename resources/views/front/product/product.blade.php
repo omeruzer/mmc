@@ -61,40 +61,40 @@
                     {{-- <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span> --}}
                     <p><small>Код : </small><b style="color: #47C78E">{{$product->code}}</b><br><br>цена за упаковку : <b style="color: #47C78E">{{$product->price*4}} ₴</b><br><br>на складе : <b style="color: #47C78E">{{$product->quantity}}</b></p>
                     @if ($product->quantity > 0)
-                    <form action=" {{ route('cart.add') }} " method="post">
-                        @csrf
-                        <div class="prod_   ">
-                            <div class="row">
-                                <label class="col-xl-5 col-lg-5  col-md-6 col-6"><strong>шт</strong></label>
-                                <div class="col-xl-4 col-lg-5 col-md-6 col-6">
-                                    <div class="numbers-row">
-                                        <input type="text" value=4 id="quantity_1" class="qty2" name="qty">
-                                        <div class="inc button_inc">+</div>
-                                        <div class="dec button_inc">-</div>
+                        <form action=" {{ route('cart.add') }} " method="post">
+                            @csrf
+                            <div class="prod_   ">
+                                <div class="row">
+                                    <label class="col-xl-5 col-lg-5  col-md-6 col-6"><strong>шт</strong></label>
+                                    <div class="col-xl-4 col-lg-5 col-md-6 col-6">
+                                        <div class="numbers-row">
+                                            <input type="text" value=4 id="quantity_1" class="qty2" name="qty">
+                                            <div class="inc button_inc">+</div>
+                                            <div class="dec button_inc">-</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <br>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-5 col-md-6">
+                                    <div class="price_main"><span class="new_price">{{$product->price}} ₴</span><!--<span class="percentage">-20%</span> <span class="old_price">$160.00</span>--></div>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                    <input type="submit" value="В Корзину" class="addCard">
+                                </div>
+                            </div>
+                        </form>   
+                    @else
                         <div class="row">
                             <div class="col-lg-5 col-md-6">
-                                <div class="price_main"><span class="new_price">{{$product->price}} ₴</span><!--<span class="percentage">-20%</span> <span class="old_price">$160.00</span>--></div>
+                                <div class="price_main"><span class="new_price" style="color: #c6c6c6">{{$product->price}} ₴</span></div>
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <input type="hidden" name="id" value="{{ $product->id }}">
-                                <input type="submit" value="В Корзину" class="addCard">
+                                <input style="background-color: #c6c6c6 " type="submit" value="Нет В Наличии" disabled class="addCard">
                             </div>
                         </div>
-                    </form>   
-                    @else
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6">
-                            <div class="price_main"><span class="new_price" style="color: #c6c6c6">{{$product->price}} ₴</span></div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <input style="background-color: #c6c6c6 " type="submit" value="Нет В Наличии" disabled class="addCard">
-                        </div>
-                    </div>
                     @endif
 
                 </div>
@@ -343,10 +343,12 @@
     <script src="\assets\jsjquery.min.js"></script>
     <script src="/assets/front/js/main.js"></script>
 
-    <script>
+    <script type="text/javascript">
 
-
-
+        $('.addCard').click(function() {
+            fbq('init', '430667125370348');
+            fbq('track','Sepete Eklendi');
+        });
     </script>
 
 @endsection
