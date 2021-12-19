@@ -41,6 +41,7 @@
     /></noscript>
     <!-- End Facebook Pixel Code -->
 
+
     {{-- JIVO CHAT --}}
 
     <script src="//code-eu1.jivosite.com/widget/jngYLerFb7" async></script>
@@ -73,6 +74,16 @@
     <!-- YOUR CUSTOM CSS -->
     <link href="/assets/front/css/custom.css" rel="stylesheet">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QTD57R0F22"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QTD57R0F22');
+    </script>
+
     @yield('head')
 
 </head>
@@ -95,6 +106,12 @@
 	
 	<div id="toTop"></div><!-- Back to top button -->
 	
+    <div class="popup_wrapper">
+		<div class="popup_content">
+			<span class="popup_close">Close</span>
+			<a href="{{$socialMedias->viber}}"><img class="img-fluid" src="/assets/images/model/model.png" alt="" width="500" height="500"></a>
+		</div>
+	</div>
 	<!-- COMMON SCRIPTS -->
     <script src="/assets/front/js/common_scripts.min.js"></script>
     <script src="/assets/front/js/main.js"></script>

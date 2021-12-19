@@ -6,6 +6,25 @@
 <main>
     <div id="carousel-home">
         <div class="owl-carousel owl-theme">
+            <div class="owl-slide cover" style="background-image: url(/assets/images/slider/slider-3.png);">
+                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+                    <div class="container">
+                        <div class="row justify-content-center justify-content-md-start">
+                            <div class="col-lg-12 static">
+                                <div class="slide-text text-center black">
+                                    <h2 class="owl-slide-animated owl-slide-title" style="color: #fff">Наши группы <br> Telegram <br> Viber</h2>
+                                    <p class="owl-slide-animated owl-slide-subtitle" style="color: #fff">
+                                        Вы можете получить специальные предложения, присоединившись к нашим группам Telegram и Viber
+                                    </p>
+                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="https://t.me/{{$socialMedias->telegram}}" role="button">Наша группа Telegram <i style="color: #fff" class="fab fa-telegram-plane"></i></a></div>
+                                    <div style="margin-top: 5px" class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="{{$socialMedias->viber}}" role="button">Наша группа Viber <i style="color: #fff" class="fab fa-viber"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/owl-slide-->
+            </div>
             <div class="owl-slide cover" style="background-image: url(/assets/images/slider/slider-1.png);">
                 <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <div class="container">
@@ -40,25 +59,6 @@
                 </div>
             </div>
             <!--/owl-slide-->
-            <div class="owl-slide cover" style="background-image: url(/assets/images/slider/slider-3.png);">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <div class="container">
-                        <div class="row justify-content-center justify-content-md-start">
-                            <div class="col-lg-12 static">
-                                <div class="slide-text text-center black">
-                                    <h2 class="owl-slide-animated owl-slide-title" style="color: #fff">Наши группы <br> Telegram <br> Viber</h2>
-                                    <p class="owl-slide-animated owl-slide-subtitle" style="color: #fff">
-                                        Вы можете получить специальные предложения, присоединившись к нашим группам Telegram и Viber
-                                    </p>
-                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="https://t.me/{{$socialMedias->telegram}}" role="button">Наша группа Telegram <i style="color: #fff" class="fab fa-telegram-plane"></i></a></div>
-                                    <div style="margin-top: 5px" class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="{{$socialMedias->viber}}" role="button">Наша группа Viber <i style="color: #fff" class="fab fa-viber"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/owl-slide-->
-            </div>
         </div>
         <div id="icon_drag_mobile"></div>
     </div>
