@@ -272,6 +272,12 @@
     </div>
     
 </main> 
+<div class="popup_wrapper">
+    <div class="popup_content">
+        <span class="popup_close">Close</span>
+        <a href="{{$socialMedias->viber}}"><img class="img-fluid" src="/assets/images/model/model.png" alt="" width="500" height="500"></a>
+    </div>
+</div>
 @endsection
 @section('footer')
 <script type="text/javascript">
@@ -281,4 +287,6 @@
         fbq('track','Sepete Eklendi');
     });
 </script>
+
+
 @endsection
