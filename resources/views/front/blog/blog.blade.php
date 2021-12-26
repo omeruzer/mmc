@@ -29,7 +29,7 @@
                                     {{-- <small>Category - 20 Nov. 2017</small> --}}
                                     <small>{{$blog->created_at}}</small>
                                     <h2><a href="{{ route('blog-detail',[$blog->slug]) }}">{{$blog->title}}</a></h2>
-                                    <p>{{ Str::substr($blog->content, 0 , 150) }}...</p>
+                                    <p>{{ Strip_Tags(Str::substr($blog->content, 0 , 150)) }}...</p>
                                     <ul style="display: table">
                                         <li><a href="{{ route('blog-detail',[$blog->slug]) }}"><button class="blogPostRead" type="submit">чтение </button></a></li>
                                     </ul>
