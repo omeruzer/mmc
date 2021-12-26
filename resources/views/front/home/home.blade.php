@@ -252,7 +252,7 @@
                                 <li>{{$blog->created_at}}</li>
                             </ul>
                             <h4>{{$blog->title}}</h4>
-                            <p>{{ Str::substr($blog->content, 0, 100)  }}...</p>
+                            <p>{{ Strip_Tags(Str::substr($blog->content, 0, 100))  }}...</p>
                         </a>
                     </div>
                     <!-- /box_news -->
@@ -272,12 +272,12 @@
     </div>
     
 </main> 
-<div class="popup_wrapper">
-    <div class="popup_content">
-        <span class="popup_close">Close</span>
-        <a href="{{$socialMedias->viber}}"><img class="img-fluid" src="/assets/images/model/model.png" alt="" width="500" height="500"></a>
-    </div>
-</div>
+    <div class="popup_wrapper">
+		<div class="popup_content">
+			<span class="popup_close">Close</span>
+			<a href="{{$socialMedias->viber}}"><img class="img-fluid" src="/assets/images/model/model.png" alt="" width="500" height="500"></a>
+		</div>
+	</div>
 @endsection
 @section('footer')
 <script type="text/javascript">

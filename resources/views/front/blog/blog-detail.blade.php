@@ -29,7 +29,7 @@
                     <!-- /post meta -->
                     <div class="post-content">
                         <div class="dropcaps">
-                            <p>{{$blog->content}}</p>
+                            <p>{!! $blog->content !!}</p>
                         </div>
 
                     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <!-- Chrome, Firefox ve Opera içim -->
@@ -9,7 +9,7 @@
     <!-- Windows Phone için -->
     <meta name="msapplication-navbutton-color" content="#47c78e">
 
-    <meta charset="utf-8">
+    <meta charset="utf-8" lang="tr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="@yield('desc')">
