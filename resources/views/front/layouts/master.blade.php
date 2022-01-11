@@ -42,9 +42,7 @@
     <!-- End Facebook Pixel Code -->
 
 
-    {{-- JIVO CHAT --}}
 
-    <script src="//code-eu1.jivosite.com/widget/jngYLerFb7" async></script>
 
     <!-- Font Awesome CSS -->
     <link href="/assets/font-awesome/css/all.css" rel="stylesheet" type="text/css" />
