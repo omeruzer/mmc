@@ -116,10 +116,6 @@
 	<!-- SPECIFIC SCRIPTS -->
 	<script src="/assets/front/js/carousel-home.min.js"></script>
 
-
-
-
-       
     @yield('footer')
 </body>
 </html>
