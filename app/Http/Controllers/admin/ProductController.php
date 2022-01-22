@@ -9,6 +9,8 @@ use App\Models\Product;
 use App\Models\ProductDetail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 { 
@@ -63,7 +65,7 @@ class ProductController extends Controller
                 Product::create([
                     'img'       =>  $imgName,
                     'name'      =>  request('name'),
-                    'slug'      =>  Str::slug(request('name')),
+                    'p_slug'      =>  Str::slug(request('name')),
                     'code'      =>  request('code'),
                     'category'  =>  request('category'),
                     'brand'     =>  request('brand'),
@@ -95,6 +97,44 @@ class ProductController extends Controller
             }
             ProductDetail::create($data);
             
+            // // Telegram Bot Dosyasını Çalıştırır
+            // $a = fopen('../node/app.js','a');
+            // fwrite($a,' ');
+            // fclose($a);
+            // // Telegram Bot Dosyasını Çalıştırırq 
+
+            //Telegram Ürünü Otomatik Mesaj Atma
+            $buttons =[
+                'inline_keyboard' => [
+                    [   
+                        [
+                        'text' => 'Web Sitesine Git',
+                        'url' => 'https://bymmc.com.ua/'. request('category') . '/'. Str::slug(request('name')) .'/'.request('code')
+                        ],
+                        [
+                        'text' => 'Mesaj At',
+                        'url' => 'https://t.me/omer_uzer'
+                        ]
+                    ],
+                    [
+                        [
+                        'text' => 'Sipariş Ver',
+                        'url' => 'https://bymmc.com.ua/'.request('category').'/'.Str::slug(request('name')).'/'.request('code'),
+                        ]
+                    ],
+                ]
+            ];
+            //Telegram Ürünü Otomatik Mesaj Atma
+            
+            //Telegram Ürünü Otomatik Mesaj Atma
+            Http::post('https://api.telegram.org/bot2064790826:AAF5xxxGH6sWbbLQt8Yc-7ptGX6VZ5um3og/sendPhoto',[
+                'chat_id' => -1001630273515,
+                'photo' => 'https://bymmc.com.ua/assets/images/products/'.$imgName,
+                'caption'=> "🔥".request('name')."🔥 \n\n\n  Kod : ".request('code')." \n\n\n Renkleri : ". request('colors')." \n\n\n Bedenler : ".request('size') . " \n\n\n Fiyat :  🔥 ".request('price')." грн 🔥 \n\n\n  Paket Fiyatı : 🔥 ".request('price')*request('packQty')." грн 🔥",
+                'reply_markup' => json_encode($buttons),
+            ]);
+            //Telegram Ürünü Otomatik Mesaj Atma
+
             return redirect()->route('admin.product')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success')->withInput();
         }
 
@@ -103,7 +143,7 @@ class ProductController extends Controller
    
     public function edit($slug){
 
-        $product = Product::where('slug',$slug)->FirstOrFail();
+        $product = Product::where('p_slug',$slug)->FirstOrFail();
 
         $categories = Category::all();
 
@@ -140,7 +180,7 @@ class ProductController extends Controller
         
         $data = [
             'name'      =>  request('name'),
-            'slug'      =>  Str::slug(request('name')),
+            'p_slug'      =>  Str::slug(request('name')),
             'code'      =>  request('code'),
             'category'  =>  request('category'),
             'brand'     =>  request('brand'),
@@ -157,7 +197,7 @@ class ProductController extends Controller
             'size'  =>  request('size'),
         ];
         
-        $product = Product::where('slug',$slug)->firstOrFail();
+        $product = Product::where('p_slug',$slug)->firstOrFail();
 
         if(request('featured') == 'on'){
             $detail['featured'] = 1;
@@ -177,7 +217,7 @@ class ProductController extends Controller
 
             if($img->isValid()){
 
-                $delete = Product::where('slug',$slug)->firstOrFail();
+                $delete = Product::where('p_slug',$slug)->firstOrFail();
                 $trash  = $delete->img;
                 $path   = 'assets/images/products/'. $trash;
 
@@ -192,20 +232,23 @@ class ProductController extends Controller
         ProductDetail::where('product',$product->id)->update($detail);
         $product->update($data);
 
+
+        
+
         return redirect()->route('admin.product')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');;
 
     }
 
     public function delete($slug){
 
-        $delete = Product::where('slug',$slug)->firstOrFail();
+        $delete = Product::where('p_slug',$slug)->firstOrFail();
         $trash  = $delete->img;
         
         $path   = 'assets/images/products/'.$trash;
 
         unlink($path); // Eski Resmi Dosyadan Siler
 
-        $product = Product::where('slug',$slug)->firstOrFail();
+        $product = Product::where('p_slug',$slug)->firstOrFail();
         $product->delete();
 
         return redirect()->route('admin.product')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');

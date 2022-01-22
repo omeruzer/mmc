@@ -48,7 +48,7 @@
                                 <div class="grid_item">
                                     {{-- <span class="ribbon new">New</span> --}}
                                     <figure>
-                                        <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
+                                        <a href="{{ route('product',[$product->getCategory->slug,$product->p_slug,$product->code]) }}">
                                             <img class="owl" src="/assets/images/products/{{$product->img}}" data-src="img/products/shoes/4.jpg" alt="">
                                         </a>
                                         @if ($product->quantity > 0)
@@ -62,7 +62,7 @@
                                         @endif
                                     </figure>
                                     <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-                                    <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
+                                    <a href="{{ route('product',[$product->getCategory->slug,$product->p_slug,$product->code]) }}">
                                         <h3>{{$product->name}}</h3>
                                         <div class=""><span>{{$product->code}}</span></div>
                                     </a>

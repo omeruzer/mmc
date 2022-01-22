@@ -28,7 +28,7 @@ class ProductController extends Controller
             'browser'       =>      $browser
         ]);
 
-        $product = Product::where('slug',$slug)->firstOrFail();
+        $product = Product::where('p_slug',$slug)->firstOrFail();
 
         $similarProducts = Product::with('getCategory')->inRandomOrder()->where('category',$product->category)->take(10)->get();
 
@@ -40,7 +40,7 @@ class ProductController extends Controller
 
         
 
-        $hit = Product::where('slug',$slug)->update([
+        $hit = Product::where('p_slug',$slug)->update([
             'hit'   =>  $product->hit+1
         ]);
         

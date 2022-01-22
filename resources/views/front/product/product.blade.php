@@ -279,7 +279,7 @@
                     <div class="grid_item">
                         {{-- <span class="ribbon new">New</span> --}}
                         <figure>
-                            <a href="{{ route('product',[$similarProduct->getCategory->slug,$similarProduct->slug,$similarProduct->code]) }}">
+                            <a href="{{ route('product',[$similarProduct->getCategory->slug,$similarProduct->p_slug,$similarProduct->code]) }}">
                                 <img class="owl" src="/assets/images/products/{{$similarProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$similarProduct->name}}">
                             </a>
                             @if ($similarProduct->quantity > 0)
@@ -293,7 +293,7 @@
                             @endif
                         </figure>
                         {{-- <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div> --}}
-                        <a href="{{ route('product',[$similarProduct->getCategory->slug,$similarProduct->slug,$similarProduct->code]) }}">
+                        <a href="{{ route('product',[$similarProduct->getCategory->slug,$similarProduct->p_slug,$similarProduct->code]) }}">
                             <h3>{{$similarProduct->name}}</h3>
                             <div class=""><span>{{$similarProduct->code}}</span></div>
                         </a>

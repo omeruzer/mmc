@@ -58,7 +58,7 @@
                                 <div class="grid_item">
                                     {{-- <span class="ribbon off">-30%</span> --}}
                                     <figure>
-                                        <a href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
+                                        <a href="{{ route('product',[$product->getCategory->slug,$product->p_slug,$product->code]) }}">
                                             <img style="width: 400px; height: 400px;" class="img-fluid" src="/assets/images/products/{{$product->img}}" data-src="img/products/shoes/1.jpg" alt="{{$product->name}}">
                                         </a>
 
@@ -73,7 +73,7 @@
                                         @endif
                                         {{-- <div data-countdown="2019/05/15" class="countdown"></div> --}}
                                     </figure>
-                                    <a style="text-decoration: none" href="{{ route('product',[$product->getCategory->slug,$product->slug,$product->code]) }}">
+                                    <a style="text-decoration: none" href="{{ route('product',[$product->getCategory->slug,$product->p_slug,$product->code]) }}">
                                         <h3>{{$product->name}}</h3>
                                         <div class=""><span style="color: #47C78E; ">{{$product->code}}</span></div>
                                     </a>

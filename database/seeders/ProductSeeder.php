@@ -34,7 +34,7 @@ class ProductSeeder extends Seeder
             $product = Product::create([
                 'img'       =>  'sample_'. $i+1 .'.jpg',
                 'name'      =>  $name,
-                'slug'      =>  Str::slug($name),
+                'p_slug'      =>  Str::slug($name),
                 'code'      =>  rand(20000,40000),
                 'category'  =>  rand(1,5),
                 'brand'     =>  rand(1,3),

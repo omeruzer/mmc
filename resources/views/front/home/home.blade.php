@@ -106,7 +106,7 @@
                     <div class="grid_item">
                         <span class="ribbon off">рекомендуемые </span>
                         <figure style="margin: auto;width: 80%">
-                            <a href="{{ route('product',[$featured->getProduct->getCategory->slug,$featured->getProduct->slug,$featured->getProduct->code]) }}">
+                            <a href="{{ route('product',[$featured->getProduct->getCategory->slug,$featured->getProduct->p_slug,$featured->getProduct->code]) }}">
                                 <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$featured->getProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$featured->getProduct->name}}">
                             </a>
                             @if ($featured->getProduct->quantity > 0)
@@ -120,7 +120,7 @@
                             @endif
                         </figure>
                         {{-- <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div> --}}
-                        <a href="{{ route('product',[$featured->getProduct->getCategory->slug,$featured->getProduct->slug,$featured->getProduct->code]) }}">
+                        <a href="{{ route('product',[$featured->getProduct->getCategory->slug,$featured->getProduct->p_slug,$featured->getProduct->code]) }}">
                             <h3>{{$featured->getProduct->name}}</h3>
                             <div class=""><span>{{$featured->getProduct->code}}</span></div>
                         </a>
@@ -170,7 +170,7 @@
                     <div class="grid_item">
                         <span class="ribbon new">Новинки</span>
                         <figure style="margin: auto;width: 80%">
-                            <a href="{{ route('product',[$newProduct->getCategory->slug,$newProduct->slug,$newProduct->code]) }}">
+                            <a href="{{ route('product',[$newProduct->getCategory->slug,$newProduct->p_slug,$newProduct->code]) }}">
                                 <img style="width: 100%;  max-height: 300px" class="owl" src="/assets/images/products/{{$newProduct->img}}" data-src="img/products/shoes/4.jpg" alt="{{$newProduct->name}}">
                             </a>
                             @if ($newProduct->quantity > 0)
@@ -184,7 +184,7 @@
                             @endif
                         </figure>
                         {{-- <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div> --}}
-                        <a href="{{ route('product',[$newProduct->getCategory->slug,$newProduct->slug,$newProduct->code]) }}">
+                        <a href="{{ route('product',[$newProduct->getCategory->slug,$newProduct->p_slug,$newProduct->code]) }}">
                             <h3>{{$newProduct->name}}</h3>
                             <div class=""><span>{{$newProduct->code}}</span></div>
                         </a>

@@ -64,8 +64,6 @@ Route::get('/blogs',[FrontBlogController::class,'index'])->name('blog');
 
 Route::get('/blogs/{slug}',[FrontBlogController::class,'detail'])->name('blog-detail');
 
-
-
 Route::get('/about',[FrontAboutController::class,'index'])->name('about');
 
 Route::get('/contact',[FrontContactController::class,'index'])->name('contact');
@@ -136,7 +134,7 @@ Route::get('/termsandconditions',[TermsandConditionsController::class,'index'])-
 
 Route::group(['prefix' => 'admin'],function(){
 
-    Route::redirect('/','/admin/login');    
+    Route::redirect('/','/admin/login');
     Route::match(['get','post'],'/login',[UserController::class,'login'])->name('admin.login');
     Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
     

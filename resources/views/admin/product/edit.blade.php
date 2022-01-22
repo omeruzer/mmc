@@ -29,9 +29,8 @@
 
                 <form action="" enctype="multipart/form-data" method="POST">
                     @csrf
-
                     <div class="form-group">
-                        <img width="15%" src="/assets/images/products/{{$product->img}}" >
+                        <img width="15%" src="/assets/images/products/{{$product->img}}">
                     </div>
                     <div class="form-group">
                         <label for="img">Ürün Resim</label>
