@@ -65,7 +65,6 @@ use Viber\Api\Sender;
 Route::get('/', [FrontHomeController::class, 'index'])->name('homepage');
 
 
-
 Route::group(['prefix' => 'viber'], function () {
     Route::get('/{id}', [ViberController::class, 'index'])->name('viber');
     Route::get('/addcart/{id}', [ViberController::class, 'addCart'])->name('addCart');
