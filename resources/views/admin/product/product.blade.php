@@ -63,6 +63,8 @@
                             <a href="{{route('admin.product.img',$product->id)}}"><button class="btn btn-success" type="submit"><i class="fa fa-images"></i></button></a>
                             <a href="{{route('admin.product.edit',$product->p_slug,[$product->id])}}"><button class="btn btn-primary" type="submit"><i class="fa fa-edit"></i></button></a>
                             <a href="{{route('admin.product.delete',$product->p_slug)}}"><button onclick="return confirm('Silmek İstediğinize Emin Misiniz? Bir daha Geri Alamayacaksınız!')" class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button></a>
+                            <a href="{{route('telegram',$product->id)}}"><button class="btn btn-primary" type="submit"><i class="fab fa-telegram-plane"></i></button></a>
+                            <a href="{{route('telegram',$product->id)}}"><button class="btn btn-primary" type="submit"><i class="fab fa-viber"></i></button></a>
                         </th>
                     </tr>
                   @endforeach

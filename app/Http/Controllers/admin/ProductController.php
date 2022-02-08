@@ -103,37 +103,42 @@ class ProductController extends Controller
             // fclose($a);
             // // Telegram Bot Dosyasını Çalıştırırq 
 
-            //Telegram Ürünü Otomatik Mesaj Atma
-            $buttons =[
-                'inline_keyboard' => [
-                    [   
-                        [
-                        'text' => 'Web Sitesine Git',
-                        'url' => 'https://bymmc.com.ua/'. request('category') . '/'. Str::slug(request('name')) .'/'.request('code')
+            //TELEGRAM
+            if(request('telegram')){
+                //Telegram Ürünü Otomatik Mesaj Atma
+                $buttons =[
+                    'inline_keyboard' => [
+                        [   
+                            [
+                            'text' => 'Перейти на сайт',
+                            'url' => 'https://bymmc.com.ua/'. request('category') . '/'. Str::slug(request('name')) .'/'.request('code')
+                            ],
+                            [
+                            'text' => 'Напиши мне',
+                            'url' => 'https://t.me/omer_uzer'
+                            ]
                         ],
                         [
-                        'text' => 'Mesaj At',
-                        'url' => 'https://t.me/omer_uzer'
-                        ]
-                    ],
-                    [
-                        [
-                        'text' => 'Sipariş Ver',
-                        'url' => 'https://bymmc.com.ua/'.request('category').'/'.Str::slug(request('name')).'/'.request('code'),
-                        ]
-                    ],
-                ]
-            ];
-            //Telegram Ürünü Otomatik Mesaj Atma
-            
-            //Telegram Ürünü Otomatik Mesaj Atma
-            Http::post('https://api.telegram.org/bot2064790826:AAF5xxxGH6sWbbLQt8Yc-7ptGX6VZ5um3og/sendPhoto',[
-                'chat_id' => -1001630273515,
-                'photo' => 'https://bymmc.com.ua/assets/images/products/'.$imgName,
-                'caption'=> "🔥".request('name')."🔥 \n\n\n  Kod : ".request('code')." \n\n\n Renkleri : ". request('colors')." \n\n\n Bedenler : ".request('size') . " \n\n\n Fiyat :  🔥 ".request('price')." грн 🔥 \n\n\n  Paket Fiyatı : 🔥 ".request('price')*request('packQty')." грн 🔥",
-                'reply_markup' => json_encode($buttons),
-            ]);
-            //Telegram Ürünü Otomatik Mesaj Atma
+                            [
+                            'text' => 'Заказ',
+                            'url' => 'https://bymmc.com.ua/'.request('category').'/'.Str::slug(request('name')).'/'.request('code'),
+                            ]
+                        ],
+                    ]
+                ]; // // Gerçek ID -1001183135934
+                //Telegram Ürünü Otomatik Mesaj Atma
+
+                //Telegram Ürünü Otomatik Mesaj Atma
+                Http::post('https://api.telegram.org/bot2064790826:AAF5xxxGH6sWbbLQt8Yc-7ptGX6VZ5um3og/sendPhoto',[
+                    'chat_id' => 1841409766,
+                    'photo' => 'https://bymmc.com.ua/assets/images/products/'.$imgName,
+                    'caption'=> "🔥".request('name')."🔥 \n\n\n  код : ".request('code')." \n\n\n цвета : ". request('colors')." \n\n\n размеры : ".request('size') . " \n\n\n цена :  🔥 ".request('price')." грн 🔥 \n\n\n  цена за упаковку : \n🔥 ".request('price')*request('packQty')." грн 🔥",
+                    'reply_markup' => json_encode($buttons),
+                ]);
+                //Telegram Ürünü Otomatik Mesaj Atma
+            }
+
+
 
             return redirect()->route('admin.product')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success')->withInput();
         }
@@ -233,7 +238,37 @@ class ProductController extends Controller
         $product->update($data);
 
 
+                    // //Telegram Ürünü Otomatik Mesaj Atma
+                    // $buttons =[
+                    //     'inline_keyboard' => [
+                    //         [   
+                    //             [
+                    //             'text' => 'Перейти на сайт',
+                    //             'url' => 'https://bymmc.com.ua/'. request('category') . '/'. Str::slug(request('name')) .'/'.request('code')
+                    //             ],
+                    //             [
+                    //             'text' => 'Напиши мне',
+                    //             'url' => 'https://t.me/omer_uzer'
+                    //             ]
+                    //         ],
+                    //         [
+                    //             [
+                    //             'text' => 'Заказ',
+                    //             'url' => 'https://bymmc.com.ua/'.request('category').'/'.Str::slug(request('name')).'/'.request('code'),
+                    //             ]
+                    //         ],
+                    //     ]
+                    // ];
+                    // //Telegram Ürünü Otomatik Mesaj Atma
         
+                    // //Telegram Ürünü Otomatik Mesaj Atma
+                    // Http::post('https://api.telegram.org/bot2064790826:AAF5xxxGH6sWbbLQt8Yc-7ptGX6VZ5um3og/sendPhoto',[
+                    //     'chat_id' => -1001183135934,
+                    //     'photo' => 'https://bymmc.com.ua/assets/images/products/'.$imgName,
+                    //     'caption'=> "🔥".request('name')."🔥 \n\n\n  код : ".request('code')." \n\n\n цвета : ". request('colors')." \n\n\n размеры : ".request('size') . " \n\n\n цена :  🔥 ".request('price')." грн 🔥 \n\n\n  цена за упаковку : \n🔥 ".request('price')*request('packQty')." грн 🔥",
+                    //     'reply_markup' => json_encode($buttons),
+                    // ]);
+                    // //Telegram Ürünü Otomatik Mesaj Atma
 
         return redirect()->route('admin.product')->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');;
 

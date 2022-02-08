@@ -12,16 +12,27 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Visitor;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Paragraf\ViberBot\Event\MessageEvent;
+use Paragraf\ViberBot\Model\ViberUser;
+use Paragraf\ViberBot\TextMessage;
+use Viber\Api\Sender;   
+use Viber\Bot;
+use Viber\Client;
+
 
 class HomeController extends Controller
 {
 
-    public function index(){    
+    public function index(){  
+
+
+
 
             // // Telegram Bot Dosyasını Çalıştırır
             // $a = fopen('../node/app.js','a');
@@ -48,17 +59,17 @@ class HomeController extends Controller
             //             ]
             //         ],
             //     ]
-            // ];
+            // ]; -1001183135934
 
             //dd(json_encode($buttons));
+            //     $i = 5;
+            // if($i==5){
+            //     Http::post('https://api.telegram.org/bot2064790826:AAF5xxxGH6sWbbLQt8Yc-7ptGX6VZ5um3og/sendMessage',[
+            //         'chat_id' => 1841409766,
+            //         'text'=> "asdfsg\n dlskfdbg",
+            //     ]);
+            // }
 
-            // Http::post('https://api.telegram.org/bot2064790826:AAF5xxxGH6sWbbLQt8Yc-7ptGX6VZ5um3og/sendPhoto',[
-            //     'chat_id' => -1001630273515,
-            //     'photo' => 'https://i.pinimg.com/236x/98/5c/39/985c3996569e449d7dccf55ade348d62.jpg',
-            //     'caption'=> "asdfsg\n dlskfdbg",
-            // ]);
-
-        
         // GENERAL DATA
 
         $userCount      =   User::count();

@@ -126,6 +126,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div  class="col-sm-10">
+                            <div  class="form-check">
+                                <div class="">
+                                    <label  class="form-check-label">
+                                        <input name="telegram" style="cursor: pointer" class="form-check-input" type="checkbox"> Telegrama At
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div style="text-align: center">
                         <button type="submit" class="btn btn-success">Ekle</button>

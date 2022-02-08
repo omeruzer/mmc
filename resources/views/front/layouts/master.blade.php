@@ -20,6 +20,7 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <title>@yield('title')</title>
 
+
     <!-- Facebook Pixel Code -->
     <meta name="facebook-domain-verification" content="9k8yp3ffma2cgo8w3qu6yxa7v51k9q" />
         <!-- Facebook Pixel Code -->
@@ -115,7 +116,6 @@
 	
 	<!-- SPECIFIC SCRIPTS -->
 	<script src="/assets/front/js/carousel-home.min.js"></script>
-
     @yield('footer')
 </body>
 </html>

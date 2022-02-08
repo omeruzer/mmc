@@ -10,12 +10,14 @@ use App\Models\Product;
 use App\Models\ProductDetail;
 use App\Models\Visitor;
 use Database\Seeders\ProductDetailSeeder;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Viber\Client;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index(){      
 
         $ip         =   $_SERVER['REMOTE_ADDR'];
         $language   =   substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);

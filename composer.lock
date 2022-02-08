@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe76b4e9fff59d65ec0e4299bb351c59",
+    "content-hash": "57e33b530bb27f15a22ffa89a656b94e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +61,56 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.0.3"
             },
             "time": "2021-03-11T06:42:03+00:00"
+        },
+        {
+            "name": "bogdaan/viber-bot-php",
+            "version": "0.0.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bogdaan/viber-bot-php.git",
+                "reference": "176dc938613d88e42ca04c7e7598f842f8f1cafc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bogdaan/viber-bot-php/zipball/176dc938613d88e42ca04c7e7598f842f8f1cafc",
+                "reference": "176dc938613d88e42ca04c7e7598f842f8f1cafc",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2 | ^7.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "monolog/monolog": "^1.22",
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Viber\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Novikov Bogdan",
+                    "email": "hcbogdan@gmail.com"
+                }
+            ],
+            "description": "Php bot interface to work with Viber API",
+            "keywords": [
+                "bot",
+                "im",
+                "viber"
+            ],
+            "support": {
+                "issues": "https://github.com/Bogdaan/viber-bot-php/issues",
+                "source": "https://github.com/Bogdaan/viber-bot-php/tree/0.0.15"
+            },
+            "time": "2022-01-23T21:49:58+00:00"
         },
         {
             "name": "brick/math",
@@ -1829,6 +1879,77 @@
             "time": "2021-10-01T21:08:31+00:00"
         },
         {
+            "name": "mprince/laravel8-viber-bot",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mprince2k18/laravel8-viber-bot.git",
+                "reference": "68edd3fc6390367d2abf68046c5859608006d8e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mprince2k18/laravel8-viber-bot/zipball/68edd3fc6390367d2abf68046c5859608006d8e7",
+                "reference": "68edd3fc6390367d2abf68046c5859608006d8e7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "php-curl-class/php-curl-class": "^9.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Paragraf\\ViberBot\\ViberBotServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Paragraf\\ViberBot\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nemanja Ivankovic",
+                    "email": "nemanja.ivankovic@paragraf.rs",
+                    "homepage": "https://paragraf.rs",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Mohammad Prince",
+                    "email": "mprince2k16@gmail.com",
+                    "homepage": "https://github.com/mprince2k18",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Viber bot for Laravel",
+            "homepage": "https://github.com/mprince2k18/laravel-viber-bot",
+            "keywords": [
+                "bot",
+                "laravel",
+                "paragraf",
+                "php",
+                "viber"
+            ],
+            "support": {
+                "issues": "https://github.com/mprince2k18/laravel8-viber-bot/issues",
+                "source": "https://github.com/mprince2k18/laravel8-viber-bot/tree/main"
+            },
+            "time": "2021-04-03T09:51:13+00:00"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "2.55.2",
             "source": {
@@ -2191,6 +2312,79 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "time": "2021-04-09T13:42:10+00:00"
+        },
+        {
+            "name": "php-curl-class/php-curl-class",
+            "version": "9.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-curl-class/php-curl-class.git",
+                "reference": "a0a3f2b10b086038eec98e92b1563b208daea04a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/a0a3f2b10b086038eec98e92b1563b208daea04a",
+                "reference": "a0a3f2b10b086038eec98e92b1563b208daea04a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "phpcompatibility/php-compatibility": "*",
+                "phpunit/phpunit": "*",
+                "squizlabs/php_codesniffer": "*",
+                "vimeo/psalm": "*"
+            },
+            "suggest": {
+                "ext-mbstring": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Curl\\": "src/Curl/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "Zach Borboa"
+                }
+            ],
+            "description": "PHP Curl Class makes it easy to send HTTP requests and integrate with web APIs.",
+            "homepage": "https://github.com/php-curl-class/php-curl-class",
+            "keywords": [
+                "API-Client",
+                "api",
+                "class",
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http-client",
+                "http-proxy",
+                "json",
+                "php",
+                "php-curl",
+                "php-curl-library",
+                "proxy",
+                "requests",
+                "restful",
+                "web-scraper",
+                "web-scraping ",
+                "web-service",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/php-curl-class/php-curl-class/issues",
+                "source": "https://github.com/php-curl-class/php-curl-class/tree/9.5.1"
+            },
+            "time": "2021-12-14T16:26:30+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -7950,7 +8144,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mprince/laravel8-viber-bot": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
