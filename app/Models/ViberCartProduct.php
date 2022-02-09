@@ -9,7 +9,7 @@ class ViberCartProduct extends Model
 {
     use HasFactory;
 
-    protected $table    =   ' viber_cart_product';
+    protected $table    =   'vibercartproduct';
     protected $guarded  =   [];
 
     public function geCart(){

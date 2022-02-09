@@ -15,8 +15,9 @@ class CreateViberorderTable extends Migration
     {
         Schema::create('viberorder', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('order_number');
             $table->bigInteger('viber_cart_product')->unsigned();
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->timestamps();
 
 

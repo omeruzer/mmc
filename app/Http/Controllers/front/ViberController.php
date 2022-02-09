@@ -5,6 +5,8 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ViberCart;
+use App\Models\ViberCartProduct;
+use App\Models\ViberOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
@@ -15,11 +17,11 @@ class ViberController extends Controller
     public function index($id){
 
         $cartID = rand(100,241236544);
-
         
         $cart_number = ViberCart::create([
             "cart_number" => $cartID
         ]);
+
         
         $a = Product::where('id', $id)->first();
 
@@ -72,7 +74,7 @@ class ViberController extends Controller
                         "BgMediaType" => "gif",
                         "BgLoop" => false,
                         "ActionType" => "open-url",
-                        "ActionBody" => "https://bymmc.com.ua/viber/addcart/" . $a->id."/".$cart_number,
+                        "ActionBody" => "https://bymmc.com.ua/viber/addcart/" . $a->id."/".$cartID,
                         "Image" => "www.tut.by/img.jpg",
                         //"Text" => 'http://localhost:8000/asd',
                         "Text" => "<b>➕ Sepete " . $a->code . " Ekle  (" . $a->packQty . " Adet) Bedenler : (" . $a->size . ")</b>",
@@ -89,11 +91,23 @@ class ViberController extends Controller
         return Redirect::to('viber://pa?chatURI=bymmcua&text=');
     }
 
-    public function addCart($id,$cart_number){
+    public function addCart($id,$cartId){
+
 
         $a = Product::where('id', $id)->first();
 
-        
+        $cart = ViberCart::where('cart_number',$cartId)->first();
+
+        //dd($cart->id);
+
+        $isHasCart = ViberCartProduct::where('cart_id',$cart->id)->get();
+
+        //dd(count($isHasCart));
+
+            $vibercartproduct = ViberCartProduct::create([
+                'cart_id' => $cart->id,
+                'product_id' => $id
+            ]);
 
 
         $b = [];
@@ -118,7 +132,7 @@ class ViberController extends Controller
                         "BgMedia" => "Siparişi Onayla",
                         "BgLoop" => false,
                         "ActionType" => "open-url",
-                        "ActionBody" => "http://bymmc.com.ua/viber/order/".$a->id,
+                        "ActionBody" => "http://bymmc.com.ua/viber/order/".$a->id."/".$vibercartproduct->id,
                         "Image" => "http://bymmc.com.ua/",
                         "Text" => "<b>✔️ Siparişi Onayla</b>",
                         "TextVAlign" => "middle",
@@ -133,7 +147,7 @@ class ViberController extends Controller
                         "BgMediaType" => "gif",
                         "BgLoop" => false,
                         "ActionType" => "open-url",
-                        "ActionBody" => "https://bymmc.com.ua/viber/orderpass/".$a->id,
+                        "ActionBody" => "https://bymmc.com.ua/viber/orderpass/".$a->id."/".$cart->cart_number,
                         "Image" => "www.tut.by/img.jpg",
                         "Text" => "<b>❌ Siparişi İptal Et</b>",
                         "TextVAlign" => "middle",
@@ -148,7 +162,7 @@ class ViberController extends Controller
                         "BgMediaType" => "gif",
                         "BgLoop" => false,
                         "ActionType" => "open-url",
-                        "ActionBody" => "https://bymmc.com.ua/viber/addcart/" . $a->id,
+                        "ActionBody" => "https://bymmc.com.ua/viber/addcart/" . $a->id."/".$cart->id,
                         "Image" => "www.tut.by/img.jpg",
                         //"Text" => 'http://localhost:8000/asd',
                         "Text" => "<b>➕ Sepete " . $a->code . " Ekle  (" . $a->packQty . " Adet) Bedenler : (" . $a->size . ")</b>",
@@ -164,7 +178,17 @@ class ViberController extends Controller
         return Redirect::to('viber://pa?chatURI=bymmcua&text=');
     }
 
-    public function order($id){
+    public function order($id,$cartproductid){
+
+        $getcartProductId = ViberCartProduct::where('id',$cartproductid)->first();
+
+        $orderNumber = rand(65564,89784);
+
+        $viberOrder = ViberOrder::create([
+            'order_number' => $orderNumber,
+            'viber_cart_product' => $getcartProductId->id,
+        ]);
+
         $http = Http::post('https://chatapi.viber.com/pa/send_message', [
             "auth_token" => "4ead3f9d78e7e029-792cd08d800f5402-c7d4541bf7b8e035",
             "receiver" => "7jEDGCYx+LDn7zWvvWqShA==",
@@ -182,7 +206,7 @@ class ViberController extends Controller
                         "BgMedia" => "📞 Telefonu Paylaş",
                         "BgLoop" => false,
                         "ActionType" => "open-url",
-                        "ActionBody" => "http://bymmc.com.ua/viber/phone/".$id,
+                        "ActionBody" => "http://bymmc.com.ua/viber/phone/".$id."/".$viberOrder->id,
                         "Image" => "http://bymmc.com.ua/viber/phone/",
                         "Text" => "<b>📞 Telefonu Paylaş</b>",
                         "TextVAlign" => "middle",
@@ -197,7 +221,10 @@ class ViberController extends Controller
         return Redirect::to('viber://pa?chatURI=bymmcua&text=');
     }
 
-    public function orderpass($id){ 
+    public function orderpass($id,$cartId){
+
+        $cartproduct = ViberCartProduct::where('cart_id',$cartId)->where('product_id',$id)->delete();
+
         $http = Http::post('https://chatapi.viber.com/pa/send_message', [
             "auth_token" => "4ead3f9d78e7e029-792cd08d800f5402-c7d4541bf7b8e035",
             "receiver" => "7jEDGCYx+LDn7zWvvWqShA==",
@@ -208,7 +235,12 @@ class ViberController extends Controller
         return Redirect::to('viber://pa?chatURI=bymmcua&text=');
     }
 
-    public function phone($id){
+    public function phone($id,$orderId){
+
+        $order = ViberOrder::where('id',$orderId)->update([
+            'phone' => rand(50000,90000)
+        ]);
+
         $http = Http::post('https://chatapi.viber.com/pa/send_message', [
             "auth_token" => "4ead3f9d78e7e029-792cd08d800f5402-c7d4541bf7b8e035",
             "receiver" => "7jEDGCYx+LDn7zWvvWqShA==",
