@@ -9,10 +9,10 @@ class ViberOrder extends Model
 {
     use HasFactory;
 
-    protected $table    =   'viber_order';
+    protected $table    =   'viberorder';
     protected $guarded  =   [];
 
-    public function getCartProduct(){
+    public function getViberCartProduct(){
         return $this->hasOne('App\Models\ViberCartProduct','id');
     }
 }

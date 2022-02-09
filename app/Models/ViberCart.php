@@ -9,6 +9,6 @@ class ViberCart extends Model
 {
     use HasFactory;
 
-    protected $table    =   ' viber_cart';
+    protected $table    =   'vibercart';
     protected $guarded  =   [];
 }

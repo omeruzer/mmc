@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateViberCartTable extends Migration
+class CreateVibercartTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateViberCartTable extends Migration
      */
     public function up()
     {
-        Schema::create('viber_cart', function (Blueprint $table) {
+        Schema::create('vibercart', function (Blueprint $table) {
             $table->id();
             $table->integer('cart_number');
             $table->timestamps();
-
-
         });
     }
 
@@ -29,6 +27,6 @@ class CreateViberCartTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('viber_cart');
+        Schema::dropIfExists('vibercart');
     }
 }

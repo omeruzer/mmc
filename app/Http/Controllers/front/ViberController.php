@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ViberCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
@@ -13,6 +14,13 @@ class ViberController extends Controller
 
     public function index($id){
 
+        $cartID = rand(100,241236544);
+
+        
+        $cart_number = ViberCart::create([
+            "cart_number" => $cartID
+        ]);
+        
         $a = Product::where('id', $id)->first();
 
         $http = Http::post('https://chatapi.viber.com/pa/send_message', [
@@ -64,7 +72,7 @@ class ViberController extends Controller
                         "BgMediaType" => "gif",
                         "BgLoop" => false,
                         "ActionType" => "open-url",
-                        "ActionBody" => "https://bymmc.com.ua/viber/addcart/" . $a->id,
+                        "ActionBody" => "https://bymmc.com.ua/viber/addcart/" . $a->id."/".$cart_number,
                         "Image" => "www.tut.by/img.jpg",
                         //"Text" => 'http://localhost:8000/asd',
                         "Text" => "<b>➕ Sepete " . $a->code . " Ekle  (" . $a->packQty . " Adet) Bedenler : (" . $a->size . ")</b>",
@@ -81,9 +89,12 @@ class ViberController extends Controller
         return Redirect::to('viber://pa?chatURI=bymmcua&text=');
     }
 
-    public function addCart($id){
+    public function addCart($id,$cart_number){
 
         $a = Product::where('id', $id)->first();
+
+        
+
 
         $b = [];
 

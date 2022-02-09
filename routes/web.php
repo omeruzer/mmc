@@ -67,7 +67,7 @@ Route::get('/', [FrontHomeController::class, 'index'])->name('homepage');
 
 Route::group(['prefix' => 'viber'], function () {
     Route::get('/{id}', [ViberController::class, 'index'])->name('viber');
-    Route::get('/addcart/{id}', [ViberController::class, 'addCart'])->name('addCart');
+    Route::get('/addcart/{id}/{cartId}', [ViberController::class, 'addCart'])->name('addCart');
     Route::get('/order/{id}',[ViberController::class,'order'])->name('order');
     Route::get('/orderpass/{id}',[ViberController::class,'orderpass'])->name('orderpass');
     Route::get('/phone/{id}',[ViberController::class,'phone'])->name('phone');

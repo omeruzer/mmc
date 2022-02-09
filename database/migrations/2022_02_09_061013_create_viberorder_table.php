@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateViberOrderTable extends Migration
+class CreateViberorderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateViberOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('viber_order', function (Blueprint $table) {
+        Schema::create('viberorder', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('cartProduct_id')->unsigned();
+            $table->bigInteger('viber_cart_product')->unsigned();
             $table->string('phone');
             $table->timestamps();
 
-            $table->foreign('cartProduct_id')->references('id')->on('viber_cart_product')->onDelete('cascade');
+
+            $table->foreign('viber_cart_product')->references('id')->on('vibercartproduct')->onDelete('cascade');
+
         });
     }
 
@@ -30,6 +32,6 @@ class CreateViberOrderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('viber_order');
+        Schema::dropIfExists('viberorder');
     }
 }
