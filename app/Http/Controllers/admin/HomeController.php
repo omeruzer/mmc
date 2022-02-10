@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Storage;
 use Paragraf\ViberBot\Event\MessageEvent;
 use Paragraf\ViberBot\Model\ViberUser;
 use Paragraf\ViberBot\TextMessage;
-use Viber\Api\Sender;   
+use Viber\Api\Sender;
 use Viber\Bot;
 use Viber\Client;
 
@@ -29,46 +29,8 @@ use Viber\Client;
 class HomeController extends Controller
 {
 
-    public function index(){  
-
-
-
-
-            // // Telegram Bot Dosyasını Çalıştırır
-            // $a = fopen('../node/app.js','a');
-            // fwrite($a,' ');
-            // fclose($a);
-            // // Telegram Bot Dosyasını Çalıştırırq 
-
-            // $buttons =[
-            //     'inline_keyboard' => [
-            //         [   
-            //             [
-            //             'text' => 'Web Sitesine Git',
-            //             'url' => 'https://google.com'
-            //             ],
-            //             [
-            //             'text' => 'Mesaj At',
-            //             'url' => 'https://web.telegram.org/z/#1841409766'
-            //             ]
-            //         ],
-            //         [
-            //             [
-            //             'text' => 'Sipariş Ver',
-            //             'url' => 'https://bymmc.com.ua'
-            //             ]
-            //         ],
-            //     ]
-            // ]; -1001183135934
-
-            //dd(json_encode($buttons));
-            //     $i = 5;
-            // if($i==5){
-            //     Http::post('https://api.telegram.org/bot2064790826:AAF5xxxGH6sWbbLQt8Yc-7ptGX6VZ5um3og/sendMessage',[
-            //         'chat_id' => 1841409766,
-            //         'text'=> "asdfsg\n dlskfdbg",
-            //     ]);
-            // }
+    public function index()
+    {
 
         // GENERAL DATA
 
@@ -78,12 +40,12 @@ class HomeController extends Controller
         $branchCount    =   Branch::count();
         $blogCount      =   Blog::count();
         $brandCount     =   Brand::count();
-        $messageCount   =   Messages::where('isRead',0)->count();
-        $managerCount   =   User::where('manager',1)->count();
+        $messageCount   =   Messages::where('isRead', 0)->count();
+        $managerCount   =   User::where('manager', 1)->count();
 
         // DECLİNİNG STOCK DATA
 
-        $decliningstocks = Product::where('quantity','<','20')->orderBy('quantity')->get();
+        $decliningstocks = Product::where('quantity', '<', '20')->orderBy('quantity')->get();
 
         // VISITOR DATA
 
@@ -107,7 +69,7 @@ class HomeController extends Controller
 
         // NEW PRODUCT DATA
 
-        $newProducts = Product::orderByDesc('id')->limit(10)->get(); 
+        $newProducts = Product::orderByDesc('id')->limit(10)->get();
 
 
         // ORDER
@@ -116,20 +78,21 @@ class HomeController extends Controller
 
         $orderCount = Order::count();
 
-        $truckOrder = Order::where('status','Заказ отправлен')->count();
-        $endOrder = Order::where('status','заказ выполнен')->count();
-        $NewOrder = Order::where('status','!=','Запрос на возврат создан')->where('isRead',0)->count();
-        $WaitOrder = Order::where('status','!=','Запрос на возврат создан')->where('isRead',1)->count();
-        $cancelOrder = Order::where('status','Заказ отменён')->count();
-        $returnOrder = Order::where('status','Запрос на возврат создан')->count();
+        $truckOrder = Order::where('status', 'Заказ отправлен')->count();
+        $endOrder = Order::where('status', 'заказ выполнен')->count();
+        $NewOrder = Order::where('status', '!=', 'Запрос на возврат создан')->where('isRead', 0)->count();
+        $WaitOrder = Order::where('status', '!=', 'Запрос на возврат создан')->where('isRead', 1)->count();
+        $cancelOrder = Order::where('status', 'Заказ отменён')->count();
+        $returnOrder = Order::where('status', 'Запрос на возврат создан')->count();
 
-        return view('admin.home.home',compact('returnOrder','cancelOrder','WaitOrder','NewOrder','endOrder','truckOrder','orderCount','amount','userCount','categoryCount','productCount','branchCount','blogCount','brandCount','messageCount','managerCount','decliningstocks','visitors','lastMonthVisitor','lastWeekVisitor','lastDayVisitor','newProducts'));
+        return view('admin.home.home', compact('returnOrder', 'cancelOrder', 'WaitOrder', 'NewOrder', 'endOrder', 'truckOrder', 'orderCount', 'amount', 'userCount', 'categoryCount', 'productCount', 'branchCount', 'blogCount', 'brandCount', 'messageCount', 'managerCount', 'decliningstocks', 'visitors', 'lastMonthVisitor', 'lastWeekVisitor', 'lastDayVisitor', 'newProducts'));
     }
 
-    public function visitorDelete(){
+    public function visitorDelete()
+    {
 
         Visitor::getQuery()->delete();
 
-        return redirect()->back()->with('message','İşlem Başarıyla Gerçekleşti')->with('message_type','success');
+        return redirect()->back()->with('message', 'İşlem Başarıyla Gerçekleşti')->with('message_type', 'success');
     }
 }

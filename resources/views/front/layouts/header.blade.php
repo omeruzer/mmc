@@ -49,7 +49,7 @@
                     <ul>
                         <li ><a href="https://www.facebook.com/{{$socialMedias->facebook}}"><i style="color: #fff" class="fab fa-2x fa-facebook itemlink"></i></a></li>
                         <li ><a href="https://www.instagram.com/{{$socialMedias->instagram}}/?hl=tr"><i style="color: #fff" class="fab fa-2x fa-instagram"></i></a></li>
-                        <li ><a href="https://t.me/{{$socialMedias->telegram}}"><i style="color: #fff" class="fab fa-2x fa-telegram"></i></a></li>
+                        <li ><a href="{{$socialMedias->telegram}}"><i style="color: #fff" class="fab fa-2x fa-telegram"></i></a></li>
                         <li ><a href="{{$socialMedias->viber}}"><i style="color: #fff" class="fab fa-2x fa-viber"></i></a></li>
                     </ul>
                 </div>

@@ -26,6 +26,7 @@ use App\Http\Controllers\admin\TelegramController as AdminTelegramController;
 use App\Http\Controllers\admin\TermsandConditionsController as AdminTermsandConditionsController;
 use App\Http\Controllers\admin\TruckController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\ViberController as AdminViberController;
 use App\Http\Controllers\ConfirmController;
 use App\Http\Controllers\front\AboutController as FrontAboutController;
 use App\Http\Controllers\front\AccountController;
@@ -159,6 +160,12 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.home');
         Route::get('/delete', [HomeController::class, 'visitorDelete'])->name('admin.visitor.delete');
+
+        Route::group(['prefix'=>'viber'],function(){
+            Route::get('/',[AdminViberController::class,'index'])->name('admin.viber');
+            Route::get('/detail/{id}',[AdminViberController::class,'detail'])->name('admin.viber.detail');
+            Route::get('/delete/{id}',[AdminViberController::class,'delete'])->name('admin.viber.delete');
+        });
 
         Route::group(['prefix' => 'category'], function () {
             Route::get('/', [CategoryController::class, 'index'])->name('admin.category');

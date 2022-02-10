@@ -188,6 +188,7 @@ class ViberController extends Controller
             'order_number' => $orderNumber,
             'viber_cart_product' => $getcartProductId->id,
         ]);
+        
 
         $http = Http::post('https://chatapi.viber.com/pa/send_message', [
             "auth_token" => "4ead3f9d78e7e029-792cd08d800f5402-c7d4541bf7b8e035",
@@ -206,8 +207,8 @@ class ViberController extends Controller
                         "BgMedia" => "📞 Telefonu Paylaş",
                         "BgLoop" => false,
                         "ActionType" => "open-url",
-                        "ActionBody" => "http://bymmc.com.ua/viber/phone/".$id."/".$viberOrder->id,
-                        "Image" => "http://bymmc.com.ua/viber/phone/",
+                        "ActionBody" => "https://bymmc.com.ua/viber/phone/".$id."/".$viberOrder->id      , 
+                        "Image" => "",
                         "Text" => "<b>📞 Telefonu Paylaş</b>",
                         "TextVAlign" => "middle",
                         "TextHAlign" => "center",
@@ -250,6 +251,4 @@ class ViberController extends Controller
 
         return Redirect::to('viber://pa?chatURI=bymmcua&text=');
     }
-
-    
 }

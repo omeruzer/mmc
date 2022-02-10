@@ -17,6 +17,6 @@ class ViberCartProduct extends Model
     }
 
     public function getProduct(){
-        return $this->hasOne('App\Models\Product','id');
+        return $this->hasOne('App\Models\Product','id','product_id');
     }
 }

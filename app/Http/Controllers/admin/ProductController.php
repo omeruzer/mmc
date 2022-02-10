@@ -118,12 +118,12 @@ class ProductController extends Controller
                             'url' => 'https://t.me/omer_uzer'
                             ]
                         ],
-                        [
-                            [
-                            'text' => 'Заказ',
-                            'url' => 'https://bymmc.com.ua/'.request('category').'/'.Str::slug(request('name')).'/'.request('code'),
-                            ]
-                        ],
+                        // [
+                        //     [
+                        //     'text' => 'Заказ',
+                        //     'url' => 'https://bymmc.com.ua/'.request('category').'/'.Str::slug(request('name')).'/'.request('code'),
+                        //     ]
+                        // ],
                     ]
                 ]; // // Gerçek ID -1001183135934
                 //Telegram Ürünü Otomatik Mesaj Atma

@@ -38,6 +38,12 @@
                             </a>
                         </li>
                         <li class="submenu">
+                            <a class="" href="{{route('admin.viber')}}">
+                                <i class="fab fa-viber"></i>
+                                <span> Viber </span>
+                            </a>
+                        </li>
+                        <li class="submenu">
                             <a class="" href="{{route('admin.order')}}">
                                 <i class="fas fa-shopping-cart"></i>
                                 <span> Siparişler </span>

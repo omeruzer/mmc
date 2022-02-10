@@ -26,12 +26,12 @@ class TelegramController extends Controller
                     'url' => 'https://t.me/omer_uzer'
                     ]
                 ],
-                [
-                    [
-                    'text' => 'Заказ',
-                    'url' => 'https://bymmc.com.ua/'. $product->category . '/'. $product->p_slug .'/'.$product->code
-                    ]
-                ],
+                // [
+                //     [
+                //     'text' => 'Заказ',
+                //     'url' => 'https://bymmc.com.ua/'. $product->category . '/'. $product->p_slug .'/'.$product->code
+                //     ]
+                // ],
             ]
         ];
 
